@@ -28,5 +28,11 @@
         /// Index: j
         /// </summary>
         Bundle OperatingRooms { get; }
+
+        /// <summary>
+        /// Gets the planning horizon.
+        /// Index: k
+        /// </summary>
+        ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
     }
 }
