@@ -1,0 +1,61 @@
+﻿namespace Britt2022.D.Factories.Dependencies.Hl7.Fhir.R4.Model
+{
+    using global::Hl7.Fhir.Model;
+
+    using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
+
+    internal sealed class DurationFactory : IDurationFactory
+    {
+        public DurationFactory()
+        {
+        }
+
+        public Duration Create()
+        {
+            Duration duration;
+
+            try
+            {
+                duration = new Duration();
+            }
+            finally
+            {
+            }
+
+            return duration;
+        }
+
+        public Duration Create(
+            string unit,
+            decimal value)
+        {
+            return this.Create(
+                "http://unitsofmeasure.org",
+                unit,
+                value);
+        }
+
+        public Duration Create(
+            string system,
+            string unit,
+            decimal value)
+        {
+            Duration duration;
+
+            try
+            {
+                duration = new Duration()
+                {
+                    System = system,
+                    Unit = unit,
+                    Value = value
+                };
+            }
+            finally
+            {
+            }
+
+            return duration;
+        }
+    }
+}
