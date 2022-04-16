@@ -298,6 +298,10 @@
         /// </summary>
         public ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
 
+        /// <summary>
+        /// Gets the length of stay days.
+        /// Index: l
+        /// </summary>
         public ImmutableList<PositiveInt> LengthOfStayDays { get; }
 
         // Surgical Specialty 1 - General / Mixed (GEN / MIX)
