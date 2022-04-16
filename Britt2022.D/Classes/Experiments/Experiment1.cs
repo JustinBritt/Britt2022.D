@@ -274,6 +274,10 @@
 
         public INullableValueFactory NullableValueFactory { get; }
 
+        /// <summary>
+        /// Gets the clusters.
+        /// Index: e
+        /// </summary>
         public ImmutableList<PositiveInt> Clusters { get; }
 
         public Bundle Surgeons { get; }

@@ -11,6 +11,10 @@
 
     public interface IExperiment1
     {
+        /// <summary>
+        /// Gets the clusters.
+        /// Index: e
+        /// </summary>
         ImmutableList<PositiveInt> Clusters { get; }
     }
 }
