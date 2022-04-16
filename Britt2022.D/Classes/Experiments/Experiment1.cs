@@ -1800,7 +1800,7 @@
             return builder.ToImmutableList();
         }
 
-        // (w1, w2, w3, w4)
+        // Parameters: (w1, w2, w3, w4)
         private ImmutableList<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>> GenerateGoalWeights(
             INullableValueFactory nullableValueFactory)
         {
