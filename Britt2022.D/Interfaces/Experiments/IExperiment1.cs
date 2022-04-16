@@ -42,6 +42,42 @@
         ImmutableList<PositiveInt> LengthOfStayDays { get; }
 
         /// <summary>
+        /// Gets the General / Mixed (GEN / MIX) surgical specialty.
+        /// Index: r
+        /// </summary>
+        Organization SurgicalSpecialty1GEN { get; }
+
+        /// <summary>
+        /// Gets the Gynecology (GYN) surgical specialty.
+        /// Index: r
+        /// </summary>
+        Organization SurgicalSpecialty2GYN { get; }
+
+        /// <summary>
+        /// Gets the Plastic (PLA) surgical specialty.
+        /// Index: r
+        /// </summary>
+        Organization SurgicalSpecialty3PLA { get; }
+
+        /// <summary>
+        /// Gets the Ear-Nose-Throat (ENT) surgical specialty.
+        /// Index: r
+        /// </summary>
+        Organization SurgicalSpecialty4ENT { get; }
+
+        /// <summary>
+        /// Gets the Orthopedic (ORT) surgical specialty.
+        /// Index: r
+        /// </summary>
+        Organization SurgicalSpecialty5ORT { get; }
+
+        /// <summary>
+        /// Gets the Urology (URO) surgical specialty.
+        /// Index: r
+        /// </summary>
+        Organization SurgicalSpecialty6URO { get; }
+
+        /// <summary>
         /// Gets the scenarios.
         /// Index: ω
         /// </summary>
