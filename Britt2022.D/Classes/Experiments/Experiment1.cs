@@ -303,12 +303,6 @@
         public Organization SurgicalSpecialty6URO { get; }
 
         /// <summary>
-        /// 
-        /// Parameter: S(r)
-        /// </summary>
-        public ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
-
-        /// <summary>
         /// Gets the scenarios.
         /// Index: ω
         /// </summary>
@@ -392,6 +386,12 @@
         /// Parameter: p(i, l, ω)
         /// </summary>
         public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
+
+        /// <summary>
+        /// 
+        /// Parameter: S(r)
+        /// </summary>
+        public ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
 
         /// <summary>
         /// 
