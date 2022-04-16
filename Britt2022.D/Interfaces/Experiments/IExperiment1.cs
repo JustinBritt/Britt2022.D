@@ -34,5 +34,11 @@
         /// Index: k
         /// </summary>
         ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
+
+        /// <summary>
+        /// Gets the length of stay days.
+        /// Index: l
+        /// </summary>
+        ImmutableList<PositiveInt> LengthOfStayDays { get; }
     }
 }
