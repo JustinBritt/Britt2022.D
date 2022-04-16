@@ -279,7 +279,11 @@
         /// Index: e
         /// </summary>
         public ImmutableList<PositiveInt> Clusters { get; }
-
+        
+        /// <summary>
+        /// Gets the surgeons.
+        /// Index: i
+        /// </summary>
         public Bundle Surgeons { get; }
 
         public Bundle OperatingRooms { get; }
