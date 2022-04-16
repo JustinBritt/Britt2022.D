@@ -22,5 +22,11 @@
         /// Index: i
         /// </summary>
         Bundle Surgeons { get; }
+
+        /// <summary>
+        /// Gets the operating rooms.
+        /// Index: j
+        /// </summary>
+        Bundle OperatingRooms { get; }
     }
 }
