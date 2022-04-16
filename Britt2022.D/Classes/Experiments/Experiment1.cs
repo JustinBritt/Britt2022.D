@@ -23,6 +23,8 @@
 
         public Experiment1()
         {
+            IAbstractFactory abstractFactory = AbstractFactory.Create();
+
             ICalculationsAbstractFactory calculationsAbstractFactory = new CalculationsAbstractFactory();
 
             IDependenciesAbstractFactory dependenciesAbstractFactory = new DependenciesAbstractFactory();
