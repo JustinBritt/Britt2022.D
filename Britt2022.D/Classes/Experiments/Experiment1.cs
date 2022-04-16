@@ -302,6 +302,10 @@
         // Surgical Specialty 6 - Urology (URO)
         public Organization SurgicalSpecialty6URO { get; }
 
+        /// <summary>
+        /// 
+        /// Parameter: S(r)
+        /// </summary>
         public ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
 
         /// <summary>
