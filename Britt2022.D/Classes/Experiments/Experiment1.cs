@@ -25,9 +25,9 @@
         {
             IAbstractFactory abstractFactory = AbstractFactory.Create();
 
-            ICalculationsAbstractFactory calculationsAbstractFactory = new CalculationsAbstractFactory();
+            ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
 
-            IDependenciesAbstractFactory dependenciesAbstractFactory = new DependenciesAbstractFactory();
+            IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
 
             IACalculation ACalculation = calculationsAbstractFactory.CreateACalculationFactory().Create();
 
