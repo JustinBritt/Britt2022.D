@@ -5139,7 +5139,6 @@
             return builder.ToImmutableList();
         }
 
-        // TODO: Finish
         // Parameter: Ρ(ω)
         private ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> GenerateScenarioProbabilities(
             INullableValueFactory nullableValueFactory,
