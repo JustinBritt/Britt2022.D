@@ -292,6 +292,10 @@
         /// </summary>
         public Bundle OperatingRooms { get; }
 
+        /// <summary>
+        /// Gets the planning horizon.
+        /// Index: k
+        /// </summary>
         public ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
 
         public ImmutableList<PositiveInt> LengthOfStayDays { get; }
