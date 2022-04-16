@@ -286,6 +286,10 @@
         /// </summary>
         public Bundle Surgeons { get; }
 
+        /// <summary>
+        /// Gets the operating rooms.
+        /// Index: j
+        /// </summary>
         public Bundle OperatingRooms { get; }
 
         public ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
