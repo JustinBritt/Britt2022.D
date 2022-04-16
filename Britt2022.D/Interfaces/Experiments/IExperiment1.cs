@@ -16,5 +16,11 @@
         /// Index: e
         /// </summary>
         ImmutableList<PositiveInt> Clusters { get; }
+
+        /// <summary>
+        /// Gets the surgeons.
+        /// Index: i
+        /// </summary>
+        Bundle Surgeons { get; }
     }
 }
