@@ -55,7 +55,7 @@
 
                 ReadOnlySpan<int> indices = this.GetRandomNumbers(
                     discreteUniformFactory: discreteUniformFactory,
-                    maxValue: qθMeans.Length,
+                    maxValue: qθMeans.Length - 1,
                     minValue: 0,
                     numberOfElements: scenarios.Count());
 
