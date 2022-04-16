@@ -40,5 +40,11 @@
         /// Index: l
         /// </summary>
         ImmutableList<PositiveInt> LengthOfStayDays { get; }
+
+        /// <summary>
+        /// Gets the scenarios.
+        /// Index: ω
+        /// </summary>
+        ImmutableList<PositiveInt> Scenarios { get; }
     }
 }
