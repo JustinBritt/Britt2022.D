@@ -21,14 +21,10 @@
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public Experiment1()
+        public Experiment1(
+            ICalculationsAbstractFactory calculationsAbstractFactory,
+            IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
-            IAbstractFactory abstractFactory = AbstractFactory.Create();
-
-            ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
-
-            IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
-
             IACalculation ACalculation = calculationsAbstractFactory.CreateACalculationFactory().Create();
 
             IDCalculation DCalculation = calculationsAbstractFactory.CreateDCalculationFactory().Create();
