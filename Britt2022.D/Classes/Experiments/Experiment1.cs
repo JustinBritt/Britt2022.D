@@ -25,8 +25,6 @@
             ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
-            InCalculation nCalculation = calculationsAbstractFactory.CreatenCalculationFactory().Create();
-
             IpCalculation pCalculation = calculationsAbstractFactory.CreatepCalculationFactory().Create();
 
             IΦCalculation ΦCalculation = calculationsAbstractFactory.CreateΦCalculationFactory().Create();
@@ -237,7 +235,7 @@
 
             // SurgeonScenarioMaximumNumberPatients
             // Parameter: n(i, ω)
-            this.SurgeonScenarioMaximumNumberPatients = nCalculation.Calculate(
+            this.SurgeonScenarioMaximumNumberPatients = calculationsAbstractFactory.CreatenCalculationFactory().Create().Calculate(
                 this.NullableValueFactory,
                 this.WeightedAverageSurgicalDurations,
                 this.TimeBlockLength);
