@@ -213,6 +213,7 @@
                 logNormalFactory,
                 calculationsAbstractFactory.CreateDCalculationFactory().Create(),
                 this.Clusters,
+                this.Scenarios,
                 this.Surgeons,
                 this.SurgicalSpecialties);
 
@@ -603,6 +604,7 @@
             ILogNormalFactory logNormalFactory,
             IDCalculation DCalculation,
             ImmutableList<PositiveInt> clusters,
+            ImmutableList<PositiveInt> scenarios,
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
