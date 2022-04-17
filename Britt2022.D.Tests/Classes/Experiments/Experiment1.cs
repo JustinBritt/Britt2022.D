@@ -38,5 +38,32 @@
                 expected: numberClusters,
                 actual: clusters.Count);
         }
+
+        [DataTestMethod]
+        [DataRow(9)]
+        public void NumberperatingRooms(
+            int numberOperatingRooms)
+        {
+            // Arrange
+            IAbstractFactory abstractFactory = Britt2022.D.AbstractFactories.AbstractFactory.Create();
+
+            ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
+
+            IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
+
+            IExperimentsAbstractFactory experimentsAbstractFactory = abstractFactory.CreateExperimentsAbstractFactory();
+
+            IExperiment1 experiment1 = experimentsAbstractFactory.CreateExperiment1Factory().Create(
+                calculationsAbstractFactory,
+                dependenciesAbstractFactory);
+
+            // Act
+            Bundle operatingRooms = experiment1.OperatingRooms;
+
+            // Assert
+            Assert.AreEqual(
+                expected: numberOperatingRooms,
+                actual: operatingRooms.Entry.Count);
+        }
     }
 }
