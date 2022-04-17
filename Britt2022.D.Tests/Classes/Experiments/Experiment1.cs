@@ -41,7 +41,7 @@
 
         [DataTestMethod]
         [DataRow(9)]
-        public void NumberperatingRooms(
+        public void NumberOperatingRooms(
             int numberOperatingRooms)
         {
             // Arrange
