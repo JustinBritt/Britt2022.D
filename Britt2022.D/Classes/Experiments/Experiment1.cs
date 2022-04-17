@@ -9,7 +9,6 @@
 
     using Hl7.Fhir.Model;
 
-    using Britt2022.D.AbstractFactories;
     using Britt2022.D.Extensions.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.Interfaces.Experiments;
