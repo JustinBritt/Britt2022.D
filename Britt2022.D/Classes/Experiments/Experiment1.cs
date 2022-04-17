@@ -366,7 +366,7 @@
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationStandardDeviations { get; }
 
         /// <summary>
-        /// 
+        /// Gets the surgical frequencies.
         /// Parameter: f(i, e)
         /// </summary>
         public ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalFrequencies { get; }
