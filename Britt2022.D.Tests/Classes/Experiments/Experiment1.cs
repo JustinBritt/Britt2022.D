@@ -34,17 +34,7 @@
             int numberClusters)
         {
             // Arrange
-            IAbstractFactory abstractFactory = Britt2022.D.AbstractFactories.AbstractFactory.Create();
-
-            ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
-
-            IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
-
-            IExperimentsAbstractFactory experimentsAbstractFactory = abstractFactory.CreateExperimentsAbstractFactory();
-
-            IExperiment1 experiment1 = experimentsAbstractFactory.CreateExperiment1Factory().Create(
-                calculationsAbstractFactory,
-                dependenciesAbstractFactory);
+            IExperiment1 experiment1 = this.CreateExperiment1();
 
             // Act
             ImmutableList<PositiveInt> clusters = experiment1.Clusters;
@@ -61,17 +51,7 @@
             int numberOperatingRooms)
         {
             // Arrange
-            IAbstractFactory abstractFactory = Britt2022.D.AbstractFactories.AbstractFactory.Create();
-
-            ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
-
-            IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
-
-            IExperimentsAbstractFactory experimentsAbstractFactory = abstractFactory.CreateExperimentsAbstractFactory();
-
-            IExperiment1 experiment1 = experimentsAbstractFactory.CreateExperiment1Factory().Create(
-                calculationsAbstractFactory,
-                dependenciesAbstractFactory);
+            IExperiment1 experiment1 = this.CreateExperiment1();
 
             // Act
             Bundle operatingRooms = experiment1.OperatingRooms;
