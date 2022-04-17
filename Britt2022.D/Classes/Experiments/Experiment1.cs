@@ -343,21 +343,21 @@
         /// Parameter: B(r)
         /// </summary>
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
-            
+
         /// <summary>
-        /// 
+        /// Gets the surgical durations.
         /// Parameter: D(i, e, ω)
         /// </summary>
         public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgicalDurations { get; }
 
         /// <summary>
-        /// 
+        /// Gets SurgeonClusterDurationMeans.
         /// Parameter: D(i, e, ω) (Means)
         /// </summary>
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationMeans { get; }
 
         /// <summary>
-        /// 
+        /// Gets SurgeonClusterDurationStandardDeviations.
         /// Parameter: D(i, e, ω) (Standard deviations)
         /// </summary>
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationStandardDeviations { get; }
