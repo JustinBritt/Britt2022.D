@@ -345,7 +345,6 @@
         /// </summary>
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
             
-
         /// <summary>
         /// 
         /// Parameter: D(i, e, ω)
