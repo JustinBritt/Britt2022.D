@@ -25,8 +25,6 @@
             ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
-            IACalculation ACalculation = calculationsAbstractFactory.CreateACalculationFactory().Create();
-
             IDCalculation DCalculation = calculationsAbstractFactory.CreateDCalculationFactory().Create();
 
             InCalculation nCalculation = calculationsAbstractFactory.CreatenCalculationFactory().Create();
@@ -229,7 +227,7 @@
 
             // WeightedAverageSurgicalDurations
             // Parameter: A(i, ω)
-            this.WeightedAverageSurgicalDurations = ACalculation.Calculate(
+            this.WeightedAverageSurgicalDurations = calculationsAbstractFactory.CreateACalculationFactory().Create().Calculate(
                 durationFactory,
                 this.Clusters,
                 this.Surgeons,
