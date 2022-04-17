@@ -124,5 +124,11 @@
         /// Parameter: H(i)
         /// </summary>
         ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMaximumNumberTimeBlocks { get; }
+
+        /// <summary>
+        /// Gets SurgeonLengthOfStayMaximums.
+        /// Parameter: h(i)
+        /// </summary>
+        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonLengthOfStayMaximums { get; }
     }
 }
