@@ -372,7 +372,7 @@
         public ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalFrequencies { get; }
 
         /// <summary>
-        /// 
+        /// Gets SurgeonMaximumNumberTimeBlocks.
         /// Parameter: H(i)
         /// </summary>
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMaximumNumberTimeBlocks { get; }
