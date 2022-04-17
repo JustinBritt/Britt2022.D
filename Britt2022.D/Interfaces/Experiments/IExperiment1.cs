@@ -130,5 +130,77 @@
         /// Parameter: h(i)
         /// </summary>
         ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonLengthOfStayMaximums { get; }
+
+        /// <summary>
+        /// Gets SurgeonMinimumNumberTimeBlocks.
+        /// Parameter: L(i)
+        /// </summary>
+        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMinimumNumberTimeBlocks { get; }
+
+        /// <summary>
+        /// Gets SurgeonStrategicTargets.
+        /// Parameter: N(i)
+        /// </summary>
+        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonStrategicTargets { get; }
+
+        /// <summary>
+        /// Gets SurgeonScenarioMaximumNumberPatients.
+        /// Parameter: n(i, ω)
+        /// </summary>
+        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
+
+        /// <summary>
+        /// Gets the surgical overheads.
+        /// Parameter: O(i, e)
+        /// </summary>
+        ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalOverheads { get; }
+
+        /// <summary>
+        /// Gets SurgeonDayScenarioLengthOfStayProbabilities.
+        /// Parameter: p(i, l, ω)
+        /// </summary>
+        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
+
+        /// <summary>
+        /// Gets the surgical specialties.
+        /// Parameter: S(r)
+        /// </summary>
+        ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
+
+        /// <summary>
+        /// Gets the time block length.
+        /// Parameter: v
+        /// </summary>
+        Duration TimeBlockLength { get; }
+
+        /// <summary>
+        /// Gets the goal weights.
+        /// Parameter: (w1, w2, w3, w4)
+        /// </summary>
+        ImmutableList<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>> GoalWeights { get; }
+
+        /// <summary>
+        /// Gets SurgeonOperatingRoomAvailabilities.
+        /// Parameter: Π(i, j)
+        /// </summary>
+        ImmutableList<Tuple<Organization, Location, FhirBoolean>> SurgeonOperatingRoomAvailabilities { get; }
+
+        /// <summary>
+        /// Gets the scenario probabilities.
+        /// Parameter: Ρ(ω)
+        /// </summary>
+        ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> ScenarioProbabilities { get; }
+
+        /// <summary>
+        /// Gets SurgeonDayScenarioCumulativeNumberPatients.
+        /// Parameter: Φ(i, l, ω)
+        /// </summary>
+        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
+
+        /// <summary>
+        /// Gets SurgeonDayAvailabilities.
+        /// Parameter: Ω(i, k)
+        /// </summary>
+        ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> SurgeonDayAvailabilities { get; }
     }
 }
