@@ -25,8 +25,6 @@
             ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
-            IpCalculation pCalculation = calculationsAbstractFactory.CreatepCalculationFactory().Create();
-
             IΦCalculation ΦCalculation = calculationsAbstractFactory.CreateΦCalculationFactory().Create();
 
             IBundleFactory bundleFactory = dependenciesAbstractFactory.CreateBundleFactory();
@@ -245,7 +243,7 @@
             this.SurgeonDayScenarioLengthOfStayProbabilities = this.GenerateSurgeonDayScenarioLengthOfStayProbabilitiesVanOostrum2011(
                 this.NullableValueFactory,
                 discreteUniformFactory,
-                pCalculation,
+                calculationsAbstractFactory.CreatepCalculationFactory().Create(),
                 this.Scenarios,
                 this.Surgeons,
                 this.SurgicalSpecialties);
