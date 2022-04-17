@@ -1,6 +1,5 @@
 ﻿namespace Britt2022.D.AbstractFactories
 {
-    using Britt2022.D.AbstractFactories;
     using Britt2022.D.InterfacesAbstractFactories;
 
     public sealed class AbstractFactory : IAbstractFactory
