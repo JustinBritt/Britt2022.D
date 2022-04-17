@@ -663,7 +663,7 @@
 
                         builder.AddRange(
                             DCalculation.CalculateLogNormal(
-                                nullableValueFactory: this.NullableValueFactory,
+                                nullableValueFactory: nullableValueFactory,
                                 logNormalFactory: logNormalFactory,
                                 cluster: cluster,
                                 scenarios: scenarios,
