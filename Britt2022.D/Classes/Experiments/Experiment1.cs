@@ -258,6 +258,9 @@
                 this.SurgeonDayScenarioLengthOfStayProbabilities);
         }
 
+        /// <summary>
+        /// Gets a factory can create FhirBoolean, FhirDecimal, and PositiveInt instances.
+        /// </summary>
         public INullableValueFactory NullableValueFactory { get; }
 
         /// <summary>
