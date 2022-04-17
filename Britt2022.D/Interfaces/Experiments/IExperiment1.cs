@@ -118,5 +118,11 @@
         /// Parameter: f(i, e)
         /// </summary>
         ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalFrequencies { get; }
+
+        /// <summary>
+        /// Gets SurgeonMaximumNumberTimeBlocks.
+        /// Parameter: H(i)
+        /// </summary>
+        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMaximumNumberTimeBlocks { get; }
     }
 }
