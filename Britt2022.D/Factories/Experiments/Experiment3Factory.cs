@@ -19,7 +19,9 @@
 
             try
             {
-                experiment = new Experiment3();
+                experiment = new Experiment3(
+                    calculationsAbstractFactory,
+                    dependenciesAbstractFactory);
             }
             finally
             {
