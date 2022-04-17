@@ -378,7 +378,7 @@
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMaximumNumberTimeBlocks { get; }
 
         /// <summary>
-        /// 
+        /// Gets SurgeonLengthOfStayMaximums.
         /// Parameter: h(i)
         /// </summary>
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonLengthOfStayMaximums { get; }
