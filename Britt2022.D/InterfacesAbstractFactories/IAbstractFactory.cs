@@ -5,5 +5,7 @@
         ICalculationsAbstractFactory CreateCalculationsAbstractFactory();
 
         IDependenciesAbstractFactory CreateDependenciesAbstractFactory();
+
+        IExperimentsAbstractFactory CreateExperimentsAbstractFactory();
     }
 }

@@ -43,5 +43,20 @@
 
             return abstractFactory;
         }
+
+        public IExperimentsAbstractFactory CreateExperimentsAbstractFactory()
+        {
+            IExperimentsAbstractFactory abstractFactory = null;
+
+            try
+            {
+                abstractFactory = new ExperimentsAbstractFactory();
+            }
+            finally
+            {
+            }
+
+            return abstractFactory;
+        }
     }
 }
