@@ -25,8 +25,6 @@
             ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
-            IDCalculation DCalculation = calculationsAbstractFactory.CreateDCalculationFactory().Create();
-
             InCalculation nCalculation = calculationsAbstractFactory.CreatenCalculationFactory().Create();
 
             IpCalculation pCalculation = calculationsAbstractFactory.CreatepCalculationFactory().Create();
@@ -213,7 +211,7 @@
                 durationFactory,
                 this.NullableValueFactory,
                 logNormalFactory,
-                DCalculation,
+                calculationsAbstractFactory.CreateDCalculationFactory().Create(),
                 this.Clusters,
                 this.Surgeons,
                 this.SurgicalSpecialties);
