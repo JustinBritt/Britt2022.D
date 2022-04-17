@@ -339,7 +339,7 @@
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
 
         /// <summary>
-        /// 
+        /// Gets SurgicalSpecialtyStrategicTargetNumberTimeBlocks.
         /// Parameter: B(r)
         /// </summary>
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
