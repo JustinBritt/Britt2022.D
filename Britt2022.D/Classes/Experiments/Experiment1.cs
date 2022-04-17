@@ -334,7 +334,7 @@
         public ImmutableList<PositiveInt> Scenarios { get; }
 
         /// <summary>
-        /// 
+        /// Gets the weighted average surgical durations.
         /// Parameter: A(i, ω)
         /// </summary>
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
