@@ -88,5 +88,11 @@
         /// Parameter: A(i, ω)
         /// </summary>
         ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
+
+        /// <summary>
+        /// Gets SurgicalSpecialtyStrategicTargetNumberTimeBlocks.
+        /// Parameter: B(r)
+        /// </summary>
+        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
     }
 }
