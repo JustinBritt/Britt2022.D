@@ -15,11 +15,11 @@
             ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
-            IExperiment1 experiment1;
+            IExperiment1 experiment;
 
             try
             {
-                experiment1 = new Experiment1(
+                experiment = new Experiment1(
                     calculationsAbstractFactory,
                     dependenciesAbstractFactory);
             }
@@ -27,7 +27,7 @@
             {
             }
 
-            return experiment1;
+            return experiment;
         }
     }
 }
