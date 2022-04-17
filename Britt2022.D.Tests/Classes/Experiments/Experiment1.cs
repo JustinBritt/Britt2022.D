@@ -12,6 +12,22 @@
     [TestClass]
     public sealed class Experiment1
     {
+        private IExperiment1 CreateExperiment1()
+        {
+
+            IAbstractFactory abstractFactory = Britt2022.D.AbstractFactories.AbstractFactory.Create();
+
+            ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
+
+            IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
+
+            IExperimentsAbstractFactory experimentsAbstractFactory = abstractFactory.CreateExperimentsAbstractFactory();
+
+            return experimentsAbstractFactory.CreateExperiment1Factory().Create(
+                calculationsAbstractFactory,
+                dependenciesAbstractFactory);
+        }
+
         [DataTestMethod]
         [DataRow(8)]
         public void NumberClusters(
