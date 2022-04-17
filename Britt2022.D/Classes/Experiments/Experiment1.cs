@@ -25,8 +25,6 @@
             ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
-            IΦCalculation ΦCalculation = calculationsAbstractFactory.CreateΦCalculationFactory().Create();
-
             IBundleFactory bundleFactory = dependenciesAbstractFactory.CreateBundleFactory();
 
             IDurationFactory durationFactory = dependenciesAbstractFactory.CreateDurationFactory();
@@ -250,7 +248,7 @@
 
             // SurgeonDayScenarioCumulativeNumberPatients
             // Parameter: Φ(i, l, ω)
-            this.SurgeonDayScenarioCumulativeNumberPatients = ΦCalculation.Calculate(
+            this.SurgeonDayScenarioCumulativeNumberPatients = calculationsAbstractFactory.CreateΦCalculationFactory().Create().Calculate(
                 this.NullableValueFactory,
                 this.Surgeons,
                 this.PlanningHorizon,
