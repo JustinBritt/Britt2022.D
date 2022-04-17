@@ -24,7 +24,7 @@
 
             IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
 
-            IExperiment1 experiment1 = new Britt2022.D.Classes.Experiments.Experiment1(
+            IExperiment1 experiment1 = new Britt2022.D.Factories.Experiments.Experiment1Factory().Create(
                 calculationsAbstractFactory,
                 dependenciesAbstractFactory);
 
