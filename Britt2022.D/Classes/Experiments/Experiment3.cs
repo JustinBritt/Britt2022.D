@@ -20,7 +20,9 @@
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public Experiment3()
+        public Experiment3(
+            ICalculationsAbstractFactory calculationsAbstractFactory,
+            IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
         }
 
