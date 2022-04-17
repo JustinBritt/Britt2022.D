@@ -666,7 +666,7 @@
                                 nullableValueFactory: this.NullableValueFactory,
                                 logNormalFactory: logNormalFactory,
                                 cluster: cluster,
-                                scenarios: this.Scenarios,
+                                scenarios: scenarios,
                                 surgeon: surgeon,
                                 µ: (double)surgicalDurationAverageOutputContext.Duration.ToHours(
                                     durationFactory).Value.Value,
