@@ -24,6 +24,25 @@
             ICalculationsAbstractFactory calculationsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
+            IBundleFactory bundleFactory = dependenciesAbstractFactory.CreateBundleFactory();
+
+            IDurationFactory durationFactory = dependenciesAbstractFactory.CreateDurationFactory();
+
+            IEntryComponentFactory entryComponentFactory = dependenciesAbstractFactory.CreateEntryComponentFactory();
+
+            IFhirDateTimeFactory FhirDateTimeFactory = dependenciesAbstractFactory.CreateFhirDateTimeFactory();
+
+            ILocationFactory locationFactory = dependenciesAbstractFactory.CreateLocationFactory();
+
+            this.NullableValueFactory = dependenciesAbstractFactory.CreateNullableValueFactory();
+
+            IOrganizationFactory organizationFactory = dependenciesAbstractFactory.CreateOrganizationFactory();
+
+            IContinuousUniformFactory continuousUniformFactory = dependenciesAbstractFactory.CreateContinuousUniformFactory();
+
+            IDiscreteUniformFactory discreteUniformFactory = dependenciesAbstractFactory.CreateDiscreteUniformFactory();
+
+            ILogNormalFactory logNormalFactory = dependenciesAbstractFactory.CreateLogNormalFactory();
         }
 
         /// <summary>
