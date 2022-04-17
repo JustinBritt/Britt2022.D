@@ -82,5 +82,11 @@
         /// Index: ω
         /// </summary>
         ImmutableList<PositiveInt> Scenarios { get; }
+
+        /// <summary>
+        /// Gets the weighted average surgical durations.
+        /// Parameter: A(i, ω)
+        /// </summary>
+        ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
     }
 }
