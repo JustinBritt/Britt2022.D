@@ -61,5 +61,22 @@
                 expected: numberOperatingRooms,
                 actual: operatingRooms.Entry.Count);
         }
+
+        [DataTestMethod]
+        [DataRow(30)]
+        public void NumberSurgeons(
+            int numberSurgeons)
+        {
+            // Arrange
+            IExperiment1 experiment1 = this.CreateExperiment1();
+
+            // Act
+            Bundle surgeons = experiment1.Surgeons;
+
+            // Assert
+            Assert.AreEqual(
+                expected: numberSurgeons,
+                actual: surgeons.Entry.Count);
+        }
     }
 }
