@@ -171,7 +171,7 @@
 
             // TimeBlockLength
             // Parameter: v
-            this.TimeBlockLength = durationFactory.CreateHours(
+            this.TimeBlockLength = durationFactory.CreateHour(
                 8m);
 
             // GoalWeights

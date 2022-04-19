@@ -13,10 +13,10 @@
             string unit,
             decimal value);
 
-        Duration CreateHours(
+        Duration CreateHour(
             decimal value);
 
-        Duration CreateMinutes(
+        Duration CreateMinute(
             decimal value);
     }
 }

@@ -62,7 +62,7 @@
             return duration;
         }
 
-        public Duration CreateHours(
+        public Duration CreateHour(
             decimal value)
         {
             return this.Create(
@@ -71,7 +71,7 @@
                 value);
         }
 
-        public Duration CreateMinutes(
+        public Duration CreateMinute(
             decimal value)
         {
             return this.Create(
