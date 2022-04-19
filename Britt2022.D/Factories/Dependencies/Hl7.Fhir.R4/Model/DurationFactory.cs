@@ -6,6 +6,9 @@
 
     internal sealed class DurationFactory : IDurationFactory
     {
+        private const string minutes = "min";
+        private const string unitsofmeasure = "http://unitsofmeasure.org";
+
         public DurationFactory()
         {
         }
