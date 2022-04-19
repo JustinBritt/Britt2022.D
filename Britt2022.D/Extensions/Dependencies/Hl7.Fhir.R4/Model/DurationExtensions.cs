@@ -11,7 +11,7 @@
         private const string minute = "min";
         private const string unitsofmeasure = "http://unitsofmeasure.org";
 
-        public static Duration ToHours(
+        public static Duration ToHour(
             this Duration duration,
             IDurationFactory durationFactory)
         {

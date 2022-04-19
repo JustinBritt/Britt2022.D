@@ -665,9 +665,9 @@
                                 cluster: cluster,
                                 scenarios: scenarios,
                                 surgeon: surgeon,
-                                µ: (double)surgicalDurationAverageOutputContext.Duration.ToHours(
+                                µ: (double)surgicalDurationAverageOutputContext.Duration.ToHour(
                                     durationFactory).Value.Value,
-                                σ: (double)surgicalDurationStdDevOutputContext.Duration.ToHours(
+                                σ: (double)surgicalDurationStdDevOutputContext.Duration.ToHour(
                                     durationFactory).Value.Value));
                     }
                 }
