@@ -35,7 +35,7 @@
                 .Select(i => Tuple.Create(
                     i.Item1, // i.Item1: Surgeon
                     i.Item2, // i.Item2: Scenario
-                    durationFactory.CreateMinutes(
+                    durationFactory.CreateHours(
                         value: clusters
                         .Select(
                             k =>  // k: Cluster
