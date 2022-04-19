@@ -1,5 +1,8 @@
 ﻿namespace Britt2022.D.Tests.Classes.Experiments
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Collections.Immutable;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -8,7 +11,7 @@
 
     using Britt2022.D.InterfacesAbstractFactories;
     using Britt2022.D.Interfaces.Experiments;
-
+    
     [TestClass]
     public sealed class Experiment1
     {
@@ -77,6 +80,23 @@
             Assert.AreEqual(
                 expected: numberSurgeons,
                 actual: surgeons.Entry.Count);
+        }
+
+        [DataTestMethod]
+        [DataRow(28)]
+        public void PlanningHorizonLength(
+            int planningHorizonLength)
+        {
+            // Arrange
+            IExperiment1 experiment1 = this.CreateExperiment1();
+
+            // Act
+            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon = experiment1.PlanningHorizon;
+
+            // Assert
+            Assert.AreEqual(
+                expected: planningHorizonLength,
+                actual: planningHorizon.Count);
         }
     }
 }
