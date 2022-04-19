@@ -8,7 +8,7 @@
 
     public static class DurationExtensions
     {
-        private const string minutes = "min";
+        private const string minute = "min";
         private const string unitsofmeasure = "http://unitsofmeasure.org";
 
         public static Duration ToHours(
@@ -17,7 +17,7 @@
         {
             return duration.Unit switch
             {
-                minutes => durationFactory.Create(
+                minute => durationFactory.Create(
                     unit: unitsofmeasure,
                     value: duration.Value.Value * (decimal)Math.Pow(60, -1)),
 
