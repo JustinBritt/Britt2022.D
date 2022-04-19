@@ -12,5 +12,8 @@
             string system,
             string unit,
             decimal value);
+
+        Duration CreateMinutes(
+            decimal value);
     }
 }

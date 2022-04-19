@@ -60,5 +60,14 @@
 
             return duration;
         }
+
+        public Duration CreateMinutes(
+            decimal value)
+        {
+            return this.Create(
+                unitsofmeasure,
+                minutes,
+                value);
+        }
     }
 }
