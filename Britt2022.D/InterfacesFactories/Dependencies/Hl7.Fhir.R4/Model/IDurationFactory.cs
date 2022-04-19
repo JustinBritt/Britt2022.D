@@ -13,6 +13,9 @@
             string unit,
             decimal value);
 
+        Duration CreateHours(
+            decimal value);
+
         Duration CreateMinutes(
             decimal value);
     }
