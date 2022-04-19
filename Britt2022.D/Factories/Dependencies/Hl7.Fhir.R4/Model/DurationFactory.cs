@@ -33,7 +33,7 @@
             decimal value)
         {
             return this.Create(
-                "http://unitsofmeasure.org",
+                unitsofmeasure,
                 unit,
                 value);
         }
