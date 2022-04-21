@@ -8,6 +8,10 @@
 
     internal sealed class BundleFactory : IBundleFactory
     {
+        public BundleFactory()
+        {
+        }
+
         public Bundle Create()
         {
             Bundle bundle;
