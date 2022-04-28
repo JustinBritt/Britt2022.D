@@ -28,6 +28,24 @@
         }
 
         public FhirDateTime Create(
+            DateTime dateTime)
+        {
+            FhirDateTime FhirDateTime;
+
+            try
+            {
+                FhirDateTime = new FhirDateTime(
+                    new DateTimeOffset(
+                        dateTime));
+            }
+            finally
+            {
+            }
+
+            return FhirDateTime;
+        }
+
+        public FhirDateTime Create(
             DateTimeOffset dateTimeOffset)
         {
             FhirDateTime FhirDateTime;

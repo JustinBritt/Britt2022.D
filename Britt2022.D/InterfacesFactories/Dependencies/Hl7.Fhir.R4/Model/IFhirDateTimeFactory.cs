@@ -9,6 +9,9 @@
         FhirDateTime Create();
 
         FhirDateTime Create(
+            DateTime dateTime);
+
+        FhirDateTime Create(
             DateTimeOffset dateTimeOffset);
     }
 }
