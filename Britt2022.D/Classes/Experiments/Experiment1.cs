@@ -1602,7 +1602,7 @@
             double lower,
             double upper)
         {
-            IContinuousDistribution surgicalOverheadsContinuousUniform = continuousUniformFactory.Create(
+            IContinuousDistribution continuousUniform = continuousUniformFactory.Create(
                 lower: lower,
                 upper: upper);
 
@@ -1617,7 +1617,7 @@
                             surgeon,
                             cluster,
                             (FhirDecimal)nullableValueFactory.Create<decimal>(
-                                (decimal)surgicalOverheadsContinuousUniform.Sample())));
+                                (decimal)continuousUniform.Sample())));
                 }
             }
 
