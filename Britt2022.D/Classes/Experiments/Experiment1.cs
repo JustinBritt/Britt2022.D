@@ -515,7 +515,7 @@
                         (PositiveInt)nullableValueFactory.Create<int>(
                             (dateTime - startDate).Days + 1),
                         FhirDateTimeFactory.Create(
-                            new DateTimeOffset(dateTime.Date))));
+                            dateTime.Date)));
             }
 
             return builder.ToImmutableList();
