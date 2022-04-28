@@ -9,6 +9,8 @@
 
     using Hl7.Fhir.Model;
 
+    using MathNet.Numerics.Distributions;
+
     using Britt2022.D.Extensions.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.Interfaces.Experiments;
@@ -1600,7 +1602,7 @@
             double lower,
             double upper)
         {
-            MathNet.Numerics.Distributions.IContinuousDistribution surgicalOverheadsContinuousUniform = continuousUniformFactory.Create(
+            IContinuousDistribution surgicalOverheadsContinuousUniform = continuousUniformFactory.Create(
                 lower: lower,
                 upper: upper);
 
