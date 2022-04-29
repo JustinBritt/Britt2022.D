@@ -35,4 +35,10 @@
     <PackageReference Include="VanHoudenhoven2007" Version="0.0.1-prerelease-ga7bba986ac" />
     <PackageReference Include="VanOostrum2011" Version="0.0.1-prerelease-gf6f323fd66" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Britt2022.D.config">
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+    </Content>
+  </ItemGroup>
 </Project>

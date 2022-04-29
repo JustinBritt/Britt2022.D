@@ -1,11 +1,22 @@
 ﻿namespace Britt2022.D.AbstractFactories
 {
+    using System;
+    using System.IO;
+
+    using log4net;
+
     using Britt2022.D.InterfacesAbstractFactories;
 
     public sealed class AbstractFactory : IAbstractFactory
     {
         public AbstractFactory()
         {
+            using (FileStream fileStream = File.OpenRead($"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.config"))
+            {
+                log4net.Config.XmlConfigurator.Configure(
+                    LogManager.GetRepository(System.Reflection.Assembly.GetExecutingAssembly()),
+                    fileStream);
+            }
         }
 
         public static IAbstractFactory Create()
