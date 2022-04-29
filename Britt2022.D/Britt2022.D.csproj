@@ -39,6 +39,7 @@
   <ItemGroup>
     <Content Include="Britt2022.D.config">
       <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 </Project>
