@@ -264,196 +264,100 @@
         /// </summary>
         public INullableValueFactory NullableValueFactory { get; }
 
-        /// <summary>
-        /// Gets the clusters.
-        /// Index: e
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<PositiveInt> Clusters { get; }
-        
-        /// <summary>
-        /// Gets the surgeons.
-        /// Index: i
-        /// </summary>
+
+        /// <inheritdoc />
         public Bundle Surgeons { get; }
 
-        /// <summary>
-        /// Gets the operating rooms.
-        /// Index: j
-        /// </summary>
+        /// <inheritdoc />
         public Bundle OperatingRooms { get; }
 
-        /// <summary>
-        /// Gets the planning horizon.
-        /// Index: k
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
 
-        /// <summary>
-        /// Gets the length of stay days.
-        /// Index: l
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<PositiveInt> LengthOfStayDays { get; }
 
-        /// <summary>
-        /// Gets the General / Mixed (GEN / MIX) surgical specialty.
-        /// Index: r
-        /// </summary>
+        /// <inheritdoc />
         public Organization SurgicalSpecialty1GEN { get; }
 
-        /// <summary>
-        /// Gets the Gynecology (GYN) surgical specialty.
-        /// Index: r
-        /// </summary>
+        /// <inheritdoc />
         public Organization SurgicalSpecialty2GYN { get; }
 
-        /// <summary>
-        /// Gets the Plastic (PLA) surgical specialty.
-        /// Index: r
-        /// </summary>
+        /// <inheritdoc />
         public Organization SurgicalSpecialty3PLA { get; }
 
-        /// <summary>
-        /// Gets the Ear-Nose-Throat (ENT) surgical specialty.
-        /// Index: r
-        /// </summary>
+        /// <inheritdoc />
         public Organization SurgicalSpecialty4ENT { get; }
 
-        /// <summary>
-        /// Gets the Orthopedic (ORT) surgical specialty.
-        /// Index: r
-        /// </summary>
+        /// <inheritdoc />
         public Organization SurgicalSpecialty5ORT { get; }
 
-        /// <summary>
-        /// Gets the Urology (URO) surgical specialty.
-        /// Index: r
-        /// </summary>
+        /// <inheritdoc />
         public Organization SurgicalSpecialty6URO { get; }
 
-        /// <summary>
-        /// Gets the scenarios.
-        /// Index: ω
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<PositiveInt> Scenarios { get; }
 
-        /// <summary>
-        /// Gets the weighted average surgical durations.
-        /// Parameter: A(i, ω)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
 
-        /// <summary>
-        /// Gets SurgicalSpecialtyStrategicTargetNumberTimeBlocks.
-        /// Parameter: B(r)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
-        /// <summary>
-        /// Gets the surgical durations.
-        /// Parameter: D(i, e, ω)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgicalDurations { get; }
 
-        /// <summary>
-        /// Gets SurgeonClusterDurationMeans.
-        /// Parameter: D(i, e, ω) (Means)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationMeans { get; }
 
-        /// <summary>
-        /// Gets SurgeonClusterDurationStandardDeviations.
-        /// Parameter: D(i, e, ω) (Standard deviations)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationStandardDeviations { get; }
 
-        /// <summary>
-        /// Gets the surgical frequencies.
-        /// Parameter: f(i, e)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalFrequencies { get; }
 
-        /// <summary>
-        /// Gets SurgeonMaximumNumberTimeBlocks.
-        /// Parameter: H(i)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMaximumNumberTimeBlocks { get; }
 
-        /// <summary>
-        /// Gets SurgeonLengthOfStayMaximums.
-        /// Parameter: h(i)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonLengthOfStayMaximums { get; }
 
-        /// <summary>
-        /// Gets SurgeonMinimumNumberTimeBlocks.
-        /// Parameter: L(i)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMinimumNumberTimeBlocks { get; }
-        
-        /// <summary>
-        /// Gets SurgeonStrategicTargets.
-        /// Parameter: N(i)
-        /// </summary>
+
+        /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonStrategicTargets { get; }
 
-        /// <summary>
-        /// Gets SurgeonScenarioMaximumNumberPatients.
-        /// Parameter: n(i, ω)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
 
-        /// <summary>
-        /// Gets the surgical overheads.
-        /// Parameter: O(i, e)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalOverheads { get; }
 
-        /// <summary>
-        /// Gets SurgeonDayScenarioLengthOfStayProbabilities.
-        /// Parameter: p(i, l, ω)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
-        /// <summary>
-        /// Gets the surgical specialties.
-        /// Parameter: S(r)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
 
-        /// <summary>
-        /// Gets the time block length.
-        /// Parameter: v
-        /// </summary>
+        /// <inheritdoc />
         public Duration TimeBlockLength { get; }
 
-        /// <summary>
-        /// Gets the goal weights.
-        /// Parameter: (w1, w2, w3, w4)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>> GoalWeights { get; }
 
-        /// <summary>
-        /// Gets SurgeonOperatingRoomAvailabilities.
-        /// Parameter: Π(i, j)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, Location, FhirBoolean>> SurgeonOperatingRoomAvailabilities { get; }
 
-        /// <summary>
-        /// Gets the scenario probabilities.
-        /// Parameter: Ρ(ω)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> ScenarioProbabilities { get; }
 
-        /// <summary>
-        /// Gets SurgeonDayScenarioCumulativeNumberPatients.
-        /// Parameter: Φ(i, l, ω)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
-        /// <summary>
-        /// Gets SurgeonDayAvailabilities.
-        /// Parameter: Ω(i, k)
-        /// </summary>
+        /// <inheritdoc />
         public ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> SurgeonDayAvailabilities { get; }
 
         // Index: e
