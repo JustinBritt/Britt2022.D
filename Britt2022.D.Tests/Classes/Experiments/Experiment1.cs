@@ -17,7 +17,6 @@
     {
         private IExperiment1 CreateExperiment1()
         {
-
             IAbstractFactory abstractFactory = Britt2022.D.AbstractFactories.AbstractFactory.Create();
 
             ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
