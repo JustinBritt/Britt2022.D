@@ -183,7 +183,10 @@
 
             // SurgeonOperatingRoomAvailabilities
             // Parameter: Π(i, j)
-            this.SurgeonOperatingRoomAvailabilities = this.GenerateSurgeonOperatingRoomAvailabilities();
+            this.SurgeonOperatingRoomAvailabilities = this.GenerateSurgeonOperatingRoomAvailabilitiesAllAvailable(
+                this.NullableValueFactory,
+                this.OperatingRooms,
+                this.Surgeons);
 
             // ScenarioProbabilities
             // Parameter: Ρ(ω)
@@ -5076,6 +5079,30 @@
                         this.OperatingRooms),
                     (FhirBoolean)this.NullableValueFactory.Create<bool>(
                         true)));
+
+            return builder.ToImmutableList();
+        }
+
+        // Parameter: Π(i, j)
+        private ImmutableList<Tuple<Organization, Location, FhirBoolean>> GenerateSurgeonOperatingRoomAvailabilitiesAllAvailable(
+            INullableValueFactory nullableValueFactory,
+            Bundle operatingRooms,
+            Bundle surgeons)
+        {
+            ImmutableList<Tuple<Organization, Location, FhirBoolean>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, Location, FhirBoolean>>();
+
+            foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            {
+                foreach (Location operatingRoom in operatingRooms.Entry.Where(i => i.Resource is Location).Select(i => (Location)i.Resource))
+                {
+                    builder.Add(
+                        Tuple.Create(
+                            surgeon,
+                            operatingRoom,
+                            (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                                false)));
+                }
+            }
 
             return builder.ToImmutableList();
         }
