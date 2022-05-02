@@ -183,10 +183,7 @@
 
             // SurgeonOperatingRoomAvailabilities
             // Parameter: Π(i, j)
-            this.SurgeonOperatingRoomAvailabilities = this.GenerateSurgeonOperatingRoomAvailabilitiesAllAvailable(
-                this.NullableValueFactory,
-                this.OperatingRooms,
-                this.Surgeons);
+            this.SurgeonOperatingRoomAvailabilities = this.GenerateSurgeonOperatingRoomAvailabilities();
 
             // ScenarioProbabilities
             // Parameter: Ρ(ω)
@@ -198,7 +195,7 @@
 
             // SurgeonDayAvailabilities
             // Parameter: Ω(i, k)
-            this.SurgeonDayAvailabilities = this.GenerateSurgeonDayAvailabilitiesAllAvailable(
+            this.SurgeonDayAvailabilities = this.GenerateSurgeonDayAvailabilities(
                 this.PlanningHorizon,
                 this.Surgeons);
 
@@ -5079,30 +5076,6 @@
                         this.OperatingRooms),
                     (FhirBoolean)this.NullableValueFactory.Create<bool>(
                         true)));
-
-            return builder.ToImmutableList();
-        }
-
-        // Parameter: Π(i, j)
-        private ImmutableList<Tuple<Organization, Location, FhirBoolean>> GenerateSurgeonOperatingRoomAvailabilitiesAllAvailable(
-            INullableValueFactory nullableValueFactory,
-            Bundle operatingRooms,
-            Bundle surgeons)
-        {
-            ImmutableList<Tuple<Organization, Location, FhirBoolean>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, Location, FhirBoolean>>();
-
-            foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
-            {
-                foreach (Location operatingRoom in operatingRooms.Entry.Where(i => i.Resource is Location).Select(i => (Location)i.Resource))
-                {
-                    builder.Add(
-                        Tuple.Create(
-                            surgeon,
-                            operatingRoom,
-                            (FhirBoolean)this.NullableValueFactory.Create<bool>(
-                                false)));
-                }
-            }
 
             return builder.ToImmutableList();
         }
@@ -15275,29 +15248,6 @@
                     (FhirBoolean)this.NullableValueFactory.Create<bool>(
                         true)));
 
-            return builder.ToImmutableList();
-        }
-
-        // Parameter: Ω(i, k)
-        private ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> GenerateSurgeonDayAvailabilitiesAllAvailable(
-            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
-            Bundle surgeons)
-        {
-            ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, FhirDateTime, FhirBoolean>>();
-
-            foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
-            {
-                foreach (FhirDateTime day in planningHorizon.Select(w => w.Value))
-                {
-                    builder.Add(
-                        Tuple.Create(
-                            surgeon,
-                            day,
-                            (FhirBoolean)this.NullableValueFactory.Create<bool>(
-                                false)));
-                }
-            }
-            
             return builder.ToImmutableList();
         }
 
