@@ -260,7 +260,7 @@
         }
 
         /// <summary>
-        /// Gets a factory can create <see cref="FhirBoolean"/>, <see cref="FhirDecimal"/>, and <see cref="PositiveInt"/> instances.
+        /// Gets a factory that can create <see cref="FhirBoolean"/>, <see cref="FhirDecimal"/>, and <see cref="PositiveInt"/> instances.
         /// </summary>
         public INullableValueFactory NullableValueFactory { get; }
 
