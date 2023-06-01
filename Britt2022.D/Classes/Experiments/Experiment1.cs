@@ -197,7 +197,7 @@
             // Each scenario currently has an equal probability.
             this.ScenarioProbabilities = this.GenerateScenarioProbabilities(
                 this.NullableValueFactory,
-                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Scenarios,
                 numberScenarios);
 
             // SurgeonDayAvailabilities
@@ -5093,7 +5093,7 @@
         // Parameter: Ρ(ω)
         private ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> GenerateScenarioProbabilities(
             INullableValueFactory nullableValueFactory,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             int numberScenarios)
         {
             ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>>.Builder scenarioProbabilitiesBuilder = ImmutableList.CreateBuilder<KeyValuePair<PositiveInt, FhirDecimal>>();
@@ -5104,67 +5104,67 @@
                 new List<KeyValuePair<PositiveInt, FhirDecimal>>()
                 {
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 1).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 1).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 2).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 2).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 3).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 3).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 4).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 4).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 5).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 5).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 6).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 6).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 7).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 7).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 8).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 8).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 9).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 9).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 10).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 10).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 11).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 11).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 12).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 12).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 13).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 13).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 14).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 14).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 15).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 15).SingleOrDefault(),
                         (FhirDecimal)probability),
 
                     KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 16).SingleOrDefault(),
+                        (PositiveInt)scenarios.Where(i => i.Value.Value == 16).SingleOrDefault(),
                         (FhirDecimal)probability),
                 });
 
