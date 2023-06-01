@@ -9,9 +9,9 @@
 
     public interface InCalculation
     {
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> Calculate(
+        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt>> Calculate(
             INullableValueFactory nullableValueFactory,
-            ImmutableList<Tuple<Organization, PositiveInt, Duration>> A,
+            ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> A,
             Duration v);
     }
 }

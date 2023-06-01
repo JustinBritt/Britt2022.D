@@ -86,7 +86,7 @@
         /// Gets the weighted average surgical durations.
         /// Parameter: A(i, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
 
         /// <summary>
         /// Gets SurgicalSpecialtyStrategicTargetNumberTimeBlocks.
@@ -146,7 +146,7 @@
         /// Gets SurgeonScenarioMaximumNumberPatients.
         /// Parameter: n(i, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
 
         /// <summary>
         /// Gets the surgical overheads.

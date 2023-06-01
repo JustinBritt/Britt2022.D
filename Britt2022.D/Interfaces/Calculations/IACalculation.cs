@@ -9,7 +9,7 @@
 
     public interface IACalculation
     {
-        ImmutableList<Tuple<Organization, PositiveInt, Duration>> Calculate(
+        ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> Calculate(
             IDurationFactory durationFactory,
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,

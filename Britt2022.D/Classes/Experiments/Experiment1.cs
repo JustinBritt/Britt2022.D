@@ -308,7 +308,7 @@
         public ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
 
         /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
@@ -338,7 +338,7 @@
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonStrategicTargets { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalOverheads { get; }
