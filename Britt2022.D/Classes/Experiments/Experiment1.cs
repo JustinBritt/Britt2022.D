@@ -217,7 +217,7 @@
             // SurgicalFrequencies
             // Parameter: f(i, e)
             this.SurgicalFrequencies = this.GenerateSurgicalFrequenciesVanHoudenhoven2007(
-                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Clusters,
                 this.Surgeons,
                 this.SurgicalSpecialties);
 
@@ -589,7 +589,7 @@
 
         // Parameter: f(i, e)
         private ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> GenerateSurgicalFrequenciesVanHoudenhoven2007(
-            ImmutableList<PositiveInt> clusters,
+            ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
