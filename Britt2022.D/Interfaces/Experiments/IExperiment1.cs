@@ -38,7 +38,7 @@
         /// Gets the length of stay days.
         /// Index: l
         /// </summary>
-        ImmutableList<PositiveInt> LengthOfStayDays { get; }
+        ImmutableList<INullableValue<int>> LengthOfStayDays { get; }
 
         /// <summary>
         /// Gets the General / Mixed (GEN / MIX) surgical specialty.

@@ -65,7 +65,7 @@
             PositiveInt lIndexElement,
             PositiveInt ωIndexElement,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
-            ImmutableList<PositiveInt> lengthOfStayDays,
+            ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, int>> τ,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities)
@@ -94,7 +94,7 @@
             INullableValueFactory nullableValueFactory,
             Bundle surgeons,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
-            ImmutableList<PositiveInt> lengthOfStayDays,
+            ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> surgeonScenarioMaximumNumberPatients,

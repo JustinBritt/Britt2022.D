@@ -284,7 +284,7 @@
         public RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
         /// <inheritdoc />
-        public ImmutableList<PositiveInt> LengthOfStayDays { get; }
+        public ImmutableList<INullableValue<int>> LengthOfStayDays { get; }
 
         /// <inheritdoc />
         public Organization SurgicalSpecialty1GEN { get; }
@@ -436,13 +436,13 @@
         }
 
         // Index: l, where h(i) is the maximum for surgeon i
-        private ImmutableList<PositiveInt> GenerateLengthOfStayDays(
+        private ImmutableList<INullableValue<int>> GenerateLengthOfStayDays(
             INullableValueFactory nullableValueFactory,
             int maximumLengthOfStay)
         {
             return Enumerable
                 .Range(0, maximumLengthOfStay + 1)
-                .Select(i => (PositiveInt)nullableValueFactory.Create<int>(i))
+                .Select(i => nullableValueFactory.Create<int>(i))
                 .ToImmutableList();
         }
 
@@ -1589,7 +1589,7 @@
                         pCalculation.GenerateScenarios(
                             nullableValueFactory,
                             discreteUniformFactory,
-                            this.LengthOfStayDays,
+                            this.LengthOfStayDays.Select(w => (PositiveInt)w).ToImmutableList(),
                             scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                             surgeon,
                             this.SurgeonLengthOfStayMaximums,
