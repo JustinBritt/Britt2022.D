@@ -11,6 +11,8 @@
 
     using MathNet.Numerics.Distributions;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.D.Extensions.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.Interfaces.Experiments;
@@ -18,6 +20,7 @@
     using Britt2022.D.InterfacesFactories.Comparers;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.InterfacesFactories.Dependencies.MathNet.Numerics.Distributions;
+    using Britt2022.D.Classes.Comparers;
 
     public sealed class Experiment1 : IExperiment1
     {
@@ -199,7 +202,7 @@
             // SurgeonDayAvailabilities
             // Parameter: Ω(i, k)
             this.SurgeonDayAvailabilities = this.GenerateSurgeonDayAvailabilities(
-                this.PlanningHorizon,
+                this.PlanningHorizon.Select(w => KeyValuePair.Create((PositiveInt)w.Key, w.Value)).ToImmutableList(),
                 this.Surgeons);
 
             // SurgicalDurations
@@ -254,7 +257,7 @@
             this.SurgeonDayScenarioCumulativeNumberPatients = calculationsAbstractFactory.CreateΦCalculationFactory().Create().Calculate(
                 this.NullableValueFactory,
                 this.Surgeons,
-                this.PlanningHorizon,
+                this.PlanningHorizon.Select(w => KeyValuePair.Create((PositiveInt)w.Key, w.Value)).ToImmutableList(),
                 this.LengthOfStayDays,
                 this.Scenarios,
                 this.SurgeonLengthOfStayMaximums,
@@ -277,7 +280,7 @@
         public Bundle OperatingRooms { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
+        public RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
         /// <inheritdoc />
         public ImmutableList<PositiveInt> LengthOfStayDays { get; }
@@ -411,25 +414,24 @@
         }
 
         // Index: k
-        private ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> GeneratePlanningHorizon(
+        private RedBlackTree<INullableValue<int>, FhirDateTime> GeneratePlanningHorizon(
             IFhirDateTimeFactory FhirDateTimeFactory,
             INullableValueFactory nullableValueFactory,
             DateTime endDate,
             DateTime startDate)
         {
-            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<PositiveInt, FhirDateTime>>();
+            RedBlackTree<INullableValue<int>, FhirDateTime> redBlackTree = new(new NullableValueintComparer());
 
-            for (DateTime dateTime = startDate; dateTime <= endDate; dateTime = dateTime.AddDays(1))
+            for (DateTime dt1 = startDate; dt1 <= endDate; dt1 = dt1.AddDays(1))
             {
-                builder.Add(
-                    KeyValuePair.Create(
-                        (PositiveInt)nullableValueFactory.Create<int>(
-                            (dateTime - startDate).Days + 1),
-                        FhirDateTimeFactory.Create(
-                            dateTime.Date)));
+                redBlackTree.Add(
+                    nullableValueFactory.Create<int>(
+                            (dt1 - startDate).Days + 1),
+                    FhirDateTimeFactory.Create(
+                            dt1.Date));
             }
 
-            return builder.ToImmutableList();
+            return redBlackTree;
         }
 
         // Index: l, where h(i) is the maximum for surgeon i

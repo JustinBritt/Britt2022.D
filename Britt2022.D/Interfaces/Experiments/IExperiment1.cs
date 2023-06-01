@@ -9,6 +9,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     public interface IExperiment1
     {
         /// <summary>
@@ -33,7 +35,7 @@
         /// Gets the planning horizon.
         /// Index: k
         /// </summary>
-        ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
+        RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
         /// <summary>
         /// Gets the length of stay days.
