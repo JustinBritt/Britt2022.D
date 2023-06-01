@@ -21,12 +21,15 @@
 
             ICalculationsAbstractFactory calculationsAbstractFactory = abstractFactory.CreateCalculationsAbstractFactory();
 
+            IComparersAbstractFactory comparersAbstractFactory = abstractFactory.CreateComparersAbstractFactory();
+
             IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
 
             IExperimentsAbstractFactory experimentsAbstractFactory = abstractFactory.CreateExperimentsAbstractFactory();
 
             return experimentsAbstractFactory.CreateExperiment1Factory().Create(
                 calculationsAbstractFactory,
+                comparersAbstractFactory,
                 dependenciesAbstractFactory);
         }
 
