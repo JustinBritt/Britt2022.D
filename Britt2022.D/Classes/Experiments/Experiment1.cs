@@ -214,7 +214,7 @@
                 logNormalFactory,
                 calculationsAbstractFactory.CreateDCalculationFactory().Create(),
                 this.Clusters,
-                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Scenarios,
                 this.Surgeons,
                 this.SurgicalSpecialties);
 
@@ -517,7 +517,7 @@
             ILogNormalFactory logNormalFactory,
             IDCalculation DCalculation,
             ImmutableSortedSet<INullableValue<int>> clusters,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
@@ -579,7 +579,7 @@
                                 nullableValueFactory: nullableValueFactory,
                                 logNormalFactory: logNormalFactory,
                                 cluster: cluster,
-                                scenarios: scenarios,
+                                scenarios: scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                                 surgeon: surgeon,
                                 µ: (double)surgicalDurationAverageOutputContext.Duration.ToHour(
                                     durationFactory).Value.Value,
