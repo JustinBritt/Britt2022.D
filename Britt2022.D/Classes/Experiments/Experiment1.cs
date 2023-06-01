@@ -209,7 +209,7 @@
                 this.NullableValueFactory,
                 logNormalFactory,
                 calculationsAbstractFactory.CreateDCalculationFactory().Create(),
-                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Clusters,
                 this.Scenarios,
                 this.Surgeons,
                 this.SurgicalSpecialties);
@@ -511,7 +511,7 @@
             INullableValueFactory nullableValueFactory,
             ILogNormalFactory logNormalFactory,
             IDCalculation DCalculation,
-            ImmutableList<PositiveInt> clusters,
+            ImmutableSortedSet<INullableValue<int>> clusters,
             ImmutableList<PositiveInt> scenarios,
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
