@@ -21,7 +21,7 @@
 
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> Calculate(
             IDurationFactory durationFactory,
-            ImmutableList<PositiveInt> clusters,
+            ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             ImmutableList<PositiveInt> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> D,

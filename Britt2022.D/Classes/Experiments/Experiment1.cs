@@ -225,7 +225,7 @@
             // Parameter: A(i, ω)
             this.WeightedAverageSurgicalDurations = calculationsAbstractFactory.CreateACalculationFactory().Create().Calculate(
                 durationFactory,
-                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Clusters,
                 this.Surgeons,
                 this.Scenarios,
                 this.SurgicalDurations,
