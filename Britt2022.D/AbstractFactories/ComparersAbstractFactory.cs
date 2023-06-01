@@ -24,5 +24,20 @@
 
             return factory;
         }
+
+        public IOrganizationComparerFactory CreateOrganizationComparerFactory()
+        {
+            IOrganizationComparerFactory factory = null;
+
+            try
+            {
+                factory = new OrganizationComparerFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
     }
 }
