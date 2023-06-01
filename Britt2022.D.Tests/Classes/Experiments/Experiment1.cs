@@ -42,7 +42,7 @@
             IExperiment1 experiment1 = this.CreateExperiment1();
 
             // Act
-            ImmutableList<PositiveInt> clusters = experiment1.Clusters;
+            ImmutableSortedSet<INullableValue<int>> clusters = experiment1.Clusters;
 
             // Assert
             Assert.AreEqual(
