@@ -98,7 +98,7 @@
         /// Gets the surgical durations.
         /// Parameter: D(i, e, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgicalDurations { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> SurgicalDurations { get; }
 
         /// <summary>
         /// Gets SurgeonClusterDurationMeans.

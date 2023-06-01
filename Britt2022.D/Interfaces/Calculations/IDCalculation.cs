@@ -10,7 +10,7 @@
 
     public interface IDCalculation
     {
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> CalculateLogNormal(
+        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> CalculateLogNormal(
             INullableValueFactory nullableValueFactory,
             ILogNormalFactory logNormalFactory,
             PositiveInt cluster,

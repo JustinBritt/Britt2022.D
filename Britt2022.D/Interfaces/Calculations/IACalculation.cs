@@ -14,7 +14,7 @@
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> D,
+            ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> D,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> f,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> O);
     }
