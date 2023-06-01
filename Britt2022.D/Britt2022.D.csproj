@@ -42,4 +42,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Factories\Comparers\" />
+    <Folder Include="InterfacesFactories\Comparers\" />
+  </ItemGroup>
 </Project>
