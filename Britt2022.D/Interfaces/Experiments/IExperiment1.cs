@@ -122,7 +122,7 @@
         /// Gets SurgeonMaximumNumberTimeBlocks.
         /// Parameter: H(i)
         /// </summary>
-        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMaximumNumberTimeBlocks { get; }
+        ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonMaximumNumberTimeBlocks { get; }
 
         /// <summary>
         /// Gets SurgeonLengthOfStayMaximums.
