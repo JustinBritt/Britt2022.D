@@ -249,7 +249,7 @@
                 this.NullableValueFactory,
                 discreteUniformFactory,
                 calculationsAbstractFactory.CreatepCalculationFactory().Create(),
-                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Scenarios,
                 this.Surgeons,
                 this.SurgicalSpecialties);
 
@@ -1543,7 +1543,7 @@
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
             IpCalculation pCalculation,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
@@ -1590,7 +1590,7 @@
                             nullableValueFactory,
                             discreteUniformFactory,
                             this.LengthOfStayDays,
-                            scenarios,
+                            scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                             surgeon,
                             this.SurgeonLengthOfStayMaximums,
                             (double)patientLengthOfStayOutputContext.Duration.Value.Value));
