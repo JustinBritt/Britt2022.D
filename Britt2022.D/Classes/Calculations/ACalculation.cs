@@ -23,7 +23,7 @@
             IDurationFactory durationFactory,
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> D,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> f,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> O)
@@ -34,7 +34,7 @@
                 .SelectMany(b => scenarios, (a, b) => Tuple.Create(a, b))
                 .Select(i => Tuple.Create(
                     i.Item1, // i.Item1: Surgeon
-                    i.Item2, // i.Item2: Scenario
+                    (PositiveInt)i.Item2, // i.Item2: Scenario
                     durationFactory.CreateHour(
                         value: clusters
                         .Select(

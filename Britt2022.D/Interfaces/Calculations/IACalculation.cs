@@ -13,7 +13,7 @@
             IDurationFactory durationFactory,
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> D,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> f,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> O);

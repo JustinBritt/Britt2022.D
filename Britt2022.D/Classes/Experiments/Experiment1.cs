@@ -231,7 +231,7 @@
                 durationFactory,
                 this.Clusters,
                 this.Surgeons,
-                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Scenarios,
                 this.SurgicalDurations,
                 this.SurgicalFrequencies,
                 this.SurgicalOverheads);
