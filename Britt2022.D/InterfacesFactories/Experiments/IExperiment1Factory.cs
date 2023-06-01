@@ -7,6 +7,7 @@
     {
         IExperiment1 Create(
             ICalculationsAbstractFactory calculationsAbstractFactory,
+            IComparersAbstractFactory comparersAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory);
     }
 }

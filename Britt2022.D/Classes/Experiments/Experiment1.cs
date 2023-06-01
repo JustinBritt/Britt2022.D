@@ -15,6 +15,7 @@
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.Interfaces.Experiments;
     using Britt2022.D.InterfacesAbstractFactories;
+    using Britt2022.D.InterfacesFactories.Comparers;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.InterfacesFactories.Dependencies.MathNet.Numerics.Distributions;
 
@@ -24,6 +25,7 @@
 
         public Experiment1(
             ICalculationsAbstractFactory calculationsAbstractFactory,
+            IComparersAbstractFactory comparersAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
             IBundleFactory bundleFactory = dependenciesAbstractFactory.CreateBundleFactory();
@@ -53,6 +55,7 @@
             int numberClusters = 8;
 
             this.Clusters = this.GenerateClusters(
+                comparersAbstractFactory.CreateNullableValueintComparerFactory(),
                 this.NullableValueFactory,
                 numberClusters);
 
@@ -162,7 +165,7 @@
             this.SurgicalOverheads = this.GenerateSurgicalOverheads(
                 this.NullableValueFactory,
                 continuousUniformFactory,
-                this.Clusters,
+                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.Surgeons,
                 lower: 1.0,
                 upper: 1.5);
@@ -206,7 +209,7 @@
                 this.NullableValueFactory,
                 logNormalFactory,
                 calculationsAbstractFactory.CreateDCalculationFactory().Create(),
-                this.Clusters,
+                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.Scenarios,
                 this.Surgeons,
                 this.SurgicalSpecialties);
@@ -214,7 +217,7 @@
             // SurgicalFrequencies
             // Parameter: f(i, e)
             this.SurgicalFrequencies = this.GenerateSurgicalFrequenciesVanHoudenhoven2007(
-                this.Clusters,
+                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.Surgeons,
                 this.SurgicalSpecialties);
 
@@ -222,7 +225,7 @@
             // Parameter: A(i, ω)
             this.WeightedAverageSurgicalDurations = calculationsAbstractFactory.CreateACalculationFactory().Create().Calculate(
                 durationFactory,
-                this.Clusters,
+                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.Surgeons,
                 this.Scenarios,
                 this.SurgicalDurations,
@@ -265,7 +268,7 @@
         public INullableValueFactory NullableValueFactory { get; }
 
         /// <inheritdoc />
-        public ImmutableList<PositiveInt> Clusters { get; }
+        public ImmutableSortedSet<INullableValue<int>> Clusters { get; }
 
         /// <inheritdoc />
         public Bundle Surgeons { get; }
@@ -361,14 +364,16 @@
         public ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> SurgeonDayAvailabilities { get; }
 
         // Index: e
-        private ImmutableList<PositiveInt> GenerateClusters(
+        private ImmutableSortedSet<INullableValue<int>> GenerateClusters(
+            INullableValueintComparerFactory nullableValueintComparerFactory,
             INullableValueFactory nullableValueFactory,
             int numberClusters)
         {
             return Enumerable
                 .Range(1, numberClusters)
-                .Select(i => (PositiveInt)nullableValueFactory.Create<int>(i))
-                .ToImmutableList();
+                .Select(i => nullableValueFactory.Create<int>(i))
+                .ToImmutableSortedSet(
+                nullableValueintComparerFactory.Create());
         }
 
         // Index: i

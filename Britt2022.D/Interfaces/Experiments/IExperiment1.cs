@@ -15,7 +15,7 @@
         /// Gets the clusters.
         /// Index: e
         /// </summary>
-        ImmutableList<PositiveInt> Clusters { get; }
+        ImmutableSortedSet<INullableValue<int>> Clusters { get; }
 
         /// <summary>
         /// Gets the surgeons.

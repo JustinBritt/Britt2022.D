@@ -13,6 +13,7 @@
 
         public IExperiment1 Create(
             ICalculationsAbstractFactory calculationsAbstractFactory,
+            IComparersAbstractFactory comparersAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory)
         {
             IExperiment1 experiment;
@@ -21,6 +22,7 @@
             {
                 experiment = new Experiment1(
                     calculationsAbstractFactory,
+                    comparersAbstractFactory,
                     dependenciesAbstractFactory);
             }
             finally
