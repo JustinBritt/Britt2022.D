@@ -329,7 +329,7 @@
         public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonMaximumNumberTimeBlocks { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonLengthOfStayMaximums { get; }
+        public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonLengthOfStayMaximums { get; }
 
         /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMinimumNumberTimeBlocks { get; }
@@ -930,19 +930,19 @@
         }
 
         // Parameter: h(i)
-        private ImmutableList<KeyValuePair<Organization, PositiveInt>> GenerateSurgeonLengthOfStayMaximumsSameForAllSurgeons(
+        private ImmutableList<KeyValuePair<Organization, INullableValue<int>>> GenerateSurgeonLengthOfStayMaximumsSameForAllSurgeons(
             INullableValueFactory nullableValueFactory,
             int maximumLengthOfStay,
             Bundle surgeons)
         {
-            ImmutableList<KeyValuePair<Organization, PositiveInt>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, PositiveInt>>();
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, INullableValue<int>>>();
 
             foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 builder.Add(
                     KeyValuePair.Create(
                         surgeon,
-                        (PositiveInt)nullableValueFactory.Create<int>(
+                        nullableValueFactory.Create<int>(
                             maximumLengthOfStay)));
             }
 

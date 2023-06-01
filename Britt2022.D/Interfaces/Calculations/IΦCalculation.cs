@@ -16,7 +16,7 @@
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
             ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums,
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt>> surgeonScenarioMaximumNumberPatients,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities);
     }

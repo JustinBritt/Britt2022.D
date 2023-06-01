@@ -29,7 +29,7 @@
             ImmutableList<PositiveInt> lengthOfStayDays,
             ImmutableList<PositiveInt> scenarios,
             Organization surgeon,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums,
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             double targetMean)
         {
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>>();

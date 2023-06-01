@@ -24,7 +24,7 @@
         private int CalculateτUpperBound(
             Organization iIndexElement,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums)
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums)
         {
             return (int)Math.Floor(
                     Convert.ToDecimal(surgeonLengthOfStayMaximums.Where(w => w.Key == iIndexElement).Select(w => w.Value.Value.Value).SingleOrDefault())
@@ -35,7 +35,7 @@
         private ImmutableList<Tuple<Organization, int>> CalculateτIndex(
             Bundle surgeons,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums)
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums)
         {
             ImmutableList<Tuple<Organization, int>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, int>>();
 
@@ -67,7 +67,7 @@
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
             ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, int>> τ,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums,
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities)
         {
             decimal? sum = 0;
@@ -96,7 +96,7 @@
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
             ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonLengthOfStayMaximums,
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt>> surgeonScenarioMaximumNumberPatients,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities)
         {
