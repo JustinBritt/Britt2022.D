@@ -165,7 +165,7 @@
             this.SurgicalOverheads = this.GenerateSurgicalOverheads(
                 this.NullableValueFactory,
                 continuousUniformFactory,
-                this.Clusters.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Clusters,
                 this.Surgeons,
                 lower: 1.0,
                 upper: 1.5);
@@ -1506,7 +1506,7 @@
         private ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> GenerateSurgicalOverheads(
             INullableValueFactory nullableValueFactory,
             IContinuousUniformFactory continuousUniformFactory,
-            ImmutableList<PositiveInt> clusters,
+            ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             double lower,
             double upper)
