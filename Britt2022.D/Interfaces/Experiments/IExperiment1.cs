@@ -110,7 +110,7 @@
         /// Gets SurgeonClusterDurationStandardDeviations.
         /// Parameter: D(i, e, ω) (Standard deviations)
         /// </summary>
-        ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationStandardDeviations { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationStandardDeviations { get; }
 
         /// <summary>
         /// Gets the surgical frequencies.
