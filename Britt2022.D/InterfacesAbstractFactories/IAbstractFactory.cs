@@ -4,6 +4,8 @@
     {
         ICalculationsAbstractFactory CreateCalculationsAbstractFactory();
 
+        IComparersAbstractFactory CreateComparersAbstractFactory();
+
         IDependenciesAbstractFactory CreateDependenciesAbstractFactory();
 
         IExperimentsAbstractFactory CreateExperimentsAbstractFactory();

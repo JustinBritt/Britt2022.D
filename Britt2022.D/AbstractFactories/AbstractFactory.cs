@@ -39,6 +39,21 @@
             return abstractFactory;
         }
 
+        public IComparersAbstractFactory CreateComparersAbstractFactory()
+        {
+            IComparersAbstractFactory abstractFactory = null;
+
+            try
+            {
+                abstractFactory = new ComparersAbstractFactory();
+            }
+            finally
+            {
+            }
+
+            return abstractFactory;
+        }
+
         public IDependenciesAbstractFactory CreateDependenciesAbstractFactory()
         {
             IDependenciesAbstractFactory abstractFactory = null;
