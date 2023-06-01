@@ -314,7 +314,7 @@
         public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> SurgicalDurations { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> SurgicalDurations { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationMeans { get; }
@@ -511,7 +511,7 @@
         }
 
         // Parameter: D(i, e, ω)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> GenerateSurgicalDurationsVanHoudenhoven2007(
+        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> GenerateSurgicalDurationsVanHoudenhoven2007(
             IDurationFactory durationFactory,
             INullableValueFactory nullableValueFactory,
             ILogNormalFactory logNormalFactory,
@@ -521,7 +521,7 @@
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
-            ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>();
 
             VanHoudenhoven2007.InterfacesAbstractFactories.IAbstractFactory abstractFactory = VanHoudenhoven2007.AbstractFactories.AbstractFactory.Create();
 

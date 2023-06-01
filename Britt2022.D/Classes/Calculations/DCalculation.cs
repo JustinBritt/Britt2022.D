@@ -21,7 +21,7 @@
         {
         }
 
-        public ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> CalculateLogNormal(
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> CalculateLogNormal(
             INullableValueFactory nullableValueFactory,
             ILogNormalFactory logNormalFactory,
             PositiveInt cluster,
@@ -30,7 +30,7 @@
             double µ,
             double σ)
         {
-            ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>();
 
             // https://stackoverflow.com/questions/48014712/get-lognormal-random-number-given-log10-mean-and-log10-standard-deviation/48016650#48016650
             if (σ != 0)
@@ -53,7 +53,7 @@
                         Tuple.Create(
                             surgeon,
                             (INullableValue<int>)cluster,
-                            scenario,
+                            (INullableValue<int>)scenario,
                             (FhirDecimal)nullableValueFactory.Create<decimal>(
                                 (decimal)logNormal.Sample())));
                 }
@@ -66,7 +66,7 @@
                         Tuple.Create(
                             surgeon,
                             (INullableValue<int>)cluster,
-                            scenario,
+                            (INullableValue<int>)scenario,
                             (FhirDecimal)nullableValueFactory.Create<decimal>(
                                 0m)));
                 }
