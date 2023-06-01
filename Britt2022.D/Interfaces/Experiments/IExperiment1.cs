@@ -83,7 +83,7 @@
         /// Gets the scenarios.
         /// Index: ω
         /// </summary>
-        ImmutableList<PositiveInt> Scenarios { get; }
+        ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
         /// <summary>
         /// Gets the weighted average surgical durations.

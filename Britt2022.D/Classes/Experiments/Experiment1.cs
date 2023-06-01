@@ -133,6 +133,7 @@
             int numberScenarios = 16;
 
             this.Scenarios = this.GenerateScenarios(
+                comparersAbstractFactory.CreateNullableValueintComparerFactory(),
                 this.NullableValueFactory,
                 numberScenarios);
 
@@ -196,7 +197,7 @@
             // Each scenario currently has an equal probability.
             this.ScenarioProbabilities = this.GenerateScenarioProbabilities(
                 this.NullableValueFactory,
-                this.Scenarios,
+                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                 numberScenarios);
 
             // SurgeonDayAvailabilities
@@ -213,7 +214,7 @@
                 logNormalFactory,
                 calculationsAbstractFactory.CreateDCalculationFactory().Create(),
                 this.Clusters,
-                this.Scenarios,
+                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.Surgeons,
                 this.SurgicalSpecialties);
 
@@ -230,7 +231,7 @@
                 durationFactory,
                 this.Clusters,
                 this.Surgeons,
-                this.Scenarios,
+                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.SurgicalDurations,
                 this.SurgicalFrequencies,
                 this.SurgicalOverheads);
@@ -248,7 +249,7 @@
                 this.NullableValueFactory,
                 discreteUniformFactory,
                 calculationsAbstractFactory.CreatepCalculationFactory().Create(),
-                this.Scenarios,
+                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.Surgeons,
                 this.SurgicalSpecialties);
 
@@ -259,7 +260,7 @@
                 this.Surgeons,
                 this.PlanningHorizon.Select(w => KeyValuePair.Create((PositiveInt)w.Key, w.Value)).ToImmutableList(),
                 this.LengthOfStayDays,
-                this.Scenarios,
+                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
                 this.SurgeonLengthOfStayMaximums,
                 this.SurgeonScenarioMaximumNumberPatients,
                 this.SurgeonDayScenarioLengthOfStayProbabilities);
@@ -304,7 +305,7 @@
         public Organization SurgicalSpecialty6URO { get; }
 
         /// <inheritdoc />
-        public ImmutableList<PositiveInt> Scenarios { get; }
+        public ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> WeightedAverageSurgicalDurations { get; }
@@ -446,14 +447,16 @@
         }
 
         // Index: ω
-        private ImmutableList<PositiveInt> GenerateScenarios(
+        private ImmutableSortedSet<INullableValue<int>> GenerateScenarios(
+            INullableValueintComparerFactory nullableValueintComparerFactory,
             INullableValueFactory nullableValueFactory,
             int numberScenarios)
         {
             return Enumerable
                 .Range(1, numberScenarios)
-                .Select(i => (PositiveInt)nullableValueFactory.Create<int>(i))
-                .ToImmutableList();
+                .Select(i => nullableValueFactory.Create<int>(i))
+                .ToImmutableSortedSet(
+                nullableValueintComparerFactory.Create());
         }
 
         // Parameter: B(r)
