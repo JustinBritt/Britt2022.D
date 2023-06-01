@@ -92,7 +92,7 @@
         /// Gets SurgicalSpecialtyStrategicTargetNumberTimeBlocks.
         /// Parameter: B(r)
         /// </summary>
-        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
+        ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         /// <summary>
         /// Gets the surgical durations.

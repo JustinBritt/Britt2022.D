@@ -311,7 +311,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
+        public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgicalDurations { get; }
@@ -460,51 +460,51 @@
         }
 
         // Parameter: B(r)
-        private ImmutableList<KeyValuePair<Organization, PositiveInt>> GenerateSurgicalSpecialtyStrategicTargetNumberTimeBlocks(
+        private ImmutableList<KeyValuePair<Organization, INullableValue<int>>> GenerateSurgicalSpecialtyStrategicTargetNumberTimeBlocks(
             INullableValueFactory nullableValueFactory)
         {
-            ImmutableList<KeyValuePair<Organization, PositiveInt>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, PositiveInt>>();
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, INullableValue<int>>>();
 
             // Surgical Specialty 1
             builder.Add(
                 KeyValuePair.Create(
                     this.SurgicalSpecialty1GEN,
-                    (PositiveInt)nullableValueFactory.Create<int>(
+                    nullableValueFactory.Create<int>(
                         36)));
 
             // Surgical Specialty 2
             builder.Add(
                 KeyValuePair.Create(
                     this.SurgicalSpecialty2GYN,
-                    (PositiveInt)nullableValueFactory.Create<int>(
+                    nullableValueFactory.Create<int>(
                         30)));
 
             // Surgical Specialty 3
             builder.Add(
                 KeyValuePair.Create(
                     this.SurgicalSpecialty3PLA,
-                    (PositiveInt)nullableValueFactory.Create<int>(
+                    nullableValueFactory.Create<int>(
                         18)));
 
             // Surgical Specialty 4
             builder.Add(
                 KeyValuePair.Create(
                     this.SurgicalSpecialty4ENT,
-                    (PositiveInt)nullableValueFactory.Create<int>(
+                    nullableValueFactory.Create<int>(
                         12)));
 
             // Surgical Specialty 5
             builder.Add(
                 KeyValuePair.Create(
                     this.SurgicalSpecialty5ORT,
-                    (PositiveInt)nullableValueFactory.Create<int>(
+                    nullableValueFactory.Create<int>(
                         36)));
 
             // Surgical Specialty 6
             builder.Add(
                 KeyValuePair.Create(
                     this.SurgicalSpecialty6URO,
-                    (PositiveInt)nullableValueFactory.Create<int>(
+                    nullableValueFactory.Create<int>(
                         48)));
 
             return builder.ToImmutableList();
