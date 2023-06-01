@@ -260,7 +260,7 @@
                 this.Surgeons,
                 this.PlanningHorizon.Select(w => KeyValuePair.Create((PositiveInt)w.Key, w.Value)).ToImmutableList(),
                 this.LengthOfStayDays,
-                this.Scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
+                this.Scenarios,
                 this.SurgeonLengthOfStayMaximums,
                 this.SurgeonScenarioMaximumNumberPatients,
                 this.SurgeonDayScenarioLengthOfStayProbabilities);
