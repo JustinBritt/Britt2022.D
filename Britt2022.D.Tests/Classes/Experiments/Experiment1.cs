@@ -93,7 +93,7 @@
             IExperiment1 experiment1 = this.CreateExperiment1();
 
             // Act
-            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon = experiment1.PlanningHorizon;
+            var planningHorizon = experiment1.PlanningHorizon;
 
             // Assert
             Assert.AreEqual(
