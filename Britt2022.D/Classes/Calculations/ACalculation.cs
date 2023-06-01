@@ -25,7 +25,7 @@
             Bundle surgeons,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> D,
-            ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> f,
+            ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>> f,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> O)
         {
             return surgeons.Entry

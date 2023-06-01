@@ -116,7 +116,7 @@
         /// Gets the surgical frequencies.
         /// Parameter: f(i, e)
         /// </summary>
-        ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgicalFrequencies { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>> SurgicalFrequencies { get; }
 
         /// <summary>
         /// Gets SurgeonMaximumNumberTimeBlocks.
