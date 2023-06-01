@@ -317,7 +317,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> SurgicalDurations { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationMeans { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationMeans { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationStandardDeviations { get; }

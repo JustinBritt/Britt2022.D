@@ -104,7 +104,7 @@
         /// Gets SurgeonClusterDurationMeans.
         /// Parameter: D(i, e, ω) (Means)
         /// </summary>
-        ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonClusterDurationMeans { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationMeans { get; }
 
         /// <summary>
         /// Gets SurgeonClusterDurationStandardDeviations.
