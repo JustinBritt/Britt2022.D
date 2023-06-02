@@ -1190,273 +1190,243 @@
 
             // Surgeon 1
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "1",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        20)));
+                this.GetSurgeonWithId(
+                    "1",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    20));
 
             // Surgeon 2
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "2",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        21)));
+                this.GetSurgeonWithId(
+                    "2",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    21));
 
             // Surgeon 3
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "3",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        33)));
+                this.GetSurgeonWithId(
+                    "3",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    33));
 
             // Surgeon 4
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "4",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        23)));
+                this.GetSurgeonWithId(
+                    "4",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    23));
 
             // Surgeon 5
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "5",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        24)));
+                this.GetSurgeonWithId(
+                    "5",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    24));
 
             // Surgeon 6
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "6",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        30)));
+                this.GetSurgeonWithId(
+                    "6",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    30));
 
             // Surgeon 7
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "7",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        28)));
+                this.GetSurgeonWithId(
+                    "7",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    28));
 
             // Surgeon 8
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "8",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        26)));
+                this.GetSurgeonWithId(
+                    "8",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    26));
 
             // Surgeon 9
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "9",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        26)));
+                this.GetSurgeonWithId(
+                    "9",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    26));
 
             // Surgeon 10
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "10",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        34)));
+                this.GetSurgeonWithId(
+                    "10",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    34));
 
             // Surgeon 11
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "11",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        25)));
+                this.GetSurgeonWithId(
+                    "11",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    25));
 
             // Surgeon 12
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "12",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        35)));
+                this.GetSurgeonWithId(
+                    "12",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    35));
 
             // Surgeon 13
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "13",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        25)));
+                this.GetSurgeonWithId(
+                    "13",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    25));
 
             // Surgeon 14
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "14",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        21)));
+                this.GetSurgeonWithId(
+                    "14",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    21));
 
             // Surgeon 15
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "15",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        30)));
+                this.GetSurgeonWithId(
+                    "15",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    30));
 
             // Surgeon 16
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "16",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        22)));
+                this.GetSurgeonWithId(
+                    "16",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    22));
 
             // Surgeon 17
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "17",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        27)));
+                this.GetSurgeonWithId(
+                    "17",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    27));
 
             // Surgeon 18
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "18",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        21)));
+                this.GetSurgeonWithId(
+                    "18",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    21));
 
             // Surgeon 19
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "19",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        26)));
+                this.GetSurgeonWithId(
+                    "19",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    26));
 
             // Surgeon 20
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "20",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        31)));
+                this.GetSurgeonWithId(
+                    "20",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    31));
 
             // Surgeon 21
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "21",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        32)));
+                this.GetSurgeonWithId(
+                    "21",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    32));
 
             // Surgeon 22
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "22",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        31)));
+                this.GetSurgeonWithId(
+                    "22",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    31));
 
             // Surgeon 23
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "23",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        32)));
+                this.GetSurgeonWithId(
+                    "23",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    32));
 
             // Surgeon 24
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "24",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        22)));
+                this.GetSurgeonWithId(
+                    "24",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    22));
 
             // Surgeon 25
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "25",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        29)));
+                this.GetSurgeonWithId(
+                    "25",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    29));
 
             // Surgeon 26
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "26",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        29)));
+                this.GetSurgeonWithId(
+                    "26",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    29));
 
             // Surgeon 27
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "27",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        24)));
+                this.GetSurgeonWithId(
+                    "27",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    24));
 
             // Surgeon 28
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "28",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        30)));
+                this.GetSurgeonWithId(
+                    "28",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    30));
 
             // Surgeon 29
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "29",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        30)));
+                this.GetSurgeonWithId(
+                    "29",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    30));
 
             // Surgeon 30
             redBlackTree.Add(
-                KeyValuePair.Create(
-                    this.GetSurgeonWithId(
-                        "30",
-                        surgeons),
-                    this.NullableValueFactory.Create<int>(
-                        35)));
+                this.GetSurgeonWithId(
+                    "30",
+                    surgeons),
+                this.NullableValueFactory.Create<int>(
+                    35));
 
             return redBlackTree;
         }
