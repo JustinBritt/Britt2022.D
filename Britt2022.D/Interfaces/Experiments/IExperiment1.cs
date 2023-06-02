@@ -200,6 +200,6 @@
         /// Gets SurgeonDayAvailabilities.
         /// Parameter: Ω(i, k)
         /// </summary>
-        ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> SurgeonDayAvailabilities { get; }
+        ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> SurgeonDayAvailabilities { get; }
     }
 }

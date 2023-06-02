@@ -365,7 +365,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> SurgeonDayAvailabilities { get; }
+        public ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> SurgeonDayAvailabilities { get; }
 
         // Index: e
         private ImmutableSortedSet<INullableValue<int>> GenerateClusters(
@@ -5172,11 +5172,11 @@
         }
 
         // Parameter: Ω(i, k)
-        private ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> GenerateSurgeonDayAvailabilities(
+        private ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> GenerateSurgeonDayAvailabilities(
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
             Bundle surgeons)
         {
-            ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, FhirDateTime, FhirBoolean>>();
+            ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
 
             // Surgeon 1, Day 1
             builder.Add(
@@ -5187,7 +5187,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 2
@@ -5199,7 +5199,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 3
@@ -5211,7 +5211,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 4
@@ -5223,7 +5223,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 5
@@ -5235,7 +5235,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 6
@@ -5247,7 +5247,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 7
@@ -5259,7 +5259,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 8
@@ -5271,7 +5271,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 9
@@ -5283,7 +5283,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 10
@@ -5295,7 +5295,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 11
@@ -5307,7 +5307,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 12
@@ -5319,7 +5319,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 13
@@ -5331,7 +5331,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 14
@@ -5343,7 +5343,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 15
@@ -5355,7 +5355,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 16
@@ -5367,7 +5367,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 17
@@ -5379,7 +5379,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 18
@@ -5391,7 +5391,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 19
@@ -5403,7 +5403,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 20
@@ -5415,7 +5415,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 21
@@ -5427,7 +5427,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 22
@@ -5439,7 +5439,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 23
@@ -5451,7 +5451,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 24
@@ -5463,7 +5463,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 25
@@ -5475,7 +5475,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 26
@@ -5487,7 +5487,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Day 27
@@ -5499,7 +5499,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 1, Day 28
@@ -5511,7 +5511,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 1
@@ -5523,7 +5523,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 2
@@ -5535,7 +5535,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 3
@@ -5547,7 +5547,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 4
@@ -5559,7 +5559,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 5
@@ -5571,7 +5571,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 6
@@ -5583,7 +5583,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 7
@@ -5595,7 +5595,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 8
@@ -5607,7 +5607,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 9
@@ -5619,7 +5619,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 10
@@ -5631,7 +5631,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 11
@@ -5643,7 +5643,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 12
@@ -5655,7 +5655,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 13
@@ -5667,7 +5667,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 14
@@ -5679,7 +5679,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 15
@@ -5691,7 +5691,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 16
@@ -5703,7 +5703,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 17
@@ -5715,7 +5715,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 18
@@ -5727,7 +5727,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 19
@@ -5739,7 +5739,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 20
@@ -5751,7 +5751,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 21
@@ -5763,7 +5763,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 22
@@ -5775,7 +5775,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 23
@@ -5787,7 +5787,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 24
@@ -5799,7 +5799,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 25
@@ -5811,7 +5811,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 26
@@ -5823,7 +5823,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Day 27
@@ -5835,7 +5835,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 2, Day 28
@@ -5847,7 +5847,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 1
@@ -5859,7 +5859,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 2
@@ -5871,7 +5871,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 3
@@ -5883,7 +5883,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 4
@@ -5895,7 +5895,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 5
@@ -5907,7 +5907,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 6
@@ -5919,7 +5919,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 7
@@ -5931,7 +5931,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 8
@@ -5943,7 +5943,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 9
@@ -5955,7 +5955,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 10
@@ -5967,7 +5967,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 11
@@ -5979,7 +5979,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 12
@@ -5991,7 +5991,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 13
@@ -6003,7 +6003,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 14
@@ -6015,7 +6015,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 15
@@ -6027,7 +6027,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 16
@@ -6039,7 +6039,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 17
@@ -6051,7 +6051,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 18
@@ -6063,7 +6063,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 19
@@ -6075,7 +6075,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 20
@@ -6087,7 +6087,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 21
@@ -6099,7 +6099,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 22
@@ -6111,7 +6111,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 23
@@ -6123,7 +6123,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 24
@@ -6135,7 +6135,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 25
@@ -6147,7 +6147,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 26
@@ -6159,7 +6159,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Day 27
@@ -6171,7 +6171,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 3, Day 28
@@ -6183,7 +6183,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 1
@@ -6195,7 +6195,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 2
@@ -6207,7 +6207,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 3
@@ -6219,7 +6219,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 4
@@ -6231,7 +6231,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 5
@@ -6243,7 +6243,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 6
@@ -6255,7 +6255,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 7
@@ -6267,7 +6267,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 8
@@ -6279,7 +6279,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 9
@@ -6291,7 +6291,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 10
@@ -6303,7 +6303,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 11
@@ -6315,7 +6315,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 12
@@ -6327,7 +6327,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 13
@@ -6339,7 +6339,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 14
@@ -6351,7 +6351,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 15
@@ -6363,7 +6363,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 16
@@ -6375,7 +6375,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 17
@@ -6387,7 +6387,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 18
@@ -6399,7 +6399,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 19
@@ -6411,7 +6411,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 20
@@ -6423,7 +6423,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 21
@@ -6435,7 +6435,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 22
@@ -6447,7 +6447,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 23
@@ -6459,7 +6459,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 24
@@ -6471,7 +6471,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 25
@@ -6483,7 +6483,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 26
@@ -6495,7 +6495,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Day 27
@@ -6507,7 +6507,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 4, Day 28
@@ -6519,7 +6519,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 1
@@ -6531,7 +6531,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 2
@@ -6543,7 +6543,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 3
@@ -6555,7 +6555,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 4
@@ -6567,7 +6567,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 5
@@ -6579,7 +6579,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 6
@@ -6591,7 +6591,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 7
@@ -6603,7 +6603,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 8
@@ -6615,7 +6615,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 9
@@ -6627,7 +6627,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 10
@@ -6639,7 +6639,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 11
@@ -6651,7 +6651,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 12
@@ -6663,7 +6663,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 13
@@ -6675,7 +6675,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 14
@@ -6687,7 +6687,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 15
@@ -6699,7 +6699,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 16
@@ -6711,7 +6711,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 17
@@ -6723,7 +6723,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 18
@@ -6735,7 +6735,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 19
@@ -6747,7 +6747,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 20
@@ -6759,7 +6759,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 21
@@ -6771,7 +6771,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 22
@@ -6783,7 +6783,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 23
@@ -6795,7 +6795,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 24
@@ -6807,7 +6807,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 25
@@ -6819,7 +6819,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Day 26
@@ -6831,7 +6831,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 27
@@ -6843,7 +6843,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 5, Day 28
@@ -6855,7 +6855,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 1
@@ -6867,7 +6867,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 2
@@ -6879,7 +6879,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 3
@@ -6891,7 +6891,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 4
@@ -6903,7 +6903,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 5
@@ -6915,7 +6915,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 6
@@ -6927,7 +6927,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 7
@@ -6939,7 +6939,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 8
@@ -6951,7 +6951,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 9
@@ -6963,7 +6963,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 10
@@ -6975,7 +6975,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 11
@@ -6987,7 +6987,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 12
@@ -6999,7 +6999,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 13
@@ -7011,7 +7011,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 14
@@ -7023,7 +7023,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 15
@@ -7035,7 +7035,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 16
@@ -7047,7 +7047,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 17
@@ -7059,7 +7059,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 18
@@ -7071,7 +7071,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 19
@@ -7083,7 +7083,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 20
@@ -7095,7 +7095,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 21
@@ -7107,7 +7107,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 22
@@ -7119,7 +7119,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 23
@@ -7131,7 +7131,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 24
@@ -7143,7 +7143,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 25
@@ -7155,7 +7155,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 26
@@ -7167,7 +7167,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Day 27
@@ -7179,7 +7179,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Day 28
@@ -7191,7 +7191,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 1
@@ -7203,7 +7203,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 2
@@ -7215,7 +7215,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 3
@@ -7227,7 +7227,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 4
@@ -7239,7 +7239,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 5
@@ -7251,7 +7251,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 6
@@ -7263,7 +7263,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 7
@@ -7275,7 +7275,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 8
@@ -7287,7 +7287,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 9
@@ -7299,7 +7299,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 10
@@ -7311,7 +7311,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 11
@@ -7323,7 +7323,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 12
@@ -7335,7 +7335,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 13
@@ -7347,7 +7347,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 14
@@ -7359,7 +7359,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 15
@@ -7371,7 +7371,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 16
@@ -7383,7 +7383,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 17
@@ -7395,7 +7395,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 18
@@ -7407,7 +7407,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 19
@@ -7419,7 +7419,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 20
@@ -7431,7 +7431,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 21
@@ -7443,7 +7443,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 22
@@ -7455,7 +7455,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 23
@@ -7467,7 +7467,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 24
@@ -7479,7 +7479,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 25
@@ -7491,7 +7491,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 26
@@ -7503,7 +7503,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Day 27
@@ -7515,7 +7515,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Day 28
@@ -7527,7 +7527,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 1
@@ -7539,7 +7539,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 2
@@ -7551,7 +7551,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 3
@@ -7563,7 +7563,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 4
@@ -7575,7 +7575,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 5
@@ -7587,7 +7587,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 6
@@ -7599,7 +7599,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 7
@@ -7611,7 +7611,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 8
@@ -7623,7 +7623,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 9
@@ -7635,7 +7635,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 10
@@ -7647,7 +7647,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 11
@@ -7659,7 +7659,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 12
@@ -7671,7 +7671,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 13
@@ -7683,7 +7683,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 14
@@ -7695,7 +7695,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 15
@@ -7707,7 +7707,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 16
@@ -7719,7 +7719,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 17
@@ -7731,7 +7731,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 18
@@ -7743,7 +7743,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 19
@@ -7755,7 +7755,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 20
@@ -7767,7 +7767,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 21
@@ -7779,7 +7779,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 22
@@ -7791,7 +7791,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 23
@@ -7803,7 +7803,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 24
@@ -7815,7 +7815,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 25
@@ -7827,7 +7827,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 26
@@ -7839,7 +7839,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Day 27
@@ -7851,7 +7851,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Day 28
@@ -7863,7 +7863,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 1
@@ -7875,7 +7875,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 2
@@ -7887,7 +7887,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 3
@@ -7899,7 +7899,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 4
@@ -7911,7 +7911,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 5
@@ -7923,7 +7923,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 6
@@ -7935,7 +7935,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 7
@@ -7947,7 +7947,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 8
@@ -7959,7 +7959,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 9
@@ -7971,7 +7971,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 10
@@ -7983,7 +7983,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 11
@@ -7995,7 +7995,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 12
@@ -8007,7 +8007,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 13
@@ -8019,7 +8019,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 14
@@ -8031,7 +8031,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 15
@@ -8043,7 +8043,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 16
@@ -8055,7 +8055,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 17
@@ -8067,7 +8067,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 18
@@ -8079,7 +8079,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 19
@@ -8091,7 +8091,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 20
@@ -8103,7 +8103,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 21
@@ -8115,7 +8115,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 22
@@ -8127,7 +8127,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 23
@@ -8139,7 +8139,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 24
@@ -8151,7 +8151,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 25
@@ -8163,7 +8163,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 26
@@ -8175,7 +8175,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Day 27
@@ -8187,7 +8187,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Day 28
@@ -8199,7 +8199,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 1
@@ -8211,7 +8211,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 2
@@ -8223,7 +8223,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 3
@@ -8235,7 +8235,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 4
@@ -8247,7 +8247,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 5
@@ -8259,7 +8259,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 6
@@ -8271,7 +8271,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 7
@@ -8283,7 +8283,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 8
@@ -8295,7 +8295,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 9
@@ -8307,7 +8307,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 10
@@ -8319,7 +8319,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 11
@@ -8331,7 +8331,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 12
@@ -8343,7 +8343,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 13
@@ -8355,7 +8355,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 14
@@ -8367,7 +8367,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 15
@@ -8379,7 +8379,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 16
@@ -8391,7 +8391,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 17
@@ -8403,7 +8403,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 18
@@ -8415,7 +8415,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 19
@@ -8427,7 +8427,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 20
@@ -8439,7 +8439,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 21
@@ -8451,7 +8451,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 22
@@ -8463,7 +8463,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 23
@@ -8475,7 +8475,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 24
@@ -8487,7 +8487,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 25
@@ -8499,7 +8499,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Day 26
@@ -8511,7 +8511,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 27
@@ -8523,7 +8523,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Day 28
@@ -8535,7 +8535,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 1
@@ -8547,7 +8547,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 2
@@ -8559,7 +8559,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 3
@@ -8571,7 +8571,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 4
@@ -8583,7 +8583,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 5
@@ -8595,7 +8595,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 6
@@ -8607,7 +8607,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 7
@@ -8619,7 +8619,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 8
@@ -8631,7 +8631,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 9
@@ -8643,7 +8643,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 10
@@ -8655,7 +8655,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 11
@@ -8667,7 +8667,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 12
@@ -8679,7 +8679,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 13
@@ -8691,7 +8691,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 14
@@ -8703,7 +8703,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 15
@@ -8715,7 +8715,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 16
@@ -8727,7 +8727,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 17
@@ -8739,7 +8739,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 18
@@ -8751,7 +8751,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 19
@@ -8763,7 +8763,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 20
@@ -8775,7 +8775,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 21
@@ -8787,7 +8787,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 22
@@ -8799,7 +8799,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 23
@@ -8811,7 +8811,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 24
@@ -8823,7 +8823,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 25
@@ -8835,7 +8835,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 26
@@ -8847,7 +8847,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Day 27
@@ -8859,7 +8859,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Day 28
@@ -8871,7 +8871,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 1
@@ -8883,7 +8883,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 2
@@ -8895,7 +8895,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 3
@@ -8907,7 +8907,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 4
@@ -8919,7 +8919,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 5
@@ -8931,7 +8931,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 6
@@ -8943,7 +8943,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 7
@@ -8955,7 +8955,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 8
@@ -8967,7 +8967,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 9
@@ -8979,7 +8979,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 10
@@ -8991,7 +8991,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 11
@@ -9003,7 +9003,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 12
@@ -9015,7 +9015,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 13
@@ -9027,7 +9027,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 14
@@ -9039,7 +9039,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 15
@@ -9051,7 +9051,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 16
@@ -9063,7 +9063,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 17
@@ -9075,7 +9075,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 18
@@ -9087,7 +9087,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 19
@@ -9099,7 +9099,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 20
@@ -9111,7 +9111,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 21
@@ -9123,7 +9123,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 22
@@ -9135,7 +9135,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 23
@@ -9147,7 +9147,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 24
@@ -9159,7 +9159,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 25
@@ -9171,7 +9171,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 26
@@ -9183,7 +9183,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Day 27
@@ -9195,7 +9195,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Day 28
@@ -9207,7 +9207,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 1
@@ -9219,7 +9219,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 2
@@ -9231,7 +9231,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 3
@@ -9243,7 +9243,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 4
@@ -9255,7 +9255,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 5
@@ -9267,7 +9267,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 6
@@ -9279,7 +9279,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 7
@@ -9291,7 +9291,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 8
@@ -9303,7 +9303,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 9
@@ -9315,7 +9315,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 10
@@ -9327,7 +9327,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 11
@@ -9339,7 +9339,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 12
@@ -9351,7 +9351,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 13
@@ -9363,7 +9363,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 14
@@ -9375,7 +9375,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 15
@@ -9387,7 +9387,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 16
@@ -9399,7 +9399,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 17
@@ -9411,7 +9411,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 18
@@ -9423,7 +9423,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 19
@@ -9435,7 +9435,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 20
@@ -9447,7 +9447,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 21
@@ -9459,7 +9459,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 22
@@ -9471,7 +9471,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 23
@@ -9483,7 +9483,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 24
@@ -9495,7 +9495,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 25
@@ -9507,7 +9507,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 26
@@ -9519,7 +9519,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Day 27
@@ -9531,7 +9531,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Day 28
@@ -9543,7 +9543,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 1
@@ -9555,7 +9555,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 2
@@ -9567,7 +9567,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 3
@@ -9579,7 +9579,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 4
@@ -9591,7 +9591,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 5
@@ -9603,7 +9603,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 6
@@ -9615,7 +9615,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 7
@@ -9627,7 +9627,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 8
@@ -9639,7 +9639,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 9
@@ -9651,7 +9651,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 10
@@ -9663,7 +9663,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 11
@@ -9675,7 +9675,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 12
@@ -9687,7 +9687,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 13
@@ -9699,7 +9699,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 14
@@ -9711,7 +9711,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 15
@@ -9723,7 +9723,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 16
@@ -9735,7 +9735,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 17
@@ -9747,7 +9747,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 18
@@ -9759,7 +9759,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 19
@@ -9771,7 +9771,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 20
@@ -9783,7 +9783,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 21
@@ -9795,7 +9795,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 22
@@ -9807,7 +9807,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 23
@@ -9819,7 +9819,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 24
@@ -9831,7 +9831,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 25
@@ -9843,7 +9843,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 26
@@ -9855,7 +9855,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Day 27
@@ -9867,7 +9867,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Day 28
@@ -9879,7 +9879,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 1
@@ -9891,7 +9891,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 2
@@ -9903,7 +9903,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 3
@@ -9915,7 +9915,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 4
@@ -9927,7 +9927,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 5
@@ -9939,7 +9939,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 6
@@ -9951,7 +9951,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 7
@@ -9963,7 +9963,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 8
@@ -9975,7 +9975,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 9
@@ -9987,7 +9987,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 10
@@ -9999,7 +9999,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 11
@@ -10011,7 +10011,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 12
@@ -10023,7 +10023,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 13
@@ -10035,7 +10035,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 14
@@ -10047,7 +10047,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 15
@@ -10059,7 +10059,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 16
@@ -10071,7 +10071,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 17
@@ -10083,7 +10083,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 18
@@ -10095,7 +10095,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 19
@@ -10107,7 +10107,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 20
@@ -10119,7 +10119,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 21
@@ -10131,7 +10131,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 22
@@ -10143,7 +10143,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 23
@@ -10155,7 +10155,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 24
@@ -10167,7 +10167,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 25
@@ -10179,7 +10179,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 26
@@ -10191,7 +10191,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Day 27
@@ -10203,7 +10203,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Day 28
@@ -10215,7 +10215,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 1
@@ -10227,7 +10227,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 2
@@ -10239,7 +10239,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 3
@@ -10251,7 +10251,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 4
@@ -10263,7 +10263,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 5
@@ -10275,7 +10275,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 6
@@ -10287,7 +10287,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 7
@@ -10299,7 +10299,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 8
@@ -10311,7 +10311,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 9
@@ -10323,7 +10323,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 10
@@ -10335,7 +10335,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 11
@@ -10347,7 +10347,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 12
@@ -10359,7 +10359,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 13
@@ -10371,7 +10371,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 14
@@ -10383,7 +10383,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 15
@@ -10395,7 +10395,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 16
@@ -10407,7 +10407,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 17
@@ -10419,7 +10419,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 18
@@ -10431,7 +10431,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 19
@@ -10443,7 +10443,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 20
@@ -10455,7 +10455,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 21
@@ -10467,7 +10467,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 22
@@ -10479,7 +10479,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 23
@@ -10491,7 +10491,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 24
@@ -10503,7 +10503,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 25
@@ -10515,7 +10515,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 26
@@ -10527,7 +10527,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Day 27
@@ -10539,7 +10539,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Day 28
@@ -10551,7 +10551,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 1
@@ -10563,7 +10563,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 2
@@ -10575,7 +10575,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 3
@@ -10587,7 +10587,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 4
@@ -10599,7 +10599,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 5
@@ -10611,7 +10611,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 6
@@ -10623,7 +10623,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 7
@@ -10635,7 +10635,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 8
@@ -10647,7 +10647,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 9
@@ -10659,7 +10659,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 10
@@ -10671,7 +10671,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 11
@@ -10683,7 +10683,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 12
@@ -10695,7 +10695,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 13
@@ -10707,7 +10707,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 14
@@ -10719,7 +10719,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 15
@@ -10731,7 +10731,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 16
@@ -10743,7 +10743,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 17
@@ -10755,7 +10755,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 18
@@ -10767,7 +10767,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 19
@@ -10779,7 +10779,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 20
@@ -10791,7 +10791,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 21
@@ -10803,7 +10803,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 22
@@ -10815,7 +10815,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 23
@@ -10827,7 +10827,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 24
@@ -10839,7 +10839,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Day 25
@@ -10851,7 +10851,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 26
@@ -10863,7 +10863,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 27
@@ -10875,7 +10875,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Day 28
@@ -10887,7 +10887,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 1
@@ -10899,7 +10899,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 2
@@ -10911,7 +10911,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 3
@@ -10923,7 +10923,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 4
@@ -10935,7 +10935,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 5
@@ -10947,7 +10947,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 6
@@ -10959,7 +10959,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 7
@@ -10971,7 +10971,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 8
@@ -10983,7 +10983,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 9
@@ -10995,7 +10995,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 10
@@ -11007,7 +11007,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 11
@@ -11019,7 +11019,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 12
@@ -11031,7 +11031,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 13
@@ -11043,7 +11043,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 14
@@ -11055,7 +11055,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 15
@@ -11067,7 +11067,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 16
@@ -11079,7 +11079,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 17
@@ -11091,7 +11091,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 18
@@ -11103,7 +11103,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 19
@@ -11115,7 +11115,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 20
@@ -11127,7 +11127,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 21
@@ -11139,7 +11139,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 22
@@ -11151,7 +11151,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 23
@@ -11163,7 +11163,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 24
@@ -11175,7 +11175,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 25
@@ -11187,7 +11187,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 26
@@ -11199,7 +11199,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Day 27
@@ -11211,7 +11211,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Day 28
@@ -11223,7 +11223,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 1
@@ -11235,7 +11235,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 2
@@ -11247,7 +11247,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 3
@@ -11259,7 +11259,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 4
@@ -11271,7 +11271,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 5
@@ -11283,7 +11283,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 6
@@ -11295,7 +11295,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 7
@@ -11307,7 +11307,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 8
@@ -11319,7 +11319,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 9
@@ -11331,7 +11331,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 10
@@ -11343,7 +11343,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 11
@@ -11355,7 +11355,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 12
@@ -11367,7 +11367,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 13
@@ -11379,7 +11379,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 14
@@ -11391,7 +11391,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 15
@@ -11403,7 +11403,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 16
@@ -11415,7 +11415,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 17
@@ -11427,7 +11427,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 18
@@ -11439,7 +11439,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 19
@@ -11451,7 +11451,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 20
@@ -11463,7 +11463,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 21
@@ -11475,7 +11475,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 22
@@ -11487,7 +11487,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 23
@@ -11499,7 +11499,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 24
@@ -11511,7 +11511,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 25
@@ -11523,7 +11523,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Day 26
@@ -11535,7 +11535,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 27
@@ -11547,7 +11547,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Day 28
@@ -11559,7 +11559,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 1
@@ -11571,7 +11571,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 2
@@ -11583,7 +11583,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 3
@@ -11595,7 +11595,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 4
@@ -11607,7 +11607,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 5
@@ -11619,7 +11619,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 6
@@ -11631,7 +11631,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 7
@@ -11643,7 +11643,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 8
@@ -11655,7 +11655,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 9
@@ -11667,7 +11667,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 10
@@ -11679,7 +11679,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 11
@@ -11691,7 +11691,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 12
@@ -11703,7 +11703,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 13
@@ -11715,7 +11715,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 14
@@ -11727,7 +11727,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 15
@@ -11739,7 +11739,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 16
@@ -11751,7 +11751,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 17
@@ -11763,7 +11763,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 18
@@ -11775,7 +11775,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 19
@@ -11787,7 +11787,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 20
@@ -11799,7 +11799,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 21
@@ -11811,7 +11811,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 22
@@ -11823,7 +11823,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 23
@@ -11835,7 +11835,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 24
@@ -11847,7 +11847,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 25
@@ -11859,7 +11859,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Day 26
@@ -11871,7 +11871,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 27
@@ -11883,7 +11883,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Day 28
@@ -11895,7 +11895,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 1
@@ -11907,7 +11907,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 2
@@ -11919,7 +11919,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 3
@@ -11931,7 +11931,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 4
@@ -11943,7 +11943,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 5
@@ -11955,7 +11955,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 6
@@ -11967,7 +11967,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 7
@@ -11979,7 +11979,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 8
@@ -11991,7 +11991,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 9
@@ -12003,7 +12003,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 10
@@ -12015,7 +12015,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 11
@@ -12027,7 +12027,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 12
@@ -12039,7 +12039,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 13
@@ -12051,7 +12051,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 14
@@ -12063,7 +12063,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 15
@@ -12075,7 +12075,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 16
@@ -12087,7 +12087,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 17
@@ -12099,7 +12099,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 18
@@ -12111,7 +12111,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 19
@@ -12123,7 +12123,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 20
@@ -12135,7 +12135,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 21
@@ -12147,7 +12147,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 22
@@ -12159,7 +12159,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 23
@@ -12171,7 +12171,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 24
@@ -12183,7 +12183,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 25
@@ -12195,7 +12195,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 26
@@ -12207,7 +12207,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Day 27
@@ -12219,7 +12219,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Day 28
@@ -12231,7 +12231,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 1
@@ -12243,7 +12243,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 2
@@ -12255,7 +12255,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 3
@@ -12267,7 +12267,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 4
@@ -12279,7 +12279,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 5
@@ -12291,7 +12291,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 6
@@ -12303,7 +12303,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 7
@@ -12315,7 +12315,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 8
@@ -12327,7 +12327,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 9
@@ -12339,7 +12339,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 10
@@ -12351,7 +12351,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 11
@@ -12363,7 +12363,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 12
@@ -12375,7 +12375,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 13
@@ -12387,7 +12387,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 14
@@ -12399,7 +12399,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 15
@@ -12411,7 +12411,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 16
@@ -12423,7 +12423,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 17
@@ -12435,7 +12435,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 18
@@ -12447,7 +12447,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 19
@@ -12459,7 +12459,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 20
@@ -12471,7 +12471,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 21
@@ -12483,7 +12483,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 22
@@ -12495,7 +12495,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 23
@@ -12507,7 +12507,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 24
@@ -12519,7 +12519,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 25
@@ -12531,7 +12531,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 26
@@ -12543,7 +12543,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Day 27
@@ -12555,7 +12555,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Day 28
@@ -12567,7 +12567,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 1
@@ -12579,7 +12579,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 2
@@ -12591,7 +12591,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 3
@@ -12603,7 +12603,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 4
@@ -12615,7 +12615,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 5
@@ -12627,7 +12627,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 6
@@ -12639,7 +12639,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 7
@@ -12651,7 +12651,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 8
@@ -12663,7 +12663,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 9
@@ -12675,7 +12675,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 10
@@ -12687,7 +12687,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 11
@@ -12699,7 +12699,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 12
@@ -12711,7 +12711,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 13
@@ -12723,7 +12723,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 14
@@ -12735,7 +12735,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 15
@@ -12747,7 +12747,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 16
@@ -12759,7 +12759,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 17
@@ -12771,7 +12771,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 18
@@ -12783,7 +12783,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 19
@@ -12795,7 +12795,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 20
@@ -12807,7 +12807,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 21
@@ -12819,7 +12819,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 22
@@ -12831,7 +12831,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 23
@@ -12843,7 +12843,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 24
@@ -12855,7 +12855,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 25
@@ -12867,7 +12867,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 26
@@ -12879,7 +12879,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Day 27
@@ -12891,7 +12891,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Day 28
@@ -12903,7 +12903,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 1
@@ -12915,7 +12915,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 2
@@ -12927,7 +12927,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 3
@@ -12939,7 +12939,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 4
@@ -12951,7 +12951,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 5
@@ -12963,7 +12963,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 6
@@ -12975,7 +12975,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 7
@@ -12987,7 +12987,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 8
@@ -12999,7 +12999,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 9
@@ -13011,7 +13011,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 10
@@ -13023,7 +13023,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 11
@@ -13035,7 +13035,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 12
@@ -13047,7 +13047,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 13
@@ -13059,7 +13059,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 14
@@ -13071,7 +13071,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 15
@@ -13083,7 +13083,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 16
@@ -13095,7 +13095,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 17
@@ -13107,7 +13107,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 18
@@ -13119,7 +13119,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 19
@@ -13131,7 +13131,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 20
@@ -13143,7 +13143,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 21
@@ -13155,7 +13155,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 22
@@ -13167,7 +13167,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 23
@@ -13179,7 +13179,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 24
@@ -13191,7 +13191,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 25
@@ -13203,7 +13203,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 26
@@ -13215,7 +13215,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Day 27
@@ -13227,7 +13227,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Day 28
@@ -13239,7 +13239,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 1
@@ -13251,7 +13251,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 2
@@ -13263,7 +13263,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 3
@@ -13275,7 +13275,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 4
@@ -13287,7 +13287,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 5
@@ -13299,7 +13299,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 6
@@ -13311,7 +13311,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 7
@@ -13323,7 +13323,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 8
@@ -13335,7 +13335,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 9
@@ -13347,7 +13347,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 10
@@ -13359,7 +13359,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 11
@@ -13371,7 +13371,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 12
@@ -13383,7 +13383,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 13
@@ -13395,7 +13395,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 14
@@ -13407,7 +13407,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 15
@@ -13419,7 +13419,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 16
@@ -13431,7 +13431,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 17
@@ -13443,7 +13443,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 18
@@ -13455,7 +13455,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 19
@@ -13467,7 +13467,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 20
@@ -13479,7 +13479,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 21
@@ -13491,7 +13491,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 22
@@ -13503,7 +13503,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 23
@@ -13515,7 +13515,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 24
@@ -13527,7 +13527,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 25
@@ -13539,7 +13539,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 26
@@ -13551,7 +13551,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Day 27
@@ -13563,7 +13563,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Day 28
@@ -13575,7 +13575,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 1
@@ -13587,7 +13587,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 2
@@ -13599,7 +13599,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 3
@@ -13611,7 +13611,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 4
@@ -13623,7 +13623,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 5
@@ -13635,7 +13635,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 6
@@ -13647,7 +13647,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 7
@@ -13659,7 +13659,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 8
@@ -13671,7 +13671,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 9
@@ -13683,7 +13683,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 10
@@ -13695,7 +13695,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 11
@@ -13707,7 +13707,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 12
@@ -13719,7 +13719,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 13
@@ -13731,7 +13731,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 14
@@ -13743,7 +13743,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 15
@@ -13755,7 +13755,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 16
@@ -13767,7 +13767,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 17
@@ -13779,7 +13779,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 18
@@ -13791,7 +13791,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 19
@@ -13803,7 +13803,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 20
@@ -13815,7 +13815,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 21
@@ -13827,7 +13827,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 22
@@ -13839,7 +13839,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 23
@@ -13851,7 +13851,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 24
@@ -13863,7 +13863,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 25
@@ -13875,7 +13875,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 26
@@ -13887,7 +13887,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Day 27
@@ -13899,7 +13899,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Day 28
@@ -13911,7 +13911,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 1
@@ -13923,7 +13923,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 2
@@ -13935,7 +13935,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 3
@@ -13947,7 +13947,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 4
@@ -13959,7 +13959,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 5
@@ -13971,7 +13971,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 6
@@ -13983,7 +13983,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 7
@@ -13995,7 +13995,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 8
@@ -14007,7 +14007,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 9
@@ -14019,7 +14019,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 10
@@ -14031,7 +14031,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 11
@@ -14043,7 +14043,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 12
@@ -14055,7 +14055,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 13
@@ -14067,7 +14067,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 14
@@ -14079,7 +14079,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 15
@@ -14091,7 +14091,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 16
@@ -14103,7 +14103,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 17
@@ -14115,7 +14115,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 18
@@ -14127,7 +14127,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 19
@@ -14139,7 +14139,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 20
@@ -14151,7 +14151,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 21
@@ -14163,7 +14163,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 22
@@ -14175,7 +14175,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 23
@@ -14187,7 +14187,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 24
@@ -14199,7 +14199,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 25
@@ -14211,7 +14211,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 26
@@ -14223,7 +14223,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Day 27
@@ -14235,7 +14235,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Day 28
@@ -14247,7 +14247,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 1
@@ -14259,7 +14259,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 2
@@ -14271,7 +14271,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 3
@@ -14283,7 +14283,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 4
@@ -14295,7 +14295,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 5
@@ -14307,7 +14307,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 6
@@ -14319,7 +14319,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 7
@@ -14331,7 +14331,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 8
@@ -14343,7 +14343,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 9
@@ -14355,7 +14355,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 10
@@ -14367,7 +14367,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 11
@@ -14379,7 +14379,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 12
@@ -14391,7 +14391,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 13
@@ -14403,7 +14403,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 14
@@ -14415,7 +14415,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 15
@@ -14427,7 +14427,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 16
@@ -14439,7 +14439,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 17
@@ -14451,7 +14451,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 18
@@ -14463,7 +14463,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 19
@@ -14475,7 +14475,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 20
@@ -14487,7 +14487,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 21
@@ -14499,7 +14499,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 22
@@ -14511,7 +14511,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 23
@@ -14523,7 +14523,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 24
@@ -14535,7 +14535,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 25
@@ -14547,7 +14547,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Day 26
@@ -14559,7 +14559,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 27
@@ -14571,7 +14571,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Day 28
@@ -14583,7 +14583,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 1
@@ -14595,7 +14595,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 2
@@ -14607,7 +14607,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 3
@@ -14619,7 +14619,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 4
@@ -14631,7 +14631,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 5
@@ -14643,7 +14643,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 6
@@ -14655,7 +14655,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 7
@@ -14667,7 +14667,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 8
@@ -14679,7 +14679,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 9
@@ -14691,7 +14691,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 10
@@ -14703,7 +14703,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 11
@@ -14715,7 +14715,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 12
@@ -14727,7 +14727,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 13
@@ -14739,7 +14739,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 14
@@ -14751,7 +14751,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 15
@@ -14763,7 +14763,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 16
@@ -14775,7 +14775,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 17
@@ -14787,7 +14787,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 18
@@ -14799,7 +14799,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 19
@@ -14811,7 +14811,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 20
@@ -14823,7 +14823,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 21
@@ -14835,7 +14835,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 22
@@ -14847,7 +14847,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 23
@@ -14859,7 +14859,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 24
@@ -14871,7 +14871,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 25
@@ -14883,7 +14883,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 26
@@ -14895,7 +14895,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Day 27
@@ -14907,7 +14907,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Day 28
@@ -14919,7 +14919,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 1
@@ -14931,7 +14931,7 @@
                     this.GetDayWithIndex(
                         1,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 2
@@ -14943,7 +14943,7 @@
                     this.GetDayWithIndex(
                         2,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 3
@@ -14955,7 +14955,7 @@
                     this.GetDayWithIndex(
                         3,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 4
@@ -14967,7 +14967,7 @@
                     this.GetDayWithIndex(
                         4,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 5
@@ -14979,7 +14979,7 @@
                     this.GetDayWithIndex(
                         5,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 6
@@ -14991,7 +14991,7 @@
                     this.GetDayWithIndex(
                         6,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 7
@@ -15003,7 +15003,7 @@
                     this.GetDayWithIndex(
                         7,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 8
@@ -15015,7 +15015,7 @@
                     this.GetDayWithIndex(
                         8,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 9
@@ -15027,7 +15027,7 @@
                     this.GetDayWithIndex(
                         9,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 10
@@ -15039,7 +15039,7 @@
                     this.GetDayWithIndex(
                         10,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 11
@@ -15051,7 +15051,7 @@
                     this.GetDayWithIndex(
                         11,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 12
@@ -15063,7 +15063,7 @@
                     this.GetDayWithIndex(
                         12,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 13
@@ -15075,7 +15075,7 @@
                     this.GetDayWithIndex(
                         13,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 14
@@ -15087,7 +15087,7 @@
                     this.GetDayWithIndex(
                         14,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 15
@@ -15099,7 +15099,7 @@
                     this.GetDayWithIndex(
                         15,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 16
@@ -15111,7 +15111,7 @@
                     this.GetDayWithIndex(
                         16,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 17
@@ -15123,7 +15123,7 @@
                     this.GetDayWithIndex(
                         17,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 18
@@ -15135,7 +15135,7 @@
                     this.GetDayWithIndex(
                         18,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 19
@@ -15147,7 +15147,7 @@
                     this.GetDayWithIndex(
                         19,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 20
@@ -15159,7 +15159,7 @@
                     this.GetDayWithIndex(
                         20,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 21
@@ -15171,7 +15171,7 @@
                     this.GetDayWithIndex(
                         21,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 22
@@ -15183,7 +15183,7 @@
                     this.GetDayWithIndex(
                         22,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 23
@@ -15195,7 +15195,7 @@
                     this.GetDayWithIndex(
                         23,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 24
@@ -15207,7 +15207,7 @@
                     this.GetDayWithIndex(
                         24,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 25
@@ -15219,7 +15219,7 @@
                     this.GetDayWithIndex(
                         25,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 26
@@ -15231,7 +15231,7 @@
                     this.GetDayWithIndex(
                         26,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Day 27
@@ -15243,7 +15243,7 @@
                     this.GetDayWithIndex(
                         27,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Day 28
@@ -15255,7 +15255,7 @@
                     this.GetDayWithIndex(
                         28,
                         planningHorizon),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             return builder.ToImmutableList();
