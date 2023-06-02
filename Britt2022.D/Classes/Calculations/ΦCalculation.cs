@@ -26,7 +26,7 @@
         private int CalculateτUpperBound(
             Organization iIndexElement,
             RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums)
+            RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums)
         {
             return (int)Math.Floor(
                     Convert.ToDecimal(surgeonLengthOfStayMaximums.Where(w => w.Key == iIndexElement).Select(w => w.Value.Value.Value).SingleOrDefault())
@@ -37,7 +37,7 @@
         private ImmutableList<Tuple<Organization, int>> CalculateτIndex(
             Bundle surgeons,
             RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums)
+            RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums)
         {
             ImmutableList<Tuple<Organization, int>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, int>>();
 
@@ -69,7 +69,7 @@
             RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, int>> τ,
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
+            RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> surgeonDayScenarioLengthOfStayProbabilities)
         {
             decimal? sum = 0;
@@ -98,7 +98,7 @@
             RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
+            RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> surgeonDayScenarioLengthOfStayProbabilities)
         {

@@ -1,10 +1,11 @@
 ﻿namespace Britt2022.D.Interfaces.Calculations
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Immutable;
 
     using Hl7.Fhir.Model;
+
+    using NGenerics.DataStructures.Trees;
 
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.InterfacesFactories.Dependencies.MathNet.Numerics.Distributions;
@@ -17,7 +18,7 @@
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             Organization surgeon,
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
+            RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums,
             double targetMean);
     }
 }

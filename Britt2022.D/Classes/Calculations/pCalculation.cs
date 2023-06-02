@@ -11,10 +11,12 @@
 
     using MathNet.Numerics.Distributions;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.InterfacesFactories.Dependencies.MathNet.Numerics.Distributions;
-
+    
     internal sealed class pCalculation : IpCalculation
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -29,7 +31,7 @@
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             Organization surgeon,
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
+            RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums,
             double targetMean)
         {
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();

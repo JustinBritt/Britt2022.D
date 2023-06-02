@@ -128,7 +128,7 @@
         /// Gets SurgeonLengthOfStayMaximums.
         /// Parameter: h(i)
         /// </summary>
-        ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonLengthOfStayMaximums { get; }
+        RedBlackTree<Organization, INullableValue<int>> SurgeonLengthOfStayMaximums { get; }
 
         /// <summary>
         /// Gets SurgeonMinimumNumberTimeBlocks.
