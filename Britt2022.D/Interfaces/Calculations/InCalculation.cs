@@ -9,7 +9,7 @@
 
     public interface InCalculation
     {
-        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt>> Calculate(
+        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> Calculate(
             INullableValueFactory nullableValueFactory,
             ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> A,
             Duration v);

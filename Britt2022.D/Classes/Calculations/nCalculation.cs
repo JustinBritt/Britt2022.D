@@ -19,7 +19,7 @@
         {
         }
 
-        public ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt>> Calculate(
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> Calculate(
             INullableValueFactory nullableValueFactory,
             ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> A,
             Duration v)
@@ -28,7 +28,7 @@
                 .Select(i => Tuple.Create(
                     i.Item1,
                     i.Item2,
-                    (PositiveInt)nullableValueFactory.Create<int>(
+                    nullableValueFactory.Create<int>(
                         (int)Math.Floor(
                             v.Value.Value
                             /
