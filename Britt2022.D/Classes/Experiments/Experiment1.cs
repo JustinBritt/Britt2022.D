@@ -341,7 +341,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> SurgeonScenarioMaximumNumberPatients { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>> SurgicalOverheads { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> SurgicalOverheads { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
@@ -1508,7 +1508,7 @@
         }
 
         // Parameter: O(i, e)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>> GenerateSurgicalOverheads(
+        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalOverheads(
             INullableValueFactory nullableValueFactory,
             IContinuousUniformFactory continuousUniformFactory,
             ImmutableSortedSet<INullableValue<int>> clusters,
@@ -1520,7 +1520,7 @@
                 lower: lower,
                 upper: upper);
 
-            ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>>();
 
             foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
@@ -1530,7 +1530,7 @@
                         Tuple.Create(
                             surgeon,
                             (INullableValue<int>)cluster,
-                            (FhirDecimal)nullableValueFactory.Create<decimal>(
+                            nullableValueFactory.Create<decimal>(
                                 (decimal)continuousUniform.Sample())));
                 }
             }

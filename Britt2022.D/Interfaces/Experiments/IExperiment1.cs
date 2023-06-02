@@ -152,7 +152,7 @@
         /// Gets the surgical overheads.
         /// Parameter: O(i, e)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>> SurgicalOverheads { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> SurgicalOverheads { get; }
 
         /// <summary>
         /// Gets SurgeonDayScenarioLengthOfStayProbabilities.
