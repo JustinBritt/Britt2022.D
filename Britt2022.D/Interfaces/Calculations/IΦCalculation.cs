@@ -13,7 +13,7 @@
         ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> Calculate(
             INullableValueFactory nullableValueFactory,
             Bundle surgeons,
-            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
+            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon,
             ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,

@@ -258,7 +258,7 @@
             this.SurgeonDayScenarioCumulativeNumberPatients = calculationsAbstractFactory.CreateΦCalculationFactory().Create().Calculate(
                 this.NullableValueFactory,
                 this.Surgeons,
-                this.PlanningHorizon.Select(w => KeyValuePair.Create((PositiveInt)w.Key, w.Value)).ToImmutableList(),
+                this.PlanningHorizon.Select(w => KeyValuePair.Create(w.Key, w.Value)).ToImmutableList(),
                 this.LengthOfStayDays,
                 this.Scenarios,
                 this.SurgeonLengthOfStayMaximums,
