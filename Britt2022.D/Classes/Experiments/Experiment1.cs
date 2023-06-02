@@ -167,6 +167,7 @@
             // SurgeonStrategicTargets
             // N(i)
             this.SurgeonStrategicTargets = this.GenerateSurgeonStrategicTargets(
+                comparersAbstractFactory.CreateOrganizationComparerFactory(),
                 this.Surgeons);
 
             // SurgicalOverheads
@@ -340,7 +341,7 @@
         public RedBlackTree<Organization, INullableValue<int>> SurgeonMinimumNumberTimeBlocks { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonStrategicTargets { get; }
+        public RedBlackTree<Organization, INullableValue<int>> SurgeonStrategicTargets { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> SurgeonScenarioMaximumNumberPatients { get; }
@@ -1179,13 +1180,15 @@
         }
 
         // Parameter: N(i)
-        private ImmutableList<KeyValuePair<Organization, INullableValue<int>>> GenerateSurgeonStrategicTargets(
+        private RedBlackTree<Organization, INullableValue<int>> GenerateSurgeonStrategicTargets(
+            IOrganizationComparerFactory organizationComparerFactory,
             Bundle surgeons)
         {
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, INullableValue<int>>>();
+            RedBlackTree<Organization, INullableValue<int>> redBlackTree = new(
+                organizationComparerFactory.Create());
 
             // Surgeon 1
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "1",
@@ -1194,7 +1197,7 @@
                         20)));
 
             // Surgeon 2
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "2",
@@ -1203,7 +1206,7 @@
                         21)));
 
             // Surgeon 3
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "3",
@@ -1212,7 +1215,7 @@
                         33)));
 
             // Surgeon 4
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "4",
@@ -1221,7 +1224,7 @@
                         23)));
 
             // Surgeon 5
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "5",
@@ -1230,7 +1233,7 @@
                         24)));
 
             // Surgeon 6
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "6",
@@ -1239,7 +1242,7 @@
                         30)));
 
             // Surgeon 7
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "7",
@@ -1248,7 +1251,7 @@
                         28)));
 
             // Surgeon 8
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "8",
@@ -1257,7 +1260,7 @@
                         26)));
 
             // Surgeon 9
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "9",
@@ -1266,7 +1269,7 @@
                         26)));
 
             // Surgeon 10
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "10",
@@ -1275,7 +1278,7 @@
                         34)));
 
             // Surgeon 11
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "11",
@@ -1284,7 +1287,7 @@
                         25)));
 
             // Surgeon 12
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "12",
@@ -1293,7 +1296,7 @@
                         35)));
 
             // Surgeon 13
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "13",
@@ -1302,7 +1305,7 @@
                         25)));
 
             // Surgeon 14
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "14",
@@ -1311,7 +1314,7 @@
                         21)));
 
             // Surgeon 15
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "15",
@@ -1320,7 +1323,7 @@
                         30)));
 
             // Surgeon 16
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "16",
@@ -1329,7 +1332,7 @@
                         22)));
 
             // Surgeon 17
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "17",
@@ -1338,7 +1341,7 @@
                         27)));
 
             // Surgeon 18
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "18",
@@ -1347,7 +1350,7 @@
                         21)));
 
             // Surgeon 19
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "19",
@@ -1356,7 +1359,7 @@
                         26)));
 
             // Surgeon 20
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "20",
@@ -1365,7 +1368,7 @@
                         31)));
 
             // Surgeon 21
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "21",
@@ -1374,7 +1377,7 @@
                         32)));
 
             // Surgeon 22
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "22",
@@ -1383,7 +1386,7 @@
                         31)));
 
             // Surgeon 23
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "23",
@@ -1392,7 +1395,7 @@
                         32)));
 
             // Surgeon 24
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "24",
@@ -1401,7 +1404,7 @@
                         22)));
 
             // Surgeon 25
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "25",
@@ -1410,7 +1413,7 @@
                         29)));
 
             // Surgeon 26
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "26",
@@ -1419,7 +1422,7 @@
                         29)));
 
             // Surgeon 27
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "27",
@@ -1428,7 +1431,7 @@
                         24)));
 
             // Surgeon 28
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "28",
@@ -1437,7 +1440,7 @@
                         30)));
 
             // Surgeon 29
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "29",
@@ -1446,7 +1449,7 @@
                         30)));
 
             // Surgeon 30
-            builder.Add(
+            redBlackTree.Add(
                 KeyValuePair.Create(
                     this.GetSurgeonWithId(
                         "30",
@@ -1454,7 +1457,7 @@
                     this.NullableValueFactory.Create<int>(
                         35)));
 
-            return builder.ToImmutableList();
+            return redBlackTree;
         }
 
         // Parameter: O(i, e)
