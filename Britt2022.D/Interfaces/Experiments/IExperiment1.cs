@@ -194,7 +194,7 @@
         /// Gets SurgeonDayScenarioCumulativeNumberPatients.
         /// Parameter: Φ(i, l, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         /// <summary>
         /// Gets SurgeonDayAvailabilities.

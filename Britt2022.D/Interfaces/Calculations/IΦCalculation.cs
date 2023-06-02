@@ -10,7 +10,7 @@
 
     public interface IΦCalculation
     {
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> Calculate(
+        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> Calculate(
             INullableValueFactory nullableValueFactory,
             Bundle surgeons,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,

@@ -362,7 +362,7 @@
         public ImmutableList<KeyValuePair<INullableValue<int>, FhirDecimal>> ScenarioProbabilities { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> SurgeonDayAvailabilities { get; }
