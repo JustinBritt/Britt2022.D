@@ -203,7 +203,7 @@
             // SurgeonDayAvailabilities
             // Parameter: Ω(i, k)
             this.SurgeonDayAvailabilities = this.GenerateSurgeonDayAvailabilities(
-                this.PlanningHorizon.Select(w => KeyValuePair.Create(w.Key, w.Value)).ToImmutableList(),
+                this.PlanningHorizon,
                 this.Surgeons);
 
             // SurgicalDurations
@@ -5173,7 +5173,7 @@
 
         // Parameter: Ω(i, k)
         private ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> GenerateSurgeonDayAvailabilities(
-            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon,
+            RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             Bundle surgeons)
         {
             ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
@@ -15297,7 +15297,7 @@
 
         private FhirDateTime GetDayWithIndex(
             int index,
-            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon)
+            RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon)
         {
             FhirDateTime day = null;
 
