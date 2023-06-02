@@ -134,7 +134,7 @@
         /// Gets SurgeonMinimumNumberTimeBlocks.
         /// Parameter: L(i)
         /// </summary>
-        ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonMinimumNumberTimeBlocks { get; }
+        RedBlackTree<Organization, INullableValue<int>> SurgeonMinimumNumberTimeBlocks { get; }
 
         /// <summary>
         /// Gets SurgeonStrategicTargets.
