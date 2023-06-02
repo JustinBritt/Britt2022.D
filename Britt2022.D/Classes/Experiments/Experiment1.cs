@@ -323,7 +323,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationStandardDeviations { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>> SurgicalFrequencies { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> SurgicalFrequencies { get; }
 
         /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonMaximumNumberTimeBlocks { get; }
@@ -593,12 +593,12 @@
         }
 
         // Parameter: f(i, e)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>> GenerateSurgicalFrequenciesVanHoudenhoven2007(
+        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalFrequenciesVanHoudenhoven2007(
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
-            ImmutableList<Tuple<Organization, INullableValue<int>, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>>();
 
             VanHoudenhoven2007.InterfacesAbstractFactories.IAbstractFactory abstractFactory = VanHoudenhoven2007.AbstractFactories.AbstractFactory.Create();
             VanHoudenhoven2007.InterfacesAbstractFactories.IContextsAbstractFactory contextsAbstractFactory = abstractFactory.CreateContextsAbstractFactory();
@@ -642,7 +642,7 @@
                             Tuple.Create(
                                 surgeon,
                                 (INullableValue<int>)cluster,
-                                (FhirDecimal)surgicalFrequencyOutputContext.Frequency));
+                                surgicalFrequencyOutputContext.Frequency));
                     }
                 }
             }
