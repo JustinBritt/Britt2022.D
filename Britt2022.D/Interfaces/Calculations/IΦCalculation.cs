@@ -18,6 +18,6 @@
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
-            ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities);
+            ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities);
     }
 }

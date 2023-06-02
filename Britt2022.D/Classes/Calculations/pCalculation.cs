@@ -23,7 +23,7 @@
         {
         }
 
-        public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> GenerateScenarios(
+        public ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> GenerateScenarios(
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
             ImmutableList<PositiveInt> lengthOfStayDays,
@@ -32,7 +32,7 @@
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             double targetMean)
         {
-            ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>();
 
             int lengthOfStayMaximum = surgeonLengthOfStayMaximums
                     .Where(i => i.Key == surgeon)
@@ -75,7 +75,7 @@
                         builder.Add(
                             Tuple.Create(
                                 surgeon,
-                                lengthOfStayDays.Where(i => i.Value.Value == item.x).SingleOrDefault(),
+                                (INullableValue<int>)lengthOfStayDays.Where(i => i.Value.Value == item.x).SingleOrDefault(),
                                 scenarios[w],
                                 (FhirDecimal)nullableValueFactory.Create<decimal>(
                                     (decimal)item.p)));
@@ -86,7 +86,7 @@
                         builder.Add(
                             Tuple.Create(
                                 surgeon,
-                                item,
+                                (INullableValue<int>)item,
                                 scenarios[w],
                                 (FhirDecimal)nullableValueFactory.Create<decimal>(
                                     0)));
