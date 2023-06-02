@@ -25,6 +25,21 @@
             return factory;
         }
 
+        public ILocationComparerFactory CreateLocationComparerFactory()
+        {
+            ILocationComparerFactory factory = null;
+
+            try
+            {
+                factory = new LocationComparerFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public INullableValueintComparerFactory CreateNullableValueintComparerFactory()
         {
             INullableValueintComparerFactory factory = null;
