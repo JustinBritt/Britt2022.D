@@ -182,7 +182,7 @@
         /// Gets SurgeonOperatingRoomAvailabilities.
         /// Parameter: Π(i, j)
         /// </summary>
-        ImmutableList<Tuple<Organization, Location, FhirBoolean>> SurgeonOperatingRoomAvailabilities { get; }
+        ImmutableList<Tuple<Organization, Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
 
         /// <summary>
         /// Gets the scenario probabilities.
