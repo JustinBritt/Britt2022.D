@@ -141,6 +141,7 @@
             // SurgicalSpecialtyStrategicTargetNumberTimeBlocks
             // Parameter: B(r)
             this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = this.GenerateSurgicalSpecialtyStrategicTargetNumberTimeBlocks(
+                comparersAbstractFactory.CreateOrganizationComparerFactory(),
                 this.NullableValueFactory);
 
             // SurgeonMaximumNumberTimeBlocks
@@ -314,7 +315,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
+        public RedBlackTree<Organization, INullableValue<int>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgicalDurations { get; }
@@ -465,54 +466,50 @@
         }
 
         // Parameter: B(r)
-        private ImmutableList<KeyValuePair<Organization, INullableValue<int>>> GenerateSurgicalSpecialtyStrategicTargetNumberTimeBlocks(
+        private RedBlackTree<Organization, INullableValue<int>> GenerateSurgicalSpecialtyStrategicTargetNumberTimeBlocks(
+            IOrganizationComparerFactory organizationComparerFactory,
             INullableValueFactory nullableValueFactory)
         {
-            ImmutableList<KeyValuePair<Organization, INullableValue<int>>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, INullableValue<int>>>();
+            RedBlackTree<Organization, INullableValue<int>> redBlackTree = new(
+                organizationComparerFactory.Create());
 
             // Surgical Specialty 1
-            builder.Add(
-                KeyValuePair.Create(
-                    this.SurgicalSpecialty1GEN,
-                    nullableValueFactory.Create<int>(
-                        36)));
+            redBlackTree.Add(
+                this.SurgicalSpecialty1GEN,
+                nullableValueFactory.Create<int>(
+                    36));
 
             // Surgical Specialty 2
-            builder.Add(
-                KeyValuePair.Create(
-                    this.SurgicalSpecialty2GYN,
-                    nullableValueFactory.Create<int>(
-                        30)));
+            redBlackTree.Add(
+                this.SurgicalSpecialty2GYN,
+                nullableValueFactory.Create<int>(
+                    30));
 
             // Surgical Specialty 3
-            builder.Add(
-                KeyValuePair.Create(
-                    this.SurgicalSpecialty3PLA,
-                    nullableValueFactory.Create<int>(
-                        18)));
+            redBlackTree.Add(
+                this.SurgicalSpecialty3PLA,
+                nullableValueFactory.Create<int>(
+                    18));
 
             // Surgical Specialty 4
-            builder.Add(
-                KeyValuePair.Create(
-                    this.SurgicalSpecialty4ENT,
-                    nullableValueFactory.Create<int>(
-                        12)));
+            redBlackTree.Add(
+                this.SurgicalSpecialty4ENT,
+                nullableValueFactory.Create<int>(
+                    12));
 
             // Surgical Specialty 5
-            builder.Add(
-                KeyValuePair.Create(
-                    this.SurgicalSpecialty5ORT,
-                    nullableValueFactory.Create<int>(
-                        36)));
+            redBlackTree.Add(
+                this.SurgicalSpecialty5ORT,
+                nullableValueFactory.Create<int>(
+                    36));
 
             // Surgical Specialty 6
-            builder.Add(
-                KeyValuePair.Create(
-                    this.SurgicalSpecialty6URO,
-                    nullableValueFactory.Create<int>(
-                        48)));
+            redBlackTree.Add(
+                this.SurgicalSpecialty6URO,
+                nullableValueFactory.Create<int>(
+                    48));
 
-            return builder.ToImmutableList();
+            return redBlackTree;
         }
 
         // Parameter: D(i, e, ω)

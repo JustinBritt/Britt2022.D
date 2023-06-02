@@ -92,7 +92,7 @@
         /// Gets SurgicalSpecialtyStrategicTargetNumberTimeBlocks.
         /// Parameter: B(r)
         /// </summary>
-        ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
+        RedBlackTree<Organization, INullableValue<int>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         /// <summary>
         /// Gets the surgical durations.
