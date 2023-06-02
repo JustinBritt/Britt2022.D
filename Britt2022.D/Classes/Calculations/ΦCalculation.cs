@@ -118,8 +118,8 @@
                         builder.Add(
                             Tuple.Create(
                                 iIndexElement,
-                                (INullableValue<int>)lIndexElement,
-                                (INullableValue<int>)ωIndexElement,
+                                lIndexElement,
+                                ωIndexElement,
                                 nullableValueFactory.Create<decimal>(
                                     surgeonScenarioMaximumNumberPatients
                                     .Where(w => w.Item1 == iIndexElement && w.Item2.Value.Value == ωIndexElement.Value.Value)
