@@ -7,6 +7,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
 
@@ -23,7 +25,7 @@
 
         private int CalculateτUpperBound(
             Organization iIndexElement,
-            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon,
+            RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums)
         {
             return (int)Math.Floor(
@@ -34,7 +36,7 @@
 
         private ImmutableList<Tuple<Organization, int>> CalculateτIndex(
             Bundle surgeons,
-            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon,
+            RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums)
         {
             ImmutableList<Tuple<Organization, int>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, int>>();
@@ -64,7 +66,7 @@
             Organization iIndexElement,
             INullableValue<int> lIndexElement,
             INullableValue<int> ωIndexElement,
-            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon,
+            RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, int>> τ,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
@@ -93,7 +95,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> Calculate(
             INullableValueFactory nullableValueFactory,
             Bundle surgeons,
-            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon,
+            RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
