@@ -158,7 +158,7 @@
         /// Gets SurgeonDayScenarioLengthOfStayProbabilities.
         /// Parameter: p(i, l, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
+        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         /// <summary>
         /// Gets the surgical specialties.

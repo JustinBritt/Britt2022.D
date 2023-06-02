@@ -23,7 +23,7 @@
         {
         }
 
-        public ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>> GenerateScenarios(
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> GenerateScenarios(
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
             ImmutableList<PositiveInt> lengthOfStayDays,
@@ -32,7 +32,7 @@
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             double targetMean)
         {
-            ImmutableList<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, PositiveInt, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>();
 
             int lengthOfStayMaximum = surgeonLengthOfStayMaximums
                     .Where(i => i.Key == surgeon)
@@ -76,7 +76,7 @@
                             Tuple.Create(
                                 surgeon,
                                 (INullableValue<int>)lengthOfStayDays.Where(i => i.Value.Value == item.x).SingleOrDefault(),
-                                scenarios[w],
+                                (INullableValue<int>)scenarios[w],
                                 (FhirDecimal)nullableValueFactory.Create<decimal>(
                                     (decimal)item.p)));
                     }
@@ -87,7 +87,7 @@
                             Tuple.Create(
                                 surgeon,
                                 (INullableValue<int>)item,
-                                scenarios[w],
+                                (INullableValue<int>)scenarios[w],
                                 (FhirDecimal)nullableValueFactory.Create<decimal>(
                                     0)));
                     }
