@@ -1589,7 +1589,7 @@
                         pCalculation.GenerateScenarios(
                             nullableValueFactory,
                             discreteUniformFactory,
-                            this.LengthOfStayDays.Select(w => (PositiveInt)w).ToImmutableList(),
+                            this.LengthOfStayDays,
                             scenarios,
                             surgeon,
                             this.SurgeonLengthOfStayMaximums,

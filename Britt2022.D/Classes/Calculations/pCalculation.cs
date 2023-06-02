@@ -26,7 +26,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> GenerateScenarios(
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
-            ImmutableList<PositiveInt> lengthOfStayDays,
+            ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             Organization surgeon,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
@@ -81,12 +81,12 @@
                                     (decimal)item.p)));
                     }
 
-                    foreach (PositiveInt item in lengthOfStayDays.Where(w => w.Value.Value > lengthOfStayMaximum))
+                    foreach (INullableValue<int> item in lengthOfStayDays.Where(w => w.Value.Value > lengthOfStayMaximum))
                     {
                         builder.Add(
                             Tuple.Create(
                                 surgeon,
-                                (INullableValue<int>)item,
+                                item,
                                 scenarios[w],
                                 nullableValueFactory.Create<decimal>(
                                     0)));
