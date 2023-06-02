@@ -921,10 +921,9 @@
             foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 redBlackTree.Add(
-                    KeyValuePair.Create(
-                        surgeon,
-                        nullableValueFactory.Create<int>(
-                            maximumLengthOfStay)));
+                    surgeon,
+                    nullableValueFactory.Create<int>(
+                        maximumLengthOfStay));
             }
 
             return redBlackTree;
