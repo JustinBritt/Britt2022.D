@@ -330,7 +330,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationStandardDeviations { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> SurgicalFrequencies { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> SurgicalFrequencies { get; }
 
         /// <inheritdoc />
         public RedBlackTree<Organization, INullableValue<int>> SurgeonMaximumNumberTimeBlocks { get; }
@@ -598,12 +598,13 @@
         }
 
         // Parameter: f(i, e)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalFrequenciesVanHoudenhoven2007(
+        private RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalFrequenciesVanHoudenhoven2007(
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>>();
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> outerRedBlackTree = new(
+                    new OrganizationComparer());
 
             VanHoudenhoven2007.InterfacesAbstractFactories.IAbstractFactory abstractFactory = VanHoudenhoven2007.AbstractFactories.AbstractFactory.Create();
             VanHoudenhoven2007.InterfacesAbstractFactories.IContextsAbstractFactory contextsAbstractFactory = abstractFactory.CreateContextsAbstractFactory();
@@ -631,6 +632,9 @@
 
                 foreach (Organization surgeon in item.Item2)
                 {
+                    RedBlackTree<INullableValue<int>, INullableValue<decimal>> innerRedBlackTree = new(
+                        new NullableValueintComparer());
+
                     foreach (INullableValue<int> cluster in clusters)
                     {
                         VanHoudenhoven2007.Interfaces.Contexts.SurgicalFrequencies.ISurgicalFrequencyInputContext surgicalFrequencyInputContext = contextsAbstractFactory.CreateSurgicalFrequencyInputContextFactory().Create(
@@ -643,16 +647,18 @@
                             abstractFactory: abstractFactory,
                             surgicalFrequencyInputContext: surgicalFrequencyInputContext);
 
-                        builder.Add(
-                            Tuple.Create(
-                                surgeon,
-                                cluster,
-                                surgicalFrequencyOutputContext.Frequency));
+                        innerRedBlackTree.Add(
+                            cluster,
+                            surgicalFrequencyOutputContext.Frequency);
                     }
+
+                    outerRedBlackTree.Add(
+                        surgeon,
+                        innerRedBlackTree);
                 }
             }
 
-            return builder.ToImmutableList();
+            return outerRedBlackTree;
         }
 
         // Parameter: H(i)

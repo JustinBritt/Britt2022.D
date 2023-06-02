@@ -8,9 +8,11 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
-
+    
     internal sealed class ACalculation : IACalculation
     {
         private ILog Log => LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -25,7 +27,7 @@
             Bundle surgeons,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> D,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> f,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> f,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> O)
         {
             return surgeons.Entry
@@ -47,9 +49,7 @@
                             .Select(j => j.Item3.Value.Value)
                             .SingleOrDefault()
                             *
-                            f.Where(j => j.Item1 == i.Item1 && j.Item2 == k)
-                            .Select(j => j.Item3.Value.Value)
-                            .SingleOrDefault())
+                            f[i.Item1][k].Value.Value)
                         .Sum())))
                 .ToImmutableList();
         }

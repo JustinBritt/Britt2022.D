@@ -116,7 +116,7 @@
         /// Gets the surgical frequencies.
         /// Parameter: f(i, e)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> SurgicalFrequencies { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> SurgicalFrequencies { get; }
 
         /// <summary>
         /// Gets SurgeonMaximumNumberTimeBlocks.

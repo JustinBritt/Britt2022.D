@@ -5,6 +5,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
 
     public interface IACalculation
@@ -15,7 +17,7 @@
             Bundle surgeons,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> D,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> f,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> f,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> O);
     }
 }
