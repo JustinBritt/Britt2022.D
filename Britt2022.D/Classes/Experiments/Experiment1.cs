@@ -344,7 +344,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> SurgicalOverheads { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
@@ -362,7 +362,7 @@
         public ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>> ScenarioProbabilities { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> SurgeonDayAvailabilities { get; }
@@ -1539,7 +1539,7 @@
         }
 
         // Parameter: p(i, l, ω)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> GenerateSurgeonDayScenarioLengthOfStayProbabilitiesVanOostrum2011(
+        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> GenerateSurgeonDayScenarioLengthOfStayProbabilitiesVanOostrum2011(
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
             IpCalculation pCalculation,
@@ -1547,7 +1547,7 @@
             Bundle surgeons,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
         {
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 
             VanOostrum2011.InterfacesAbstractFactories.IAbstractFactory abstractFactory = VanOostrum2011.AbstractFactories.AbstractFactory.Create();
             VanOostrum2011.InterfacesAbstractFactories.IContextsAbstractFactory contextsAbstractFactory = abstractFactory.CreateContextsAbstractFactory();

@@ -10,7 +10,7 @@
 
     public interface IΦCalculation
     {
-        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> Calculate(
+        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> Calculate(
             INullableValueFactory nullableValueFactory,
             Bundle surgeons,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
@@ -18,6 +18,6 @@
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities);
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> surgeonDayScenarioLengthOfStayProbabilities);
     }
 }

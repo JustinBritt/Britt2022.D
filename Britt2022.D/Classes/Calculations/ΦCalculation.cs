@@ -68,7 +68,7 @@
             ImmutableList<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, int>> τ,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities)
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> surgeonDayScenarioLengthOfStayProbabilities)
         {
             decimal? sum = 0;
 
@@ -90,7 +90,7 @@
             return sum;
         }
 
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> Calculate(
+        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> Calculate(
             INullableValueFactory nullableValueFactory,
             Bundle surgeons,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
@@ -98,9 +98,9 @@
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities)
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> surgeonDayScenarioLengthOfStayProbabilities)
         {
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>>();
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 
             ImmutableList<Tuple<Organization, int>> τ = this.CalculateτIndex(
                 surgeons,
@@ -118,7 +118,7 @@
                                 iIndexElement,
                                 (INullableValue<int>)lIndexElement,
                                 (INullableValue<int>)ωIndexElement,
-                                (FhirDecimal)nullableValueFactory.Create<decimal>(
+                                nullableValueFactory.Create<decimal>(
                                     surgeonScenarioMaximumNumberPatients
                                     .Where(w => w.Item1 == iIndexElement && w.Item2.Value.Value == ωIndexElement.Value.Value)
                                     .Select(w => w.Item3.Value.Value)
