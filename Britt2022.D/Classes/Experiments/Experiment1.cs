@@ -579,7 +579,7 @@
                                 nullableValueFactory: nullableValueFactory,
                                 logNormalFactory: logNormalFactory,
                                 cluster: cluster,
-                                scenarios: scenarios.Select(w => (PositiveInt)w).ToImmutableList(),
+                                scenarios: scenarios,
                                 surgeon: surgeon,
                                 µ: (double)surgicalDurationAverageOutputContext.Duration.ToHour(
                                     durationFactory).Value.Value,
