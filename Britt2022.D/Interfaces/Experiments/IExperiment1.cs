@@ -188,7 +188,7 @@
         /// Gets the scenario probabilities.
         /// Parameter: Ρ(ω)
         /// </summary>
-        ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> ScenarioProbabilities { get; }
+        ImmutableList<KeyValuePair<INullableValue<int>, FhirDecimal>> ScenarioProbabilities { get; }
 
         /// <summary>
         /// Gets SurgeonDayScenarioCumulativeNumberPatients.
