@@ -324,12 +324,6 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgicalDurations { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationMeans { get; }
-
-        /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationStandardDeviations { get; }
-
-        /// <inheritdoc />
         public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> SurgicalFrequencies { get; }
 
         /// <inheritdoc />

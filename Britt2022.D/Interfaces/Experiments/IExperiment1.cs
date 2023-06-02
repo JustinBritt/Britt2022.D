@@ -101,18 +101,6 @@
         ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgicalDurations { get; }
 
         /// <summary>
-        /// Gets SurgeonClusterDurationMeans.
-        /// Parameter: D(i, e, ω) (Means)
-        /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationMeans { get; }
-
-        /// <summary>
-        /// Gets SurgeonClusterDurationStandardDeviations.
-        /// Parameter: D(i, e, ω) (Standard deviations)
-        /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> SurgeonClusterDurationStandardDeviations { get; }
-
-        /// <summary>
         /// Gets the surgical frequencies.
         /// Parameter: f(i, e)
         /// </summary>
