@@ -62,7 +62,7 @@
 
         private decimal? CalculatepSum(
             Organization iIndexElement,
-            PositiveInt lIndexElement,
+            INullableValue<int> lIndexElement,
             INullableValue<int> ωIndexElement,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
             ImmutableList<INullableValue<int>> lengthOfStayDays,
@@ -111,7 +111,7 @@
             {
                 foreach (Organization iIndexElement in surgeons.Entry.Where(x => x.Resource is Organization).Select(x => (Organization)x.Resource))
                 {
-                    foreach (PositiveInt lIndexElement in lengthOfStayDays)
+                    foreach (INullableValue<int> lIndexElement in lengthOfStayDays)
                     {
                         builder.Add(
                             Tuple.Create(
