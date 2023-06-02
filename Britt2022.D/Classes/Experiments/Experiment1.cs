@@ -626,7 +626,7 @@
 
                 foreach (Organization surgeon in item.Item2)
                 {
-                    foreach (PositiveInt cluster in clusters)
+                    foreach (INullableValue<int> cluster in clusters)
                     {
                         VanHoudenhoven2007.Interfaces.Contexts.SurgicalFrequencies.ISurgicalFrequencyInputContext surgicalFrequencyInputContext = contextsAbstractFactory.CreateSurgicalFrequencyInputContextFactory().Create(
                             category: cluster,
@@ -641,7 +641,7 @@
                         builder.Add(
                             Tuple.Create(
                                 surgeon,
-                                (INullableValue<int>)cluster,
+                                cluster,
                                 surgicalFrequencyOutputContext.Frequency));
                     }
                 }
