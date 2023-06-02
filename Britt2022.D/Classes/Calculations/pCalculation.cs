@@ -27,7 +27,7 @@
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
             ImmutableList<PositiveInt> lengthOfStayDays,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableList<INullableValue<int>> scenarios,
             Organization surgeon,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             double targetMean)
@@ -87,7 +87,7 @@
                             Tuple.Create(
                                 surgeon,
                                 (INullableValue<int>)item,
-                                (INullableValue<int>)scenarios[w],
+                                scenarios[w],
                                 nullableValueFactory.Create<decimal>(
                                     0)));
                     }

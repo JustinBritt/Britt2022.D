@@ -15,7 +15,7 @@
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
             ImmutableList<PositiveInt> lengthOfStayDays,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableList<INullableValue<int>> scenarios,
             Organization surgeon,
             ImmutableList<KeyValuePair<Organization, INullableValue<int>>> surgeonLengthOfStayMaximums,
             double targetMean);
