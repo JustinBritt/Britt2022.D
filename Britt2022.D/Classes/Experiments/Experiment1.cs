@@ -353,13 +353,13 @@
         public Duration TimeBlockLength { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>> GoalWeights { get; }
+        public ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GoalWeights { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, Location, FhirBoolean>> SurgeonOperatingRoomAvailabilities { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<INullableValue<int>, FhirDecimal>> ScenarioProbabilities { get; }
+        public ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>> ScenarioProbabilities { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, FhirDecimal>> SurgeonDayScenarioCumulativeNumberPatients { get; }
@@ -1746,97 +1746,97 @@
         }
 
         // Parameters: (w1, w2, w3, w4)
-        private ImmutableList<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>> GenerateGoalWeights(
+        private ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GenerateGoalWeights(
             INullableValueFactory nullableValueFactory)
         {
-            ImmutableList<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>>.Builder builder = ImmutableList.CreateBuilder<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>>();
+            ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>>();
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1)));
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         20),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1)));
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         20),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1)));
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         20),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1)));
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         20)));
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         40),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         5),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         15),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         10)));
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         5),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         50),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         20),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         100)));
 
             builder.Add(
                 Tuple.Create(
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         100),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         25),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         1),
-                    (FhirDecimal)nullableValueFactory.Create<decimal>(
+                    nullableValueFactory.Create<decimal>(
                         15)));
 
             return builder.ToImmutableList();
@@ -5091,81 +5091,81 @@
         }
 
         // Parameter: Ρ(ω)
-        private ImmutableList<KeyValuePair<INullableValue<int>, FhirDecimal>> GenerateScenarioProbabilities(
+        private ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>> GenerateScenarioProbabilities(
             INullableValueFactory nullableValueFactory,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             int numberScenarios)
         {
-            ImmutableList<KeyValuePair<INullableValue<int>, FhirDecimal>>.Builder scenarioProbabilitiesBuilder = ImmutableList.CreateBuilder<KeyValuePair<INullableValue<int>, FhirDecimal>>();
+            ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>>.Builder scenarioProbabilitiesBuilder = ImmutableList.CreateBuilder<KeyValuePair<INullableValue<int>, INullableValue<decimal>>>();
 
             INullableValue<decimal> probability = nullableValueFactory.Create<decimal>((decimal)1/(decimal)numberScenarios);
 
             scenarioProbabilitiesBuilder.AddRange(
-                new List<KeyValuePair<INullableValue<int>, FhirDecimal>>()
+                new List<KeyValuePair<INullableValue<int>, INullableValue<decimal>>>()
                 {
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 1).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 2).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 3).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 4).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 5).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 6).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 7).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 8).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 9).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 10).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 11).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 12).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 13).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 14).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 15).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
 
                     KeyValuePair.Create(
                         scenarios.Where(i => i.Value.Value == 16).SingleOrDefault(),
-                        (FhirDecimal)probability),
+                        probability),
                 });
 
             return scenarioProbabilitiesBuilder.ToImmutableList();

@@ -176,7 +176,7 @@
         /// Gets the goal weights.
         /// Parameter: (w1, w2, w3, w4)
         /// </summary>
-        ImmutableList<Tuple<FhirDecimal, FhirDecimal, FhirDecimal, FhirDecimal>> GoalWeights { get; }
+        ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GoalWeights { get; }
 
         /// <summary>
         /// Gets SurgeonOperatingRoomAvailabilities.
@@ -188,7 +188,7 @@
         /// Gets the scenario probabilities.
         /// Parameter: Ρ(ω)
         /// </summary>
-        ImmutableList<KeyValuePair<INullableValue<int>, FhirDecimal>> ScenarioProbabilities { get; }
+        ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>> ScenarioProbabilities { get; }
 
         /// <summary>
         /// Gets SurgeonDayScenarioCumulativeNumberPatients.
