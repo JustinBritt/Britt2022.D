@@ -47,26 +47,26 @@
                         normalµ,
                         normalσ);
 
-                foreach (PositiveInt scenario in scenarios)
+                foreach (INullableValue<int> scenario in scenarios)
                 {
                     builder.Add(
                         Tuple.Create(
                             surgeon,
                             cluster,
-                            (INullableValue<int>)scenario,
+                            scenario,
                             nullableValueFactory.Create<decimal>(
                                 (decimal)logNormal.Sample())));
                 }
             }
             else
             {
-                foreach (PositiveInt scenario in scenarios)
+                foreach (INullableValue<int> scenario in scenarios)
                 {
                     builder.Add(
                         Tuple.Create(
                             surgeon,
-                            (INullableValue<int>)cluster,
-                            (INullableValue<int>)scenario,
+                            cluster,
+                            scenario,
                             nullableValueFactory.Create<decimal>(
                                 0m)));
                 }
