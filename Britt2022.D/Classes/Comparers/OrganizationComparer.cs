@@ -17,8 +17,8 @@
         }
 
         public int Compare(
-                Organization x,
-                Organization y)
+            Organization x,
+            Organization y)
         {
             return String.CompareOrdinal(
                 x.Id,
