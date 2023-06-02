@@ -1843,9 +1843,9 @@
         }
 
         // Parameter: Π(i, j)
-        private ImmutableList<Tuple<Organization, Location, FhirBoolean>> GenerateSurgeonOperatingRoomAvailabilities()
+        private ImmutableList<Tuple<Organization, Location, INullableValue<bool>>> GenerateSurgeonOperatingRoomAvailabilities()
         {
-            ImmutableList<Tuple<Organization, Location, FhirBoolean>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, Location, FhirBoolean>>();
+            ImmutableList<Tuple<Organization, Location, INullableValue<bool>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, Location, INullableValue<bool>>>();
 
             // Surgeon 1, Operating Room 1
             builder.Add(
@@ -1856,7 +1856,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 2
@@ -1868,7 +1868,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 3
@@ -1880,7 +1880,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 4
@@ -1892,7 +1892,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 5
@@ -1904,7 +1904,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 6
@@ -1916,7 +1916,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 7
@@ -1928,7 +1928,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 8
@@ -1940,7 +1940,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 1, Operating Room 9
@@ -1952,7 +1952,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 1
@@ -1964,7 +1964,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 2
@@ -1976,7 +1976,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 3
@@ -1988,7 +1988,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 4
@@ -2000,7 +2000,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 5
@@ -2012,7 +2012,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 6
@@ -2024,7 +2024,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 7
@@ -2036,7 +2036,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 8
@@ -2048,7 +2048,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 2, Operating Room 9
@@ -2060,7 +2060,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 1
@@ -2072,7 +2072,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 2
@@ -2084,7 +2084,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 3
@@ -2096,7 +2096,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 4
@@ -2108,7 +2108,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 5
@@ -2120,7 +2120,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 6
@@ -2132,7 +2132,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 7
@@ -2144,7 +2144,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 8
@@ -2156,7 +2156,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 3, Operating Room 9
@@ -2168,7 +2168,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 1
@@ -2180,7 +2180,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 2
@@ -2192,7 +2192,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 3
@@ -2204,7 +2204,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 4
@@ -2216,7 +2216,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 5
@@ -2228,7 +2228,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 6
@@ -2240,7 +2240,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 7
@@ -2252,7 +2252,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 8
@@ -2264,7 +2264,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 4, Operating Room 9
@@ -2276,7 +2276,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 1
@@ -2288,7 +2288,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 2
@@ -2300,7 +2300,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 3
@@ -2312,7 +2312,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 4
@@ -2324,7 +2324,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 5
@@ -2336,7 +2336,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 6
@@ -2348,7 +2348,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 7
@@ -2360,7 +2360,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 8
@@ -2372,7 +2372,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 5, Operating Room 9
@@ -2384,7 +2384,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 1
@@ -2396,7 +2396,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 2
@@ -2408,7 +2408,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 6, Operating Room 3
@@ -2420,7 +2420,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 4
@@ -2432,7 +2432,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 5
@@ -2444,7 +2444,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 6
@@ -2456,7 +2456,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 7
@@ -2468,7 +2468,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 8
@@ -2480,7 +2480,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 6, Operating Room 9
@@ -2492,7 +2492,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Operating Room 1
@@ -2504,7 +2504,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Operating Room 2
@@ -2516,7 +2516,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 7, Operating Room 3
@@ -2528,7 +2528,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Operating Room 4
@@ -2540,7 +2540,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Operating Room 5
@@ -2552,7 +2552,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Operating Room 6
@@ -2564,7 +2564,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Operating Room 7
@@ -2576,7 +2576,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Operating Room 8
@@ -2588,7 +2588,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 7, Operating Room 9
@@ -2600,7 +2600,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Operating Room 1
@@ -2612,7 +2612,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Operating Room 2
@@ -2624,7 +2624,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 8, Operating Room 3
@@ -2636,7 +2636,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Operating Room 4
@@ -2648,7 +2648,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Operating Room 5
@@ -2660,7 +2660,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Operating Room 6
@@ -2672,7 +2672,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Operating Room 7
@@ -2684,7 +2684,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Operating Room 8
@@ -2696,7 +2696,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 8, Operating Room 9
@@ -2708,7 +2708,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Operating Room 1
@@ -2720,7 +2720,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Operating Room 2
@@ -2732,7 +2732,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 9, Operating Room 3
@@ -2744,7 +2744,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Operating Room 4
@@ -2756,7 +2756,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Operating Room 5
@@ -2768,7 +2768,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Operating Room 6
@@ -2780,7 +2780,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Operating Room 7
@@ -2792,7 +2792,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Operating Room 8
@@ -2804,7 +2804,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 9, Operating Room 9
@@ -2816,7 +2816,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Operating Room 1
@@ -2828,7 +2828,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Operating Room 2
@@ -2840,7 +2840,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 10, Operating Room 3
@@ -2852,7 +2852,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Operating Room 4
@@ -2864,7 +2864,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Operating Room 5
@@ -2876,7 +2876,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Operating Room 6
@@ -2888,7 +2888,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Operating Room 7
@@ -2900,7 +2900,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Operating Room 8
@@ -2912,7 +2912,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 10, Operating Room 9
@@ -2924,7 +2924,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Operating Room 1
@@ -2936,7 +2936,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Operating Room 2
@@ -2948,7 +2948,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 11, Operating Room 3
@@ -2960,7 +2960,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Operating Room 4
@@ -2972,7 +2972,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Operating Room 5
@@ -2984,7 +2984,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Operating Room 6
@@ -2996,7 +2996,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Operating Room 7
@@ -3008,7 +3008,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Operating Room 8
@@ -3020,7 +3020,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 11, Operating Room 9
@@ -3032,7 +3032,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Operating Room 1
@@ -3044,7 +3044,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Operating Room 2
@@ -3056,7 +3056,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 12, Operating Room 3
@@ -3068,7 +3068,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Operating Room 4
@@ -3080,7 +3080,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Operating Room 5
@@ -3092,7 +3092,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Operating Room 6
@@ -3104,7 +3104,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Operating Room 7
@@ -3116,7 +3116,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Operating Room 8
@@ -3128,7 +3128,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 12, Operating Room 9
@@ -3140,7 +3140,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Operating Room 1
@@ -3152,7 +3152,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Operating Room 2
@@ -3164,7 +3164,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 13, Operating Room 3
@@ -3176,7 +3176,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Operating Room 4
@@ -3188,7 +3188,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Operating Room 5
@@ -3200,7 +3200,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Operating Room 6
@@ -3212,7 +3212,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Operating Room 7
@@ -3224,7 +3224,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Operating Room 8
@@ -3236,7 +3236,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 13, Operating Room 9
@@ -3248,7 +3248,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Operating Room 1
@@ -3260,7 +3260,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Operating Room 2
@@ -3272,7 +3272,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 14, Operating Room 3
@@ -3284,7 +3284,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Operating Room 4
@@ -3296,7 +3296,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Operating Room 5
@@ -3308,7 +3308,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Operating Room 6
@@ -3320,7 +3320,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Operating Room 7
@@ -3332,7 +3332,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Operating Room 8
@@ -3344,7 +3344,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 14, Operating Room 9
@@ -3356,7 +3356,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Operating Room 1
@@ -3368,7 +3368,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Operating Room 2
@@ -3380,7 +3380,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 15, Operating Room 3
@@ -3392,7 +3392,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Operating Room 4
@@ -3404,7 +3404,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Operating Room 5
@@ -3416,7 +3416,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Operating Room 6
@@ -3428,7 +3428,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Operating Room 7
@@ -3440,7 +3440,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Operating Room 8
@@ -3452,7 +3452,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 15, Operating Room 9
@@ -3464,7 +3464,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Operating Room 1
@@ -3476,7 +3476,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Operating Room 2
@@ -3488,7 +3488,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 16, Operating Room 3
@@ -3500,7 +3500,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Operating Room 4
@@ -3512,7 +3512,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Operating Room 5
@@ -3524,7 +3524,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Operating Room 6
@@ -3536,7 +3536,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Operating Room 7
@@ -3548,7 +3548,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Operating Room 8
@@ -3560,7 +3560,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 16, Operating Room 9
@@ -3572,7 +3572,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Operating Room 1
@@ -3584,7 +3584,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Operating Room 2
@@ -3596,7 +3596,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 17, Operating Room 3
@@ -3608,7 +3608,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Operating Room 4
@@ -3620,7 +3620,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Operating Room 5
@@ -3632,7 +3632,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Operating Room 6
@@ -3644,7 +3644,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Operating Room 7
@@ -3656,7 +3656,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Operating Room 8
@@ -3668,7 +3668,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 17, Operating Room 9
@@ -3680,7 +3680,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Operating Room 1
@@ -3692,7 +3692,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Operating Room 2
@@ -3704,7 +3704,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 18, Operating Room 3
@@ -3716,7 +3716,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Operating Room 4
@@ -3728,7 +3728,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Operating Room 5
@@ -3740,7 +3740,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Operating Room 6
@@ -3752,7 +3752,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Operating Room 7
@@ -3764,7 +3764,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Operating Room 8
@@ -3776,7 +3776,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 18, Operating Room 9
@@ -3788,7 +3788,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 1
@@ -3800,7 +3800,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 2
@@ -3812,7 +3812,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 19, Operating Room 3
@@ -3824,7 +3824,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 4
@@ -3836,7 +3836,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 5
@@ -3848,7 +3848,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 6
@@ -3860,7 +3860,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 7
@@ -3872,7 +3872,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 8
@@ -3884,7 +3884,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 19, Operating Room 9
@@ -3896,7 +3896,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 1
@@ -3908,7 +3908,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 2
@@ -3920,7 +3920,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 20, Operating Room 3
@@ -3932,7 +3932,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 4
@@ -3944,7 +3944,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 5
@@ -3956,7 +3956,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 6
@@ -3968,7 +3968,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 7
@@ -3980,7 +3980,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 8
@@ -3992,7 +3992,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 20, Operating Room 9
@@ -4004,7 +4004,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 1
@@ -4016,7 +4016,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 2
@@ -4028,7 +4028,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 21, Operating Room 3
@@ -4040,7 +4040,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 4
@@ -4052,7 +4052,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 5
@@ -4064,7 +4064,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 6
@@ -4076,7 +4076,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 7
@@ -4088,7 +4088,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 8
@@ -4100,7 +4100,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 21, Operating Room 9
@@ -4112,7 +4112,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 1
@@ -4124,7 +4124,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 2
@@ -4136,7 +4136,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 22, Operating Room 3
@@ -4148,7 +4148,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 4
@@ -4160,7 +4160,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 5
@@ -4172,7 +4172,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 6
@@ -4184,7 +4184,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 7
@@ -4196,7 +4196,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 8
@@ -4208,7 +4208,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 22, Operating Room 9
@@ -4220,7 +4220,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 1
@@ -4232,7 +4232,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 2
@@ -4244,7 +4244,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 23, Operating Room 3
@@ -4256,7 +4256,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 4
@@ -4268,7 +4268,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 5
@@ -4280,7 +4280,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 6
@@ -4292,7 +4292,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 7
@@ -4304,7 +4304,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 8
@@ -4316,7 +4316,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 23, Operating Room 9
@@ -4328,7 +4328,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 1
@@ -4340,7 +4340,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 2
@@ -4352,7 +4352,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 24, Operating Room 3
@@ -4364,7 +4364,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 4
@@ -4376,7 +4376,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 5
@@ -4388,7 +4388,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 6
@@ -4400,7 +4400,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 7
@@ -4412,7 +4412,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 8
@@ -4424,7 +4424,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 24, Operating Room 9
@@ -4436,7 +4436,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 1
@@ -4448,7 +4448,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 2
@@ -4460,7 +4460,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 25, Operating Room 3
@@ -4472,7 +4472,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 4
@@ -4484,7 +4484,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 5
@@ -4496,7 +4496,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 6
@@ -4508,7 +4508,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 7
@@ -4520,7 +4520,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 8
@@ -4532,7 +4532,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 25, Operating Room 9
@@ -4544,7 +4544,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 1
@@ -4556,7 +4556,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 2
@@ -4568,7 +4568,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 26, Operating Room 3
@@ -4580,7 +4580,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 4
@@ -4592,7 +4592,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 5
@@ -4604,7 +4604,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 6
@@ -4616,7 +4616,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 7
@@ -4628,7 +4628,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 8
@@ -4640,7 +4640,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 26, Operating Room 9
@@ -4652,7 +4652,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 1
@@ -4664,7 +4664,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 2
@@ -4676,7 +4676,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 27, Operating Room 3
@@ -4688,7 +4688,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 4
@@ -4700,7 +4700,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 5
@@ -4712,7 +4712,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 6
@@ -4724,7 +4724,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 7
@@ -4736,7 +4736,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 8
@@ -4748,7 +4748,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 27, Operating Room 9
@@ -4760,7 +4760,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 1
@@ -4772,7 +4772,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 2
@@ -4784,7 +4784,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 28, Operating Room 3
@@ -4796,7 +4796,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 4
@@ -4808,7 +4808,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 5
@@ -4820,7 +4820,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 6
@@ -4832,7 +4832,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 7
@@ -4844,7 +4844,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 8
@@ -4856,7 +4856,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 28, Operating Room 9
@@ -4868,7 +4868,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Operating Room 1
@@ -4880,7 +4880,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Operating Room 2
@@ -4892,7 +4892,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Operating Room 3
@@ -4904,7 +4904,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Operating Room 4
@@ -4916,7 +4916,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Operating Room 5
@@ -4928,7 +4928,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Operating Room 6
@@ -4940,7 +4940,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 29, Operating Room 7
@@ -4952,7 +4952,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Operating Room 8
@@ -4964,7 +4964,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 29, Operating Room 9
@@ -4976,7 +4976,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Operating Room 1
@@ -4988,7 +4988,7 @@
                     this.GetOperatingRoomWithId(
                         "1",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Operating Room 2
@@ -5000,7 +5000,7 @@
                     this.GetOperatingRoomWithId(
                         "2",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Operating Room 3
@@ -5012,7 +5012,7 @@
                     this.GetOperatingRoomWithId(
                         "3",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Operating Room 4
@@ -5024,7 +5024,7 @@
                     this.GetOperatingRoomWithId(
                         "4",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Operating Room 5
@@ -5036,7 +5036,7 @@
                     this.GetOperatingRoomWithId(
                         "5",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Operating Room 6
@@ -5048,7 +5048,7 @@
                     this.GetOperatingRoomWithId(
                         "6",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         false)));
 
             // Surgeon 30, Operating Room 7
@@ -5060,7 +5060,7 @@
                     this.GetOperatingRoomWithId(
                         "7",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Operating Room 8
@@ -5072,7 +5072,7 @@
                     this.GetOperatingRoomWithId(
                         "8",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             // Surgeon 30, Operating Room 9
@@ -5084,7 +5084,7 @@
                     this.GetOperatingRoomWithId(
                         "9",
                         this.OperatingRooms),
-                    (FhirBoolean)this.NullableValueFactory.Create<bool>(
+                    this.NullableValueFactory.Create<bool>(
                         true)));
 
             return builder.ToImmutableList();
