@@ -188,7 +188,7 @@
         /// Gets the scenario probabilities.
         /// Parameter: Ρ(ω)
         /// </summary>
-        ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>> ScenarioProbabilities { get; }
+        RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioProbabilities { get; }
 
         /// <summary>
         /// Gets SurgeonDayScenarioCumulativeNumberPatients.

@@ -202,6 +202,7 @@
             // Parameter: Ρ(ω)
             // Each scenario currently has an equal probability.
             this.ScenarioProbabilities = this.GenerateScenarioProbabilities(
+                comparersAbstractFactory.CreateNullableValueintComparerFactory(),
                 this.NullableValueFactory,
                 this.Scenarios,
                 numberScenarios);
@@ -365,7 +366,7 @@
         public ImmutableList<Tuple<Organization, Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>> ScenarioProbabilities { get; }
+        public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioProbabilities { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
@@ -5044,84 +5045,82 @@
         }
 
         // Parameter: Ρ(ω)
-        private ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>> GenerateScenarioProbabilities(
+        private RedBlackTree<INullableValue<int>, INullableValue<decimal>> GenerateScenarioProbabilities(
+            INullableValueintComparerFactory nullableValueintComparerFactory,
             INullableValueFactory nullableValueFactory,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             int numberScenarios)
         {
-            ImmutableList<KeyValuePair<INullableValue<int>, INullableValue<decimal>>>.Builder scenarioProbabilitiesBuilder = ImmutableList.CreateBuilder<KeyValuePair<INullableValue<int>, INullableValue<decimal>>>();
+            RedBlackTree<INullableValue<int>, INullableValue<decimal>> redBlackTree = new(
+                nullableValueintComparerFactory.Create());
 
             INullableValue<decimal> probability = nullableValueFactory.Create<decimal>((decimal)1/(decimal)numberScenarios);
 
-            scenarioProbabilitiesBuilder.AddRange(
-                new List<KeyValuePair<INullableValue<int>, INullableValue<decimal>>>()
-                {
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 1).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 1).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 2).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 2).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 3).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 3).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 4).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 4).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 5).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 5).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 6).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 6).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 7).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 7).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 8).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 8).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 9).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 9).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 10).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 10).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 11).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 11).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 12).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 12).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 13).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 13).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 14).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 14).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 15).SingleOrDefault(),
-                        probability),
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 15).SingleOrDefault(),
+                probability);
 
-                    KeyValuePair.Create(
-                        scenarios.Where(i => i.Value.Value == 16).SingleOrDefault(),
-                        probability),
-                });
+            redBlackTree.Add(
+                scenarios.Where(i => i.Value.Value == 16).SingleOrDefault(),
+                probability);
 
-            return scenarioProbabilitiesBuilder.ToImmutableList();
+            return redBlackTree;
         }
 
         // Parameter: Ω(i, k)
