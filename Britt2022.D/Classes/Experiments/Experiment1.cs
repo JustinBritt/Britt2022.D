@@ -1524,12 +1524,12 @@
 
             foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
-                foreach (PositiveInt cluster in clusters)
+                foreach (INullableValue<int> cluster in clusters)
                 {
                     builder.Add(
                         Tuple.Create(
                             surgeon,
-                            (INullableValue<int>)cluster,
+                            cluster,
                             nullableValueFactory.Create<decimal>(
                                 (decimal)continuousUniform.Sample())));
                 }
