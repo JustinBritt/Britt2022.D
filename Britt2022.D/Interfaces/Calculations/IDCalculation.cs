@@ -13,7 +13,7 @@
         ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> CalculateLogNormal(
             INullableValueFactory nullableValueFactory,
             ILogNormalFactory logNormalFactory,
-            PositiveInt cluster,
+            INullableValue<int> cluster,
             ImmutableList<PositiveInt> scenarios,
             Organization surgeon,
             double µ,

@@ -550,7 +550,7 @@
 
                 foreach (Organization surgeon in item.Item2)
                 {
-                    foreach (PositiveInt cluster in clusters)
+                    foreach (INullableValue<int> cluster in clusters)
                     {
                         VanHoudenhoven2007.Interfaces.Contexts.SurgicalDurations.ISurgicalDurationInputContext surgicalDurationAverageInputContext = contextsAbstractFactory.CreateSurgicalDurationInputContextFactory().Create(
                             category: cluster,

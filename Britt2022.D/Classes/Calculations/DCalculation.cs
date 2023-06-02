@@ -24,7 +24,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> CalculateLogNormal(
             INullableValueFactory nullableValueFactory,
             ILogNormalFactory logNormalFactory,
-            PositiveInt cluster,
+            INullableValue<int> cluster,
             ImmutableList<PositiveInt> scenarios,
             Organization surgeon,
             double µ,
@@ -52,7 +52,7 @@
                     builder.Add(
                         Tuple.Create(
                             surgeon,
-                            (INullableValue<int>)cluster,
+                            cluster,
                             (INullableValue<int>)scenario,
                             nullableValueFactory.Create<decimal>(
                                 (decimal)logNormal.Sample())));
