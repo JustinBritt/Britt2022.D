@@ -348,7 +348,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> SurgeonScenarioMaximumNumberPatients { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> SurgicalOverheads { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> SurgicalOverheads { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
@@ -1438,7 +1438,7 @@
         }
 
         // Parameter: O(i, e)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalOverheads(
+        private RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalOverheads(
             INullableValueFactory nullableValueFactory,
             IContinuousUniformFactory continuousUniformFactory,
             ImmutableSortedSet<INullableValue<int>> clusters,
@@ -1446,6 +1446,9 @@
             double lower,
             double upper)
         {
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> outerRedBlackTree = new(
+                new OrganizationComparer());
+
             IContinuousDistribution continuousUniform = continuousUniformFactory.Create(
                 lower: lower,
                 upper: upper);
@@ -1454,18 +1457,23 @@
 
             foreach (Organization surgeon in surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
+                RedBlackTree<INullableValue<int>, INullableValue<decimal>> innerRedBlackTree = new(
+                    new NullableValueintComparer());
+
                 foreach (INullableValue<int> cluster in clusters)
                 {
-                    builder.Add(
-                        Tuple.Create(
-                            surgeon,
-                            cluster,
-                            nullableValueFactory.Create<decimal>(
-                                (decimal)continuousUniform.Sample())));
+                    innerRedBlackTree.Add(
+                        cluster,
+                        nullableValueFactory.Create<decimal>(
+                            (decimal)continuousUniform.Sample()));
                 }
+
+                outerRedBlackTree.Add(
+                    surgeon,
+                    innerRedBlackTree);
             }
 
-            return builder.ToImmutableList();
+            return outerRedBlackTree;
         }
 
         // Parameter: p(i, l, ω)

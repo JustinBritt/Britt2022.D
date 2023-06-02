@@ -28,7 +28,7 @@
             ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> D,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> f,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<decimal>>> O)
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> O)
         {
             return surgeons.Entry
                 .Where(x => x.Resource is Organization)
@@ -45,9 +45,7 @@
                             .Select(j => j.Item4.Value.Value)
                             .SingleOrDefault()
                             *
-                            O.Where(j => j.Item1 == i.Item1 && j.Item2 == k)
-                            .Select(j => j.Item3.Value.Value)
-                            .SingleOrDefault()
+                            O[i.Item1][k].Value.Value
                             *
                             f[i.Item1][k].Value.Value)
                         .Sum())))
