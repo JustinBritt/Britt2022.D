@@ -105,6 +105,7 @@
             int maximumLengthOfStay = 5;
 
             this.LengthOfStayDays = this.GenerateLengthOfStayDays(
+                comparersAbstractFactory.CreateNullableValueintComparerFactory(),
                 this.NullableValueFactory,
                 planningHorizonLength);
 
@@ -284,7 +285,7 @@
         public RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
         /// <inheritdoc />
-        public ImmutableList<INullableValue<int>> LengthOfStayDays { get; }
+        public ImmutableSortedSet<INullableValue<int>> LengthOfStayDays { get; }
 
         /// <inheritdoc />
         public Organization SurgicalSpecialty1GEN { get; }
@@ -436,14 +437,16 @@
         }
 
         // Index: l, where h(i) is the maximum for surgeon i
-        private ImmutableList<INullableValue<int>> GenerateLengthOfStayDays(
+        private ImmutableSortedSet<INullableValue<int>> GenerateLengthOfStayDays(
+            INullableValueintComparerFactory nullableValueintComparerFactory,
             INullableValueFactory nullableValueFactory,
             int maximumLengthOfStay)
         {
             return Enumerable
                 .Range(0, maximumLengthOfStay + 1)
                 .Select(i => nullableValueFactory.Create<int>(i))
-                .ToImmutableList();
+                .ToImmutableSortedSet(
+                nullableValueintComparerFactory.Create());
         }
 
         // Index: ω
