@@ -332,7 +332,7 @@
         public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonLengthOfStayMaximums { get; }
 
         /// <inheritdoc />
-        public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMinimumNumberTimeBlocks { get; }
+        public ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonMinimumNumberTimeBlocks { get; }
 
         /// <inheritdoc />
         public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonStrategicTargets { get; }
@@ -950,10 +950,10 @@
         }
 
         // Parameter: L(i)
-        private ImmutableList<KeyValuePair<Organization, PositiveInt>> GenerateSurgeonMinimumNumberTimeBlocks(
+        private ImmutableList<KeyValuePair<Organization, INullableValue<int>>> GenerateSurgeonMinimumNumberTimeBlocks(
             Bundle surgeons)
         {
-            ImmutableList<KeyValuePair<Organization, PositiveInt>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, PositiveInt>>();
+            ImmutableList<KeyValuePair<Organization, INullableValue<int>>>.Builder builder = ImmutableList.CreateBuilder<KeyValuePair<Organization, INullableValue<int>>>();
 
             // Surgeon 1
             builder.Add(
@@ -961,7 +961,7 @@
                     this.GetSurgeonWithId(
                         "1",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         1)));
 
             // Surgeon 2
@@ -970,7 +970,7 @@
                     this.GetSurgeonWithId(
                         "2",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         5)));
 
             // Surgeon 3
@@ -979,7 +979,7 @@
                     this.GetSurgeonWithId(
                         "3",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         1)));
 
             // Surgeon 4
@@ -988,7 +988,7 @@
                     this.GetSurgeonWithId(
                         "4",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         5)));
 
             // Surgeon 5
@@ -997,7 +997,7 @@
                     this.GetSurgeonWithId(
                         "5",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 6
@@ -1006,7 +1006,7 @@
                     this.GetSurgeonWithId(
                         "6",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         5)));
 
             // Surgeon 7
@@ -1015,7 +1015,7 @@
                     this.GetSurgeonWithId(
                         "7",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         3)));
 
             // Surgeon 8
@@ -1024,7 +1024,7 @@
                     this.GetSurgeonWithId(
                         "8",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 9
@@ -1033,7 +1033,7 @@
                     this.GetSurgeonWithId(
                         "9",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 10
@@ -1042,7 +1042,7 @@
                     this.GetSurgeonWithId(
                         "10",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         4)));
 
             // Surgeon 11
@@ -1051,7 +1051,7 @@
                     this.GetSurgeonWithId(
                         "11",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         3)));
 
             // Surgeon 12
@@ -1060,7 +1060,7 @@
                     this.GetSurgeonWithId(
                         "12",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         5)));
 
             // Surgeon 13
@@ -1069,7 +1069,7 @@
                     this.GetSurgeonWithId(
                         "13",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         1)));
 
             // Surgeon 14
@@ -1078,7 +1078,7 @@
                     this.GetSurgeonWithId(
                         "14",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         1)));
 
             // Surgeon 15
@@ -1087,7 +1087,7 @@
                     this.GetSurgeonWithId(
                         "15",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 16
@@ -1096,7 +1096,7 @@
                     this.GetSurgeonWithId(
                         "16",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         4)));
 
             // Surgeon 17
@@ -1105,7 +1105,7 @@
                     this.GetSurgeonWithId(
                         "17",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         3)));
 
             // Surgeon 18
@@ -1114,7 +1114,7 @@
                     this.GetSurgeonWithId(
                         "18",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 19
@@ -1123,7 +1123,7 @@
                     this.GetSurgeonWithId(
                         "19",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 20
@@ -1132,7 +1132,7 @@
                     this.GetSurgeonWithId(
                         "20",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 21
@@ -1141,7 +1141,7 @@
                     this.GetSurgeonWithId(
                         "21",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         3)));
 
             // Surgeon 22
@@ -1150,7 +1150,7 @@
                     this.GetSurgeonWithId(
                         "22",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         1)));
 
             // Surgeon 23
@@ -1159,7 +1159,7 @@
                     this.GetSurgeonWithId(
                         "23",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         5)));
 
             // Surgeon 24
@@ -1168,7 +1168,7 @@
                     this.GetSurgeonWithId(
                         "24",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         3)));
 
             // Surgeon 25
@@ -1177,7 +1177,7 @@
                     this.GetSurgeonWithId(
                         "25",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         2)));
 
             // Surgeon 26
@@ -1186,7 +1186,7 @@
                     this.GetSurgeonWithId(
                         "26",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         5)));
 
             // Surgeon 27
@@ -1195,7 +1195,7 @@
                     this.GetSurgeonWithId(
                         "27",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         1)));
 
             // Surgeon 28
@@ -1204,7 +1204,7 @@
                     this.GetSurgeonWithId(
                         "28",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         4)));
 
             // Surgeon 29
@@ -1213,7 +1213,7 @@
                     this.GetSurgeonWithId(
                         "29",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         3)));
 
             // Surgeon 30
@@ -1222,7 +1222,7 @@
                     this.GetSurgeonWithId(
                         "30",
                         surgeons),
-                    (PositiveInt)this.NullableValueFactory.Create<int>(
+                    this.NullableValueFactory.Create<int>(
                         4)));
 
             return builder.ToImmutableList();

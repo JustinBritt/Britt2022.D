@@ -134,7 +134,7 @@
         /// Gets SurgeonMinimumNumberTimeBlocks.
         /// Parameter: L(i)
         /// </summary>
-        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMinimumNumberTimeBlocks { get; }
+        ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonMinimumNumberTimeBlocks { get; }
 
         /// <summary>
         /// Gets SurgeonStrategicTargets.
