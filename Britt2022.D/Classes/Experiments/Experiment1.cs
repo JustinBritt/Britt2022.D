@@ -1590,7 +1590,7 @@
                             nullableValueFactory,
                             discreteUniformFactory,
                             this.LengthOfStayDays.Select(w => (PositiveInt)w).ToImmutableList(),
-                            scenarios,
+                            scenarios.ToImmutableList(),
                             surgeon,
                             this.SurgeonLengthOfStayMaximums,
                             (double)patientLengthOfStayOutputContext.Duration.Value.Value));
