@@ -140,7 +140,7 @@
         /// Gets SurgeonStrategicTargets.
         /// Parameter: N(i)
         /// </summary>
-        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonStrategicTargets { get; }
+        ImmutableList<KeyValuePair<Organization, INullableValue<int>>> SurgeonStrategicTargets { get; }
 
         /// <summary>
         /// Gets SurgeonScenarioMaximumNumberPatients.
