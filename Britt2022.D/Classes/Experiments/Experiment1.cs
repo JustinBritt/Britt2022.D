@@ -203,7 +203,7 @@
             // SurgeonDayAvailabilities
             // Parameter: Ω(i, k)
             this.SurgeonDayAvailabilities = this.GenerateSurgeonDayAvailabilities(
-                this.PlanningHorizon.Select(w => KeyValuePair.Create((PositiveInt)w.Key, w.Value)).ToImmutableList(),
+                this.PlanningHorizon.Select(w => KeyValuePair.Create(w.Key, w.Value)).ToImmutableList(),
                 this.Surgeons);
 
             // SurgicalDurations
@@ -5173,7 +5173,7 @@
 
         // Parameter: Ω(i, k)
         private ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> GenerateSurgeonDayAvailabilities(
-            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
+            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon,
             Bundle surgeons)
         {
             ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
@@ -15297,11 +15297,11 @@
 
         private FhirDateTime GetDayWithIndex(
             int index,
-            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon)
+            ImmutableList<KeyValuePair<INullableValue<int>, FhirDateTime>> planningHorizon)
         {
             FhirDateTime day = null;
 
-            foreach (KeyValuePair<PositiveInt, FhirDateTime> item in planningHorizon)
+            foreach (KeyValuePair<INullableValue<int>, FhirDateTime> item in planningHorizon)
             {
                 if (item.Key.Value.Value.Equals(index))
                 {
