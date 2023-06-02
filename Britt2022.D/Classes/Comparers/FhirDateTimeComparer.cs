@@ -17,8 +17,8 @@
         }
 
         public int Compare(
-                FhirDateTime x,
-                FhirDateTime y)
+            FhirDateTime x,
+            FhirDateTime y)
         {
             return x.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime
                 .CompareTo(

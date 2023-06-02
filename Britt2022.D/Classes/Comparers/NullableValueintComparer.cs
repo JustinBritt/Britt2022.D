@@ -15,8 +15,8 @@
         }
 
         public int Compare(
-                INullableValue<int> x,
-                INullableValue<int> y)
+            INullableValue<int> x,
+            INullableValue<int> y)
         {
             return x.Value.Value.CompareTo(
                 y.Value.Value);
