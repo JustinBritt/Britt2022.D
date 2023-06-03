@@ -133,7 +133,7 @@
         /// Gets SurgeonScenarioMaximumNumberPatients.
         /// Parameter: n(i, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> SurgeonScenarioMaximumNumberPatients { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioMaximumNumberPatients { get; }
 
         /// <summary>
         /// Gets the surgical overheads.

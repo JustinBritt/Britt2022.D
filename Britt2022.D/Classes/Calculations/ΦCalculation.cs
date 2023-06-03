@@ -96,7 +96,7 @@
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioLengthOfStayProbabilities)
         {
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
@@ -118,10 +118,7 @@
                                 lIndexElement,
                                 ωIndexElement,
                                 nullableValueFactory.Create<decimal>(
-                                    surgeonScenarioMaximumNumberPatients
-                                    .Where(w => w.Item1 == iIndexElement && w.Item2.Value.Value == ωIndexElement.Value.Value)
-                                    .Select(w => w.Item3.Value.Value)
-                                    .SingleOrDefault()
+                                    surgeonScenarioMaximumNumberPatients[iIndexElement][ωIndexElement].Value.Value
                                     *
                                     this.CalculatepSum(
                                         iIndexElement,
