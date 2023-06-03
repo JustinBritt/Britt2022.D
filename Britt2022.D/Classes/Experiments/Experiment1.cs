@@ -256,15 +256,8 @@
 
             // SurgeonDayScenarioCumulativeNumberPatients
             // Parameter: Φ(i, l, ω)
-            this.SurgeonDayScenarioCumulativeNumberPatients = calculationsAbstractFactory.CreateΦCalculationFactory().Create().Calculate(
-                this.NullableValueFactory,
-                this.Surgeons,
-                this.PlanningHorizon,
-                this.LengthOfStayDays,
-                this.Scenarios,
-                this.SurgeonLengthOfStayMaximums,
-                this.SurgeonScenarioMaximumNumberPatients,
-                this.SurgeonDayScenarioLengthOfStayProbabilities);
+            this.SurgeonDayScenarioCumulativeNumberPatients = this.GenerateSurgeonDayScenarioCumulativeNumberPatients(
+                calculationsAbstractFactory.CreateΦCalculationFactory());
         }
 
         /// <summary>
@@ -357,7 +350,7 @@
         public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioProbabilities { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         /// <inheritdoc />
         public RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> SurgeonDayAvailabilities { get; }
@@ -15356,6 +15349,52 @@
                 outerRedBlackTree.Add(
                     surgeon,
                     innerRedBlackTree);
+            }
+
+            return outerRedBlackTree;
+        }
+
+        private RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> GenerateSurgeonDayScenarioCumulativeNumberPatients(
+            IΦCalculationFactory ΦCalculationFactory)
+        {
+            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> Φ = ΦCalculationFactory.Create().Calculate(
+                this.NullableValueFactory,
+                this.Surgeons,
+                this.PlanningHorizon,
+                this.LengthOfStayDays,
+                this.Scenarios,
+                this.SurgeonLengthOfStayMaximums,
+                this.SurgeonScenarioMaximumNumberPatients,
+                this.SurgeonDayScenarioLengthOfStayProbabilities);
+
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> outerRedBlackTree = new(
+                new OrganizationComparer());
+
+            foreach (Organization surgeon in this.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            {
+                RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> firstInnerRedBlackTree = new(
+                    new NullableValueintComparer());
+
+                foreach (INullableValue<int> day in this.LengthOfStayDays)
+                {
+                    RedBlackTree<INullableValue<int>, INullableValue<decimal>> secondInnerRedBlackTree = new(
+                        new NullableValueintComparer());
+
+                    foreach (INullableValue<int> scenario in this.Scenarios)
+                    {
+                        secondInnerRedBlackTree.Add(
+                            scenario,
+                            Φ.Where(w => w.Item1 == surgeon && w.Item2 == day && w.Item3 == scenario).Select(w => w.Item4).SingleOrDefault());
+                    }
+
+                    firstInnerRedBlackTree.Add(
+                        day,
+                        secondInnerRedBlackTree);
+                }
+
+                outerRedBlackTree.Add(
+                    surgeon,
+                    firstInnerRedBlackTree);
             }
 
             return outerRedBlackTree;

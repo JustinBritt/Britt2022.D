@@ -181,7 +181,7 @@
         /// Gets SurgeonDayScenarioCumulativeNumberPatients.
         /// Parameter: Φ(i, l, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         /// <summary>
         /// Gets SurgeonDayAvailabilities.
