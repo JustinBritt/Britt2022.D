@@ -1,7 +1,6 @@
 ﻿namespace Britt2022.D.Interfaces.Experiments
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Immutable;
 
     using Hl7.Fhir.Model;
