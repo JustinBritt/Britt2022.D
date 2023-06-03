@@ -345,7 +345,7 @@
         public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> SurgicalOverheads { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         /// <inheritdoc />
         public ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
@@ -1502,7 +1502,7 @@
         }
 
         // Parameter: p(i, l, ω)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> GenerateSurgeonDayScenarioLengthOfStayProbabilitiesVanOostrum2011(
+        private RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> GenerateSurgeonDayScenarioLengthOfStayProbabilitiesVanOostrum2011(
             INullableValueFactory nullableValueFactory,
             IDiscreteUniformFactory discreteUniformFactory,
             IpCalculation pCalculation,
@@ -1560,7 +1560,38 @@
                 }
             }
 
-            return builder.ToImmutableList();
+            //
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> outerRedBlackTree = new(
+                new OrganizationComparer());
+
+            foreach (Organization surgeon in this.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            {
+                RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> firstInnerRedBlackTree = new(
+                    new NullableValueintComparer());
+
+                foreach (INullableValue<int> day in this.LengthOfStayDays)
+                {
+                    RedBlackTree<INullableValue<int>, INullableValue<decimal>> secondInnerRedBlackTree = new(
+                        new NullableValueintComparer());
+
+                    foreach (INullableValue<int> scenario in this.Scenarios)
+                    {
+                        secondInnerRedBlackTree.Add(
+                            scenario,
+                            builder.Where(w => w.Item1 == surgeon && w.Item2 == day && w.Item3 == scenario).Select(w => w.Item4).SingleOrDefault());
+                    }
+
+                    firstInnerRedBlackTree.Add(
+                        day,
+                        secondInnerRedBlackTree);
+                }
+
+                outerRedBlackTree.Add(
+                    surgeon,
+                    firstInnerRedBlackTree);
+            }
+
+            return outerRedBlackTree;
         }
 
         // S(r)

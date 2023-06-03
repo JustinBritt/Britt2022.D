@@ -70,7 +70,7 @@
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             ImmutableList<Tuple<Organization, int>> τ,
             RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> surgeonDayScenarioLengthOfStayProbabilities)
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioLengthOfStayProbabilities)
         {
             decimal? sum = 0;
 
@@ -82,10 +82,7 @@
 
                 for (int lPrime = lPrimeLowerBound; lPrime <= lPrimeUpperBound; lPrime = lPrime + 1)
                 {
-                    sum += surgeonDayScenarioLengthOfStayProbabilities
-                        .Where(w => w.Item1 == iIndexElement && w.Item2.Value.Value == lPrime && w.Item3.Value.Value == ωIndexElement.Value.Value)
-                        .Select(w => w.Item4.Value.Value)
-                        .SingleOrDefault();
+                    sum += surgeonDayScenarioLengthOfStayProbabilities[iIndexElement][lengthOfStayDays.Where(w => w.Value.Value == lPrime).SingleOrDefault()][ωIndexElement].Value.Value;
                 }
             }
 
@@ -100,7 +97,7 @@
             ImmutableSortedSet<INullableValue<int>> scenarios,
             RedBlackTree<Organization, INullableValue<int>> surgeonLengthOfStayMaximums,
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> surgeonDayScenarioLengthOfStayProbabilities)
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioLengthOfStayProbabilities)
         {
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 

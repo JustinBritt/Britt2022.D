@@ -145,7 +145,7 @@
         /// Gets SurgeonDayScenarioLengthOfStayProbabilities.
         /// Parameter: p(i, l, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         /// <summary>
         /// Gets the surgical specialties.
