@@ -335,7 +335,7 @@
         public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
+        public RedBlackTree<Organization, ImmutableSortedSet<Organization>> SurgicalSpecialties { get; }
 
         /// <inheritdoc />
         public Duration TimeBlockLength { get; }
@@ -542,7 +542,7 @@
             ImmutableSortedSet<INullableValue<int>> clusters,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             Bundle surgeons,
-            ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
+            RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties)
         {
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 
@@ -552,9 +552,9 @@
             VanHoudenhoven2007.InterfacesAbstractFactories.IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
             VanHoudenhoven2007.InterfacesAbstractFactories.IExportsAbstractFactory exportsAbstractFactory = abstractFactory.CreateExportsAbstractFactory();
 
-            foreach (Tuple<Organization, ImmutableList<Organization>> item in surgicalSpecialties)
+            foreach (KeyValuePair<Organization, ImmutableSortedSet<Organization>> item in surgicalSpecialties)
             {
-                CodeableConcept specialty = item.Item1.Id switch
+                CodeableConcept specialty = item.Key.Id switch
                 {
                     "1" => dependenciesAbstractFactory.CreateCodeableConceptFactory().CreateGeneralSurgery(),
 
@@ -571,7 +571,7 @@
                     _ => null
                 };
 
-                foreach (Organization surgeon in item.Item2)
+                foreach (Organization surgeon in item.Value)
                 {
                     foreach (INullableValue<int> cluster in clusters)
                     {
@@ -651,7 +651,7 @@
         private RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalFrequenciesVanHoudenhoven2007(
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
-            ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
+            RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties)
         {
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> outerRedBlackTree = new(
                     new OrganizationComparer());
@@ -661,9 +661,9 @@
             VanHoudenhoven2007.InterfacesAbstractFactories.IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
             VanHoudenhoven2007.InterfacesAbstractFactories.IExportsAbstractFactory exportsAbstractFactory = abstractFactory.CreateExportsAbstractFactory();
 
-            foreach (Tuple<Organization, ImmutableList<Organization>> item in surgicalSpecialties)
+            foreach (KeyValuePair<Organization, ImmutableSortedSet<Organization>> item in surgicalSpecialties)
             {
-                CodeableConcept specialty = item.Item1.Id switch
+                CodeableConcept specialty = item.Key.Id switch
                 {
                     "1" => dependenciesAbstractFactory.CreateCodeableConceptFactory().CreateGeneralSurgery(),
 
@@ -680,7 +680,7 @@
                     _ => null
                 };
 
-                foreach (Organization surgeon in item.Item2)
+                foreach (Organization surgeon in item.Value)
                 {
                     RedBlackTree<INullableValue<int>, INullableValue<decimal>> innerRedBlackTree = new(
                         new NullableValueintComparer());
@@ -1567,7 +1567,7 @@
             IpCalculation pCalculation,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             Bundle surgeons,
-            ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties)
+            RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties)
         {
             ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 
@@ -1576,9 +1576,9 @@
             VanOostrum2011.InterfacesAbstractFactories.IDependenciesAbstractFactory dependenciesAbstractFactory = abstractFactory.CreateDependenciesAbstractFactory();
             VanOostrum2011.InterfacesAbstractFactories.IExportsAbstractFactory exportsAbstractFactory = abstractFactory.CreateExportsAbstractFactory();
 
-            foreach (Tuple<Organization, ImmutableList<Organization>> item in surgicalSpecialties)
+            foreach (KeyValuePair<Organization, ImmutableSortedSet<Organization>> item in surgicalSpecialties)
             {
-                CodeableConcept specialty = item.Item1.Id switch
+                CodeableConcept specialty = item.Key.Id switch
                 {
                     "1" => dependenciesAbstractFactory.CreateCodeableConceptFactory().CreateGeneralSurgery(),
 
@@ -1605,7 +1605,7 @@
                     abstractFactory: abstractFactory,
                     patientLengthOfStayInputContext: patientLengthOfStayInputContext);
 
-                foreach (Organization surgeon in item.Item2)
+                foreach (Organization surgeon in item.Value)
                 {
                     builder.AddRange(
                         pCalculation.GenerateScenarios(
@@ -1654,148 +1654,198 @@
         }
 
         // S(r)
-        private ImmutableList<Tuple<Organization, ImmutableList<Organization>>> GenerateSurgicalSpecialties()
+        private RedBlackTree<Organization, ImmutableSortedSet<Organization>> GenerateSurgicalSpecialties()
         {
-            ImmutableList<Tuple<Organization, ImmutableList<Organization>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, ImmutableList<Organization>>>();
+            RedBlackTree<Organization, ImmutableSortedSet<Organization>> redBlackTree = new(
+                new OrganizationComparer());
 
-            builder.AddRange(
-                new List<Tuple<Organization, ImmutableList<Organization>>>()
-                {
-                        Tuple.Create(
-                            this.SurgicalSpecialty1GEN,
-                            new List<Organization>()
-                            {
-                                this.GetSurgeonWithId(
-                                    "1",
-                                    this.Surgeons),
-                                this.GetSurgeonWithId(
-                                    "2",
-                                    this.Surgeons),
-                                this.GetSurgeonWithId(
-                                    "3",
-                                    this.Surgeons),
-                                this.GetSurgeonWithId(
-                                    "4",
-                                    this.Surgeons),
-                                this.GetSurgeonWithId(
-                                    "5",
-                                    this.Surgeons),
-                                this.GetSurgeonWithId(
-                                    "6",
-                                    this.Surgeons)
-                        }
-                        .ToImmutableList()),
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty1GENBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
 
-                    Tuple.Create(
-                        this.SurgicalSpecialty2GYN,
-                        new List<Organization>()
-                        {
-                            this.GetSurgeonWithId(
-                                    "7",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "8",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "9",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "10",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "11",
-                                    this.Surgeons)
-                        }
-                        .ToImmutableList()),
+            surgicalSpecialty1GENBuilder.Add(
+                this.GetSurgeonWithId(
+                    "1",
+                    this.Surgeons));
 
-                    Tuple.Create(
-                        this.SurgicalSpecialty3PLA,
-                        new List<Organization>()
-                        {
-                           this.GetSurgeonWithId(
-                                    "12",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "13",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "14",
-                                    this.Surgeons)
-                        }
-                        .ToImmutableList()),
+            surgicalSpecialty1GENBuilder.Add(
+                this.GetSurgeonWithId(
+                    "2",
+                    this.Surgeons));
 
-                    Tuple.Create(
-                        this.SurgicalSpecialty4ENT,
-                        new List<Organization>()
-                        {
-                            this.GetSurgeonWithId(
-                                    "15",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "16",
-                                    this.Surgeons)
-                        }
-                        .ToImmutableList()),
+            surgicalSpecialty1GENBuilder.Add(
+                this.GetSurgeonWithId(
+                    "3",
+                    this.Surgeons));
 
-                    Tuple.Create(
-                        this.SurgicalSpecialty5ORT,
-                        new List<Organization>()
-                        {
-                            this.GetSurgeonWithId(
-                                    "17",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "18",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "19",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "20",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "21",
-                                    this.Surgeons),
-                            this.GetSurgeonWithId(
-                                    "22",
-                                    this.Surgeons)
-                        }
-                        .ToImmutableList()),
+            surgicalSpecialty1GENBuilder.Add(
+                this.GetSurgeonWithId(
+                    "4",
+                    this.Surgeons));
 
-                    Tuple.Create(
-                        this.SurgicalSpecialty6URO,
-                        new List<Organization>()
-                        {
-                           this.GetSurgeonWithId(
-                                    "23",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "24",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "25",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "26",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "27",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "28",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "29",
-                                    this.Surgeons),
-                           this.GetSurgeonWithId(
-                                    "30",
-                                    this.Surgeons)
-                        }
-                        .ToImmutableList())
-                }
-                .ToImmutableList());
-            
-            return builder.ToImmutableList();
+            surgicalSpecialty1GENBuilder.Add(
+                this.GetSurgeonWithId(
+                    "5",
+                    this.Surgeons));
+
+            surgicalSpecialty1GENBuilder.Add(
+                this.GetSurgeonWithId(
+                    "6",
+                    this.Surgeons));
+
+            redBlackTree.Add(
+                this.SurgicalSpecialty1GEN,
+                surgicalSpecialty1GENBuilder.ToImmutableSortedSet());
+
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty2GYNBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+
+            surgicalSpecialty2GYNBuilder.Add(
+                this.GetSurgeonWithId(
+                    "7",
+                    this.Surgeons));
+
+            surgicalSpecialty2GYNBuilder.Add(
+                this.GetSurgeonWithId(
+                    "8",
+                    this.Surgeons));
+
+            surgicalSpecialty2GYNBuilder.Add(
+                this.GetSurgeonWithId(
+                    "9",
+                    this.Surgeons));
+
+            surgicalSpecialty2GYNBuilder.Add(
+                this.GetSurgeonWithId(
+                    "10",
+                    this.Surgeons));
+
+            surgicalSpecialty2GYNBuilder.Add(
+                this.GetSurgeonWithId(
+                    "11",
+                    this.Surgeons));
+
+            redBlackTree.Add(
+                this.SurgicalSpecialty2GYN,
+                surgicalSpecialty2GYNBuilder.ToImmutableSortedSet());
+
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty3PLABuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+
+            surgicalSpecialty3PLABuilder.Add(
+                this.GetSurgeonWithId(
+                    "12",
+                    this.Surgeons));
+
+            surgicalSpecialty3PLABuilder.Add(
+                this.GetSurgeonWithId(
+                    "13",
+                    this.Surgeons));
+
+            surgicalSpecialty3PLABuilder.Add(
+                this.GetSurgeonWithId(
+                    "14",
+                    this.Surgeons));
+
+            redBlackTree.Add(
+                this.SurgicalSpecialty3PLA,
+                surgicalSpecialty3PLABuilder.ToImmutableSortedSet());
+
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty4ENTBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+
+            surgicalSpecialty4ENTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "15",
+                    this.Surgeons));
+
+            surgicalSpecialty4ENTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "16",
+                    this.Surgeons));
+
+            redBlackTree.Add(
+                this.SurgicalSpecialty4ENT,
+                surgicalSpecialty4ENTBuilder.ToImmutableSortedSet());
+
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty5ORTBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+
+            surgicalSpecialty5ORTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "17",
+                    this.Surgeons));
+
+            surgicalSpecialty5ORTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "18",
+                    this.Surgeons));
+
+            surgicalSpecialty5ORTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "19",
+                    this.Surgeons));
+
+            surgicalSpecialty5ORTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "20",
+                    this.Surgeons));
+
+            surgicalSpecialty5ORTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "21",
+                    this.Surgeons));
+
+            surgicalSpecialty5ORTBuilder.Add(
+                this.GetSurgeonWithId(
+                    "22",
+                    this.Surgeons));
+
+            redBlackTree.Add(
+                this.SurgicalSpecialty5ORT,
+                surgicalSpecialty5ORTBuilder.ToImmutableSortedSet());
+
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty6UROBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "23",
+                    this.Surgeons));
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "24",
+                    this.Surgeons));
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "25",
+                    this.Surgeons));
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "26",
+                    this.Surgeons));
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "27",
+                    this.Surgeons));
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "28",
+                    this.Surgeons));
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "29",
+                    this.Surgeons));
+
+            surgicalSpecialty6UROBuilder.Add(
+                this.GetSurgeonWithId(
+                    "30",
+                    this.Surgeons));
+
+            redBlackTree.Add(
+                this.SurgicalSpecialty6URO,
+                surgicalSpecialty6UROBuilder.ToImmutableSortedSet());
+
+            return redBlackTree;
         }
 
         // Parameters: (w1, w2, w3, w4)

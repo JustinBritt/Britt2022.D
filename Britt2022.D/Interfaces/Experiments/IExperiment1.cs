@@ -151,7 +151,7 @@
         /// Gets the surgical specialties.
         /// Parameter: S(r)
         /// </summary>
-        ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
+        RedBlackTree<Organization, ImmutableSortedSet<Organization>> SurgicalSpecialties { get; }
 
         /// <summary>
         /// Gets the time block length.
