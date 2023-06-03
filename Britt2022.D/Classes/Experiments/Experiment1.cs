@@ -235,14 +235,9 @@
 
             // WeightedAverageSurgicalDurations
             // Parameter: A(i, ω)
-            this.WeightedAverageSurgicalDurations = calculationsAbstractFactory.CreateACalculationFactory().Create().Calculate(
-                durationFactory,
-                this.Clusters,
-                this.Surgeons,
-                this.Scenarios,
-                this.SurgicalDurations,
-                this.SurgicalFrequencies,
-                this.SurgicalOverheads);
+            this.WeightedAverageSurgicalDurations = this.GenerateWeightedAverageSurgicalDurations(
+                calculationsAbstractFactory.CreateACalculationFactory(),
+                dependenciesAbstractFactory.CreateDurationFactory());
 
             // SurgeonScenarioMaximumNumberPatients
             // Parameter: n(i, ω)
@@ -316,7 +311,7 @@
         public ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
 
         /// <inheritdoc />
         public RedBlackTree<Organization, INullableValue<int>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }

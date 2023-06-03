@@ -5,13 +5,15 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
 
     public interface InCalculation
     {
         ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> Calculate(
             INullableValueFactory nullableValueFactory,
-            ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> A,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> A,
             Duration v);
     }
 }

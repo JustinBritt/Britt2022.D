@@ -85,7 +85,7 @@
         /// Gets the weighted average surgical durations.
         /// Parameter: A(i, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> WeightedAverageSurgicalDurations { get; }
 
         /// <summary>
         /// Gets SurgicalSpecialtyStrategicTargetNumberTimeBlocks.

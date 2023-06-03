@@ -1,12 +1,15 @@
 ﻿namespace Britt2022.D.Classes.Calculations
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
 
     using log4net;
 
     using Hl7.Fhir.Model;
+
+    using NGenerics.DataStructures.Trees;
 
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
@@ -21,19 +24,28 @@
 
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>>> Calculate(
             INullableValueFactory nullableValueFactory,
-            ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> A,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> A,
             Duration v)
         {
-            return A
-                .Select(i => Tuple.Create(
-                    i.Item1,
-                    i.Item2,
-                    nullableValueFactory.Create<int>(
-                        (int)Math.Floor(
-                            v.Value.Value
-                            /
-                            i.Item3.Value.Value))))
-                .ToImmutableList();
+            List<Tuple<Organization, INullableValue<int>, INullableValue<int>>> list = new();
+
+            foreach (Organization surgeon in A.Keys.DistinctBy(w => w.Id))
+            {
+                foreach (INullableValue<int> scenario in A[surgeon].Keys.DistinctBy(w => w.Value.Value))
+                {
+                    list.Add(
+                        Tuple.Create(
+                            surgeon,
+                            scenario,
+                            nullableValueFactory.Create<int>(
+                                (int)Math.Floor(
+                                    v.Value.Value
+                                    /
+                                    A[surgeon][scenario].Value.Value))));
+                }
+            }
+
+            return list.ToImmutableList();
         }
     }
 }
