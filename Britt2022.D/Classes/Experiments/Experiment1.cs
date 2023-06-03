@@ -17,10 +17,13 @@
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.Interfaces.Experiments;
     using Britt2022.D.InterfacesAbstractFactories;
+    using Britt2022.D.InterfacesFactories.Calculations;
     using Britt2022.D.InterfacesFactories.Comparers;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.InterfacesFactories.Dependencies.MathNet.Numerics.Distributions;
     using Britt2022.D.Classes.Comparers;
+    using Britt2022.D.AbstractFactories;
+    using Britt2022.D.Factories.Dependencies.Hl7.Fhir.R4.Model;
 
     public sealed class Experiment1 : IExperiment1
     {
@@ -460,6 +463,43 @@
                 .Select(i => nullableValueFactory.Create<int>(i))
                 .ToImmutableSortedSet(
                 nullableValueintComparerFactory.Create());
+        }
+
+        // Parameter: A(i, ω)
+        private RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> GenerateWeightedAverageSurgicalDurations(
+            IACalculationFactory ACalculationFactory,
+            IDurationFactory durationFactory)
+        {
+            ImmutableList<Tuple<Organization, INullableValue<int>, Duration>> A = ACalculationFactory.Create().Calculate(
+                durationFactory,
+                this.Clusters,
+                this.Surgeons,
+                this.Scenarios,
+                this.SurgicalDurations,
+                this.SurgicalFrequencies,
+                this.SurgicalOverheads);
+
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> outerRedBlackTree = new(
+                new OrganizationComparer());
+
+            foreach (Organization surgeon in this.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            {
+                RedBlackTree<INullableValue<int>, Duration> innerRedBlackTree = new(
+                    new NullableValueintComparer());
+
+                foreach (INullableValue<int> scenario in this.Scenarios)
+                {
+                    innerRedBlackTree.Add(
+                        scenario,
+                        A.Where(w => w.Item1 == surgeon && w.Item2 == scenario).Select(w => w.Item3).SingleOrDefault());
+                }
+
+                outerRedBlackTree.Add(
+                    surgeon,
+                    innerRedBlackTree);
+            }
+
+            return outerRedBlackTree;
         }
 
         // Parameter: B(r)
