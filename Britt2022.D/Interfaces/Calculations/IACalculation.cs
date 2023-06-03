@@ -16,7 +16,7 @@
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> D,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> D,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> f,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> O);
     }

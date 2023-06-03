@@ -26,7 +26,7 @@
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> D,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> D,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> f,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> O)
         {
@@ -41,9 +41,7 @@
                         value: clusters
                         .Select(
                             k =>  // k: Cluster
-                            D.Where(j => j.Item1 == i.Item1 && j.Item2 == k && j.Item3 == i.Item2)
-                            .Select(j => j.Item4.Value.Value)
-                            .SingleOrDefault()
+                            D[i.Item1][k][i.Item2].Value.Value
                             *
                             O[i.Item1][k].Value.Value
                             *

@@ -321,7 +321,7 @@
         public RedBlackTree<Organization, INullableValue<int>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgicalDurations { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgicalDurations { get; }
 
         /// <inheritdoc />
         public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> SurgicalFrequencies { get; }
@@ -510,7 +510,7 @@
         }
 
         // Parameter: D(i, e, ω)
-        private ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> GenerateSurgicalDurationsVanHoudenhoven2007(
+        private RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> GenerateSurgicalDurationsVanHoudenhoven2007(
             IDurationFactory durationFactory,
             INullableValueFactory nullableValueFactory,
             ILogNormalFactory logNormalFactory,
@@ -588,7 +588,38 @@
                 }
             }
 
-            return builder.ToImmutableList();
+            //
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> outerRedBlackTree = new();
+
+            foreach (Organization surgeon in this.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            {
+                RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>> firstInnerRedBlackTree = new(
+                    new NullableValueintComparer());
+
+                foreach (INullableValue<int> cluster in this.Clusters)
+                {
+                    RedBlackTree<INullableValue<int>, INullableValue<decimal>> secondInnerRedBlackTree = new(
+                        new NullableValueintComparer());
+
+                    foreach (INullableValue<int> scenario in this.Scenarios)
+                    {
+                        secondInnerRedBlackTree.Add(
+                            scenario,
+                            builder.Where(w => w.Item1 == surgeon && w.Item2 == cluster && w.Item3 == scenario).Select(w => w.Item4).SingleOrDefault());
+                    }
+
+                    firstInnerRedBlackTree.Add(
+                        cluster,
+                        secondInnerRedBlackTree);
+                }
+
+                outerRedBlackTree.Add(
+                    surgeon,
+                    firstInnerRedBlackTree);
+
+            }
+
+            return outerRedBlackTree;
         }
 
         // Parameter: f(i, e)

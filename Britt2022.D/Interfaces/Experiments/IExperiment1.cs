@@ -97,7 +97,7 @@
         /// Gets the surgical durations.
         /// Parameter: D(i, e, ω)
         /// </summary>
-        ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgicalDurations { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgicalDurations { get; }
 
         /// <summary>
         /// Gets the surgical frequencies.
