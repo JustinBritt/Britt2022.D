@@ -1659,7 +1659,8 @@
             RedBlackTree<Organization, ImmutableSortedSet<Organization>> redBlackTree = new(
                 new OrganizationComparer());
 
-            ImmutableSortedSet<Organization>.Builder surgicalSpecialty1GENBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty1GENBuilder = ImmutableSortedSet.CreateBuilder<Organization>(
+                new OrganizationComparer());
 
             surgicalSpecialty1GENBuilder.Add(
                 this.GetSurgeonWithId(
@@ -1695,7 +1696,8 @@
                 this.SurgicalSpecialty1GEN,
                 surgicalSpecialty1GENBuilder.ToImmutableSortedSet());
 
-            ImmutableSortedSet<Organization>.Builder surgicalSpecialty2GYNBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty2GYNBuilder = ImmutableSortedSet.CreateBuilder<Organization>(
+                new OrganizationComparer());
 
             surgicalSpecialty2GYNBuilder.Add(
                 this.GetSurgeonWithId(
@@ -1726,7 +1728,8 @@
                 this.SurgicalSpecialty2GYN,
                 surgicalSpecialty2GYNBuilder.ToImmutableSortedSet());
 
-            ImmutableSortedSet<Organization>.Builder surgicalSpecialty3PLABuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty3PLABuilder = ImmutableSortedSet.CreateBuilder<Organization>(
+                new OrganizationComparer());
 
             surgicalSpecialty3PLABuilder.Add(
                 this.GetSurgeonWithId(
@@ -1747,7 +1750,8 @@
                 this.SurgicalSpecialty3PLA,
                 surgicalSpecialty3PLABuilder.ToImmutableSortedSet());
 
-            ImmutableSortedSet<Organization>.Builder surgicalSpecialty4ENTBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty4ENTBuilder = ImmutableSortedSet.CreateBuilder<Organization>(
+                new OrganizationComparer());
 
             surgicalSpecialty4ENTBuilder.Add(
                 this.GetSurgeonWithId(
@@ -1763,7 +1767,8 @@
                 this.SurgicalSpecialty4ENT,
                 surgicalSpecialty4ENTBuilder.ToImmutableSortedSet());
 
-            ImmutableSortedSet<Organization>.Builder surgicalSpecialty5ORTBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty5ORTBuilder = ImmutableSortedSet.CreateBuilder<Organization>(
+                new OrganizationComparer());
 
             surgicalSpecialty5ORTBuilder.Add(
                 this.GetSurgeonWithId(
@@ -1799,7 +1804,8 @@
                 this.SurgicalSpecialty5ORT,
                 surgicalSpecialty5ORTBuilder.ToImmutableSortedSet());
 
-            ImmutableSortedSet<Organization>.Builder surgicalSpecialty6UROBuilder = ImmutableSortedSet.CreateBuilder<Organization>();
+            ImmutableSortedSet<Organization>.Builder surgicalSpecialty6UROBuilder = ImmutableSortedSet.CreateBuilder<Organization>(
+                new OrganizationComparer());
 
             surgicalSpecialty6UROBuilder.Add(
                 this.GetSurgeonWithId(
