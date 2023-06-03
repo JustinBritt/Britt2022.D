@@ -341,7 +341,7 @@
         public Duration TimeBlockLength { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GoalWeights { get; }
+        public RedBlackTree<INullableValue<int>, Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GoalWeights { get; }
 
         /// <inheritdoc />
         public RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
@@ -1799,12 +1799,15 @@
         }
 
         // Parameters: (w1, w2, w3, w4)
-        private ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GenerateGoalWeights(
+        private RedBlackTree<INullableValue<int>, Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GenerateGoalWeights(
             INullableValueFactory nullableValueFactory)
         {
-            ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>>();
+            RedBlackTree<INullableValue<int>, Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> redBlackTree = new(
+                new NullableValueintComparer());
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    1),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         1),
@@ -1815,7 +1818,9 @@
                     nullableValueFactory.Create<decimal>(
                         1)));
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    2),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         20),
@@ -1826,7 +1831,9 @@
                     nullableValueFactory.Create<decimal>(
                         1)));
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    3),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         1),
@@ -1837,7 +1844,9 @@
                     nullableValueFactory.Create<decimal>(
                         1)));
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    4),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         1),
@@ -1848,7 +1857,9 @@
                     nullableValueFactory.Create<decimal>(
                         1)));
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    5),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         1),
@@ -1859,7 +1870,9 @@
                     nullableValueFactory.Create<decimal>(
                         20)));
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    6),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         40),
@@ -1870,7 +1883,9 @@
                     nullableValueFactory.Create<decimal>(
                         10)));
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    7),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         5),
@@ -1881,7 +1896,9 @@
                     nullableValueFactory.Create<decimal>(
                         100)));
 
-            builder.Add(
+            redBlackTree.Add(
+                nullableValueFactory.Create<int>(
+                    8),
                 Tuple.Create(
                     nullableValueFactory.Create<decimal>(
                         100),
@@ -1892,7 +1909,7 @@
                     nullableValueFactory.Create<decimal>(
                         15)));
 
-            return builder.ToImmutableList();
+            return redBlackTree;
         }
 
         // Parameter: Π(i, j)

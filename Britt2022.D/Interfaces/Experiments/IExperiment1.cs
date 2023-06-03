@@ -163,7 +163,7 @@
         /// Gets the goal weights.
         /// Parameter: (w1, w2, w3, w4)
         /// </summary>
-        ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GoalWeights { get; }
+        RedBlackTree<INullableValue<int>, Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GoalWeights { get; }
 
         /// <summary>
         /// Gets SurgeonOperatingRoomAvailabilities.
