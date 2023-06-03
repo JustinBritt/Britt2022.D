@@ -366,7 +366,7 @@
         public ImmutableList<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> SurgeonDayAvailabilities { get; }
+        public RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> SurgeonDayAvailabilities { get; }
 
         // Index: e
         private ImmutableSortedSet<INullableValue<int>> GenerateClusters(
@@ -5123,7 +5123,7 @@
         }
 
         // Parameter: Ω(i, k)
-        private ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> GenerateSurgeonDayAvailabilities(
+        private RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> GenerateSurgeonDayAvailabilities(
             RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             Bundle surgeons)
         {
@@ -15209,7 +15209,28 @@
                     this.NullableValueFactory.Create<bool>(
                         true)));
 
-            return builder.ToImmutableList();
+            //
+            RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> outerRedBlackTree = new(
+                new OrganizationComparer());
+
+            foreach (Organization surgeon in this.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            {
+                RedBlackTree<FhirDateTime, INullableValue<bool>> innerRedBlackTree = new(
+                    new FhirDateTimeComparer());
+
+                foreach (FhirDateTime day in this.PlanningHorizon.Values)
+                {
+                    innerRedBlackTree.Add(
+                        day,
+                        builder.Where(w => w.Item1 == surgeon && w.Item2 == day).Select(w => w.Item3).SingleOrDefault());
+                }
+
+                outerRedBlackTree.Add(
+                    surgeon,
+                    innerRedBlackTree);
+            }
+
+            return outerRedBlackTree;
         }
 
         private Organization GetSurgeonWithId(

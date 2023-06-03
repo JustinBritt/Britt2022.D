@@ -187,6 +187,6 @@
         /// Gets SurgeonDayAvailabilities.
         /// Parameter: Ω(i, k)
         /// </summary>
-        ImmutableList<Tuple<Organization, FhirDateTime, INullableValue<bool>>> SurgeonDayAvailabilities { get; }
+        RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> SurgeonDayAvailabilities { get; }
     }
 }
