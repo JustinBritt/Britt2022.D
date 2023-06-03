@@ -13,6 +13,7 @@
 
     using NGenerics.DataStructures.Trees;
 
+    using Britt2022.D.Classes.Comparers;
     using Britt2022.D.Extensions.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.Interfaces.Calculations;
     using Britt2022.D.Interfaces.Experiments;
@@ -21,9 +22,6 @@
     using Britt2022.D.InterfacesFactories.Comparers;
     using Britt2022.D.InterfacesFactories.Dependencies.Hl7.Fhir.R4.Model;
     using Britt2022.D.InterfacesFactories.Dependencies.MathNet.Numerics.Distributions;
-    using Britt2022.D.Classes.Comparers;
-    using Britt2022.D.AbstractFactories;
-    using Britt2022.D.Factories.Dependencies.Hl7.Fhir.R4.Model;
 
     public sealed class Experiment1 : IExperiment1
     {
