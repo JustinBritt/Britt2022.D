@@ -170,7 +170,7 @@
         /// Gets SurgeonOperatingRoomAvailabilities.
         /// Parameter: Π(i, j)
         /// </summary>
-        ImmutableList<Tuple<Organization, Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
+        RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
 
         /// <summary>
         /// Gets the scenario probabilities.

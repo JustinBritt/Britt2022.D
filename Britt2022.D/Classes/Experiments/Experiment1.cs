@@ -357,7 +357,7 @@
         public ImmutableList<Tuple<INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>, INullableValue<decimal>>> GoalWeights { get; }
 
         /// <inheritdoc />
-        public ImmutableList<Tuple<Organization, Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
+        public RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
 
         /// <inheritdoc />
         public RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioProbabilities { get; }
@@ -1775,7 +1775,7 @@
         }
 
         // Parameter: Π(i, j)
-        private ImmutableList<Tuple<Organization, Location, INullableValue<bool>>> GenerateSurgeonOperatingRoomAvailabilities()
+        private RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> GenerateSurgeonOperatingRoomAvailabilities()
         {
             ImmutableList<Tuple<Organization, Location, INullableValue<bool>>>.Builder builder = ImmutableList.CreateBuilder<Tuple<Organization, Location, INullableValue<bool>>>();
 
@@ -5019,7 +5019,28 @@
                     this.NullableValueFactory.Create<bool>(
                         true)));
 
-            return builder.ToImmutableList();
+            //
+            RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> outerRedBlackTree = new(
+                new OrganizationComparer());
+
+            foreach (Organization surgeon in this.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            {
+                RedBlackTree<Location, INullableValue<bool>> innerRedBlackTree = new(
+                    new LocationComparer());
+
+                foreach (Location operatingRoom in this.OperatingRooms.Entry.Where(i => i.Resource is Location).Select(i => (Location)i.Resource))
+                {
+                    innerRedBlackTree.Add(
+                        operatingRoom,
+                        builder.Where(w => w.Item1 == surgeon && w.Item2 == operatingRoom).Select(w => w.Item3).SingleOrDefault());
+                }
+
+                outerRedBlackTree.Add(
+                    surgeon,
+                    innerRedBlackTree);
+            }
+
+            return outerRedBlackTree;
         }
 
         // Parameter: Ρ(ω)
